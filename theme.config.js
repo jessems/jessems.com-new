@@ -1,20 +1,23 @@
-const YEAR = new Date().getFullYear()
+const YEAR = new Date().getFullYear();
 
 export default {
-  footer: (
-    <footer>
-      <small>
-        <time>{YEAR}</time> © Your Name.
-        <a href="/feed.xml">RSS</a>
-      </small>
-      <style jsx>{`
-        footer {
-          margin-top: 8rem;
-        }
-        a {
-          float: right;
-        }
-      `}</style>
-    </footer>
-  ),
-}
+	footer: (
+		<footer>
+			<small>
+				<time>{YEAR}</time> © Jesse M. Szepieniec.
+				<a href="/feed.xml">RSS</a>
+			</small>
+			<style jsx>{`
+				footer {
+					margin-top: 8rem;
+				}
+				a {
+					float: right;
+				}
+			`}</style>
+		</footer>
+	),
+	nextThemes: {
+		defaultTheme: 'dark'
+	}
+};
