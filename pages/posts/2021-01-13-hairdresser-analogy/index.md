@@ -8,7 +8,7 @@ keywords: ['privacy', 'whatsapp', 'facebook']
 published: true
 ---
 
-![The Rummaging Hairdresser](images/hairdresser-analogy.jpg)
+![The Rummaging Hairdresser](./images/hairdresser-analogy.jpg)
 
 _This is a thought exercise to help explore what is okay (and what isn't) when it comes to the exchange between personal information and the provision of a personalised service._
 
