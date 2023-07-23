@@ -1,14 +1,16 @@
 ---
 slug: custom-next-components-check-list
-date: "2023-06-24"
-title: "Custom Next Components: Check List"
-description: ""
-tags: "ServiceNow, Next Experience"
+date: '2023-06-24'
+title: 'Custom Next Components: Check List'
+description: ''
+tags: 'ServiceNow, Next Experience'
 published: true
-category: "Technical"
+category: 'Technical'
 ---
 
-<YouTube youTubeId="GjUv0h9Lj4A" />
+import YouTube from '@components/YouTube';
+
+<YouTube id="GjUv0h9Lj4A" />
 
 This is a tutorial for building a checklist component using ServiceNow's Next Experience UI framework.
 
@@ -54,31 +56,31 @@ We can look up the [usage](https://developer.servicenow.com/dev.do#!/reference/n
 
 The button API exposes several properties that we'll use.
 
-- `disabled` takes a boolean and mutes the button color and disables user click interactions if set to `true`.
-- `icon` defines the icon to be displayed. We'll use the `close-outline` icon, but you can pick any icon from the icon library.
-- `size` sets the size of the button. We'll use `sm` which is the smallest size.
-- `variant` Sets the icon style. We'll use `tertiary` which is designated for "actions that are optional or less important to a workflow.
+-   `disabled` takes a boolean and mutes the button color and disables user click interactions if set to `true`.
+-   `icon` defines the icon to be displayed. We'll use the `close-outline` icon, but you can pick any icon from the icon library.
+-   `size` sets the size of the button. We'll use `sm` which is the smallest size.
+-   `variant` Sets the icon style. We'll use `tertiary` which is designated for "actions that are optional or less important to a workflow.
 
 There's one additional property which we'll set which is not specific to the now-button component: `appendtoPayload`. This is an undocumented property which adds an object's key-value pairs to the click event payload. For now we'll just add a test object to understand how it works.
 
 ```jsx
 // ...other import statements
-import "@servicenow/now-button"
+import '@servicenow/now-button';
 
 const view = (state, { updateState }) => {
-  return (
-    <div className="now-checklist-item">
-      Test
-      <now-button-iconic
-        icon="close-outline"
-        tooltipContent="Delete"
-        size="sm"
-        variant="tertiary"
-        appendtoPayload={{ test: "test" }}
-      />
-    </div>
-  )
-}
+	return (
+		<div className="now-checklist-item">
+			Test
+			<now-button-iconic
+				icon="close-outline"
+				tooltipContent="Delete"
+				size="sm"
+				variant="tertiary"
+				appendtoPayload={{ test: 'test' }}
+			/>
+		</div>
+	);
+};
 
 // createCustomElement call
 ```
@@ -92,17 +94,17 @@ The iconic button is clickable out of the box, but I like to make sure things wo
 To create an action handler for the iconic button's click event, all we need is the event's name, which we can get from the API: `NOW_BUTTON_ICONIC#CLICKED`.
 
 ```jsx
-createCustomElement("x-733577-check-list", {
-  actionHandlers: {
-    "NOW_BUTTON_ICONIC#CLICKED": e => {
-      console.log("I've been clicked")
-      console.log(e)
-    },
-  },
-  renderer: { type: snabbdom },
-  view,
-  styles,
-})
+createCustomElement('x-733577-check-list', {
+	actionHandlers: {
+		'NOW_BUTTON_ICONIC#CLICKED': e => {
+			console.log("I've been clicked");
+			console.log(e);
+		}
+	},
+	renderer: { type: snabbdom },
+	view,
+	styles
+});
 ```
 
 This should result in `I've been clicked` getting logged into the browser console when the button is clicked as well as the event object.
@@ -119,88 +121,88 @@ The view function is called with two arguments: `state` and `helpers`.
 
 The helpers object contains the following functions:
 
-- `updateState` - Updates the state of the component
-- `dispatch` - Used to emit actions when users interact with a component
-- `updateProperties` - Updates the properties of the component
+-   `updateState` - Updates the state of the component
+-   `dispatch` - Used to emit actions when users interact with a component
+-   `updateProperties` - Updates the properties of the component
 
 In our `createCustomElement` call let's add a parameter for `properties`. We'll use this to declare that we'll be using a `label` and an `editing` property and we'll set their default values.
 
 ```jsx
-createCustomElement("x-733577-check-list", {
-  // ... other parameters
-  properties: {
-    label: {
-      default: "Enter a label",
-    },
-    editing: {
-      default: false,
-    },
-  },
-  // ... other parameters
-})
+createCustomElement('x-733577-check-list', {
+	// ... other parameters
+	properties: {
+		label: {
+			default: 'Enter a label'
+		},
+		editing: {
+			default: false
+		}
+	}
+	// ... other parameters
+});
 ```
 
 We can access these properties through the `state` variable, which gets passed through the `view` function. We can update these properties with the `updateProperties` function in the second parameter, the helpers object.
 
 ```jsx
 const view = (state, { updateProperties }) => {
-  // ... view body
-}
+	// ... view body
+};
 ```
 
 Let's update the `view` function to use the `label` and `editing` properties.
 
 ```jsx
 const view = (state, { updateProperties }) => {
-  const {
-    properties: { label, editing },
-  } = state
-  // ... view body
-}
+	const {
+		properties: { label, editing }
+	} = state;
+	// ... view body
+};
 ```
 
 Now let's use the `updateProperties` to create a function that will update the `editing` property.
 
 ```jsx
 const view = (state, { updateProperties }) => {
-  const {
-    properties: { label, editing },
-  } = state
+	const {
+		properties: { label, editing }
+	} = state;
 
-  const setEditing = editing => updateProperties({ editing })
+	const setEditing = editing => updateProperties({ editing });
 
-  // ... view body
-}
+	// ... view body
+};
 ```
 
 Now we can use the `setEditing` function to update the `editing` property when the span is double clicked. We can use the `on-dblclick` attribute for this. We'll also add a ternary operator to the span's text to show that we're in edit mode by appending "(editing)" to the label.
 
 ```jsx
 const view = (state, { updateProperties }) => {
-  const {
-    properties: { label, editing },
-  } = state
+	const {
+		properties: { label, editing }
+	} = state;
 
-  const setEditing = editing => updateProperties({ editing })
+	const setEditing = editing => updateProperties({ editing });
 
-  return (
-    <div className="now-checklist-item">
-      <span
-        className="now-checklist-item-cell"
-        on-dblclick={() => setEditing(true)}
-      >
-        {editing ? label + " (editing)" : label}
-      </span>
-      <now-button-iconic
-        icon="close-outline"
-        tooltipContent="Delete"
-        size="sm"
-        variant="tertiary"
-        appendToPayload={{ testKey: "testValue" }}
-      />
-    </div>
-  )
-}
+	return (
+		<div className="now-checklist-item">
+			<span
+				className="now-checklist-item-cell"
+				on-dblclick={() => setEditing(true)}
+			>
+				{editing ? label + ' (editing)' : label}
+			</span>
+			<now-button-iconic
+				icon="close-outline"
+				tooltipContent="Delete"
+				size="sm"
+				variant="tertiary"
+				appendToPayload={{ testKey: 'testValue' }}
+			/>
+		</div>
+	);
+};
 ```
 
 Here is the final code of our view function:
@@ -208,32 +210,32 @@ Here is the final code of our view function:
 ```jsx
 // Pass state and helpers object, destructure updateProperties from helpers
 const view = (state, { updateProperties }) => {
-  // Get label and editing variables via destructuring the state object
-  const {
-    properties: { label, editing },
-  } = state
+	// Get label and editing variables via destructuring the state object
+	const {
+		properties: { label, editing }
+	} = state;
 
-  // Create a function that calls updateProperties with the new value for editing
-  const setEditing = editing => updateProperties({ editing })
+	// Create a function that calls updateProperties with the new value for editing
+	const setEditing = editing => updateProperties({ editing });
 
-  return (
-    <div className="now-checklist-item">
-      <span
-        className="now-checklist-item-cell"
-        on-dblclick={() => setEditing(true)} // Call setEditing with true when the span is double clicked
-      >
-        {editing ? label + " (editing)" : label}
-      </span>
-      <now-button-iconic
-        icon="close-outline"
-        tooltipContent="Delete"
-        size="sm"
-        variant="tertiary"
-        appendToPayload={{ testKey: "testValue" }}
-      />
-    </div>
-  )
-}
+	return (
+		<div className="now-checklist-item">
+			<span
+				className="now-checklist-item-cell"
+				on-dblclick={() => setEditing(true)} // Call setEditing with true when the span is double clicked
+			>
+				{editing ? label + ' (editing)' : label}
+			</span>
+			<now-button-iconic
+				icon="close-outline"
+				tooltipContent="Delete"
+				size="sm"
+				variant="tertiary"
+				appendToPayload={{ testKey: 'testValue' }}
+			/>
+		</div>
+	);
+};
 ```
 
 ## Step 3: Using an input field
@@ -244,30 +246,30 @@ First let's encapsulate our span and make it dedicated to displaying the label (
 
 ```jsx
 const labelCell = (
-  <span
-    className="now-checklist-item-cell"
-    on-dblclick={() => setEditing(true)}
-  >
-    {label}
-  </span>
-)
+	<span
+		className="now-checklist-item-cell"
+		on-dblclick={() => setEditing(true)}
+	>
+		{label}
+	</span>
+);
 ```
 
 Then in our return declaration where we just took out our span, let's add a ternary operator that will show the label when editing is `false` and the input field when editing is `true`.
 
 ```jsx
 return (
-  <div className="now-checklist-item">
-    {editing ? inputCell : labelCell} {/* 👈 Add this */}
-    <now-button-iconic
-      icon="close-outline"
-      tooltipContent="Delete"
-      size="sm"
-      variant="tertiary"
-      appendToPayload={{ testKey: "testValue" }}
-    />
-  </div>
-)
+	<div className="now-checklist-item">
+		{editing ? inputCell : labelCell} {/* 👈 Add this */}
+		<now-button-iconic
+			icon="close-outline"
+			tooltipContent="Delete"
+			size="sm"
+			variant="tertiary"
+			appendToPayload={{ testKey: 'testValue' }}
+		/>
+	</div>
+);
 ```
 
 We just encapsulated our label span element as `labelCell`, now all we need is an `inputCell` to replace the span with an input field when `editing` is `true`. We can use the built-in `on-blur` attribute to call `setEditing` with `false` when the input field loses focus.
@@ -276,14 +278,14 @@ We can do something like this:
 
 ```jsx
 const inputCell = (
-  <span className="now-checklist-item-cell" role="cell">
-    <input
-      className="now-checklist-item-input"
-      value={label}
-      on-blur={() => setEditing(false)}
-    />
-  </span>
-)
+	<span className="now-checklist-item-cell" role="cell">
+		<input
+			className="now-checklist-item-input"
+			value={label}
+			on-blur={() => setEditing(false)}
+		/>
+	</span>
+);
 ```
 
 This gives us the following result:
@@ -300,23 +302,23 @@ Here's the new new `inputCell` in `index.js`:
 
 ```jsx
 const inputCell = (
-  <span className="now-checklist-item-cell" role="cell">
-    <input
-      className="now-checklist-item-input"
-      value={label}
-      on-keydown={({ keyCode, target: { value: label } }) => {
-        const newLabel = label.trim()
-        if (keyCode === 13 && newLabel) {
-          updateProperties({ label: newLabel })
-          setEditing(false)
-        } else if (keyCode === 27) {
-          setEditing(false)
-        }
-      }}
-      on-blur={() => setEditing(false)}
-    />
-  </span>
-)
+	<span className="now-checklist-item-cell" role="cell">
+		<input
+			className="now-checklist-item-input"
+			value={label}
+			on-keydown={({ keyCode, target: { value: label } }) => {
+				const newLabel = label.trim();
+				if (keyCode === 13 && newLabel) {
+					updateProperties({ label: newLabel });
+					setEditing(false);
+				} else if (keyCode === 27) {
+					setEditing(false);
+				}
+			}}
+			on-blur={() => setEditing(false)}
+		/>
+	</span>
+);
 ```
 
 And here's what the result looks like:
@@ -329,24 +331,24 @@ Notice how when we double click on the label, the input field is not focused. We
 
 ```jsx
 const inputCell = (
-  <span className="now-checklist-item-cell" role="cell">
-    <input
-      className="now-checklist-item-input"
-      value={label}
-      hook-insert={vnode => vnode.elm.focus()} // 👈 Add this
-      on-keydown={({ keyCode, target: { value: label } }) => {
-        const newLabel = label.trim()
-        if (keyCode === 13 && newLabel) {
-          updateProperties({ label: newLabel })
-          setEditing(false)
-        } else if (keyCode === 27) {
-          setEditing(false)
-        }
-      }}
-      on-blur={() => setEditing(false)}
-    />
-  </span>
-)
+	<span className="now-checklist-item-cell" role="cell">
+		<input
+			className="now-checklist-item-input"
+			value={label}
+			hook-insert={vnode => vnode.elm.focus()} // 👈 Add this
+			on-keydown={({ keyCode, target: { value: label } }) => {
+				const newLabel = label.trim();
+				if (keyCode === 13 && newLabel) {
+					updateProperties({ label: newLabel });
+					setEditing(false);
+				} else if (keyCode === 27) {
+					setEditing(false);
+				}
+			}}
+			on-blur={() => setEditing(false)}
+		/>
+	</span>
+);
 ```
 
 Now when you double click the input field should be in focus.
@@ -358,58 +360,58 @@ Now that we have a way to edit the label, let's add a toggle to mark the task as
 In our createCustomElement declaration, let's add a new property called `active` and set it to `false` by default.
 
 ```jsx
-createCustomElement("x-733577-check-list", {
-  actionHandlers: {
-    "NOW_BUTTON_ICONIC#CLICKED": e => {
-      console.log("I've been clicked")
-      console.log(e)
-    },
-  },
-  view,
-  properties: {
-    label: {
-      default: "Enter a label",
-    },
-    editing: {
-      default: false,
-    },
-    // 👇 Add this
-    active: {
-      default: false,
-    },
-    //
-  },
-  renderer: { type: snabbdom },
-  styles,
-})
+createCustomElement('x-733577-check-list', {
+	actionHandlers: {
+		'NOW_BUTTON_ICONIC#CLICKED': e => {
+			console.log("I've been clicked");
+			console.log(e);
+		}
+	},
+	view,
+	properties: {
+		label: {
+			default: 'Enter a label'
+		},
+		editing: {
+			default: false
+		},
+		// 👇 Add this
+		active: {
+			default: false
+		}
+		//
+	},
+	renderer: { type: snabbdom },
+	styles
+});
 ```
 
 Then where we're destructuring the state into properties, let's include the `active` property.
 
 ```jsx
 const {
-  properties: { label, editing, active },
-} = state
+	properties: { label, editing, active }
+} = state;
 ```
 
 Now we can use the `active` property to set the `checked` attribute on the `now-toggle` element.
 
 ```jsx
 return (
-  <div className="now-checklist-item">
-    <span className="now-checklist-item-cell -center" role="cell">
-      <now-toggle checked={active} disabled={editing} />
-    </span>
-    {editing ? inputCell : labelCell}
-    <now-button-iconic
-      icon="close-outline"
-      tooltipContent="Delete"
-      size="sm"
-      variant="tertiary"
-      appendToPayload={{ testKey: "testValue" }}
-    />
-  </div>
-)
+	<div className="now-checklist-item">
+		<span className="now-checklist-item-cell -center" role="cell">
+			<now-toggle checked={active} disabled={editing} />
+		</span>
+		{editing ? inputCell : labelCell}
+		<now-button-iconic
+			icon="close-outline"
+			tooltipContent="Delete"
+			size="sm"
+			variant="tertiary"
+			appendToPayload={{ testKey: 'testValue' }}
+		/>
+	</div>
+);
 ```
 
 The result should look like this:
@@ -436,15 +438,15 @@ Then let's rename the parent directory from "x-733577-check-list" to "checklist"
 You'll want to make sure the checklist folder has an `index.js` file which contains the following:
 
 ```js
-import "./checklist-item"
+import './checklist-item';
 ```
 
 We also need to change our `createCustomElement` declaration to reflect the new directory structure:
 
 ```jsx
-createCustomElement("checklist", {
-  // View and actionHandlers omitted for brevity
-})
+createCustomElement('checklist', {
+	// View and actionHandlers omitted for brevity
+});
 ```
 
 You will need to stop (CTRL + C on Windows, CMD + C on Mac) and restart `snc ui-component develop` the development server to make sure your changes are picked up.
@@ -453,19 +455,19 @@ You will also need to rename the reference in the now-ui.json config file:
 
 ```json
 {
-  "components": {
-    "checklist": {
-      "innerComponents": [],
-      "uiBuilder": {
-        "associatedTypes": ["global.core", "global.landing-page"],
-        "label": "My Component",
-        "icon": "document-outline",
-        "description": "A description of my component",
-        "category": "primitives"
-      }
-    }
-  },
-  "scopeName": "x_733577_jessems_2"
+	"components": {
+		"checklist": {
+			"innerComponents": [],
+			"uiBuilder": {
+				"associatedTypes": ["global.core", "global.landing-page"],
+				"label": "My Component",
+				"icon": "document-outline",
+				"description": "A description of my component",
+				"category": "primitives"
+			}
+		}
+	},
+	"scopeName": "x_733577_jessems_2"
 }
 ```
 
@@ -474,15 +476,15 @@ You will also need to rename the reference in the now-ui.json config file:
 Let's put the constants in a constants file. Create a file called `constants.js` in the `checklist` directory. Then create two constants for the enter and escape keys we used earlier as well as one for the event that is fired on toggle click:
 
 ```js
-export const ENTER_KEY_CODE = 13
-export const ESC_KEY_CODE = 27
-export const TOGGLE_CLICKED = "NOW_TOGGLE#CLICKED"
+export const ENTER_KEY_CODE = 13;
+export const ESC_KEY_CODE = 27;
+export const TOGGLE_CLICKED = 'NOW_TOGGLE#CLICKED';
 ```
 
 Then import them into `src/checklist/checklist-item/index.js`:
 
 ```js
-import { ENTER_KEY_CODE, ESC_KEY_CODE, TOGGLE_CLICKED } from "../constants"
+import { ENTER_KEY_CODE, ESC_KEY_CODE, TOGGLE_CLICKED } from '../constants';
 // the rest of the code omitted for brevity
 ```
 
@@ -510,16 +512,16 @@ on-keydown={({keyCode, target: {value: label}}) => {
 And use the toggle event constant in the `actionHandlers`:
 
 ```jsx
-createCustomElement("checklist-item", {
-  actionHandlers: {
-    [TOGGLE_CLICKED]: e => {
-      // ☝️ Use the constant
-      console.log("I've been clicked")
-      console.log(e)
-    },
-  },
-  // ..
-})
+createCustomElement('checklist-item', {
+	actionHandlers: {
+		[TOGGLE_CLICKED]: e => {
+			// ☝️ Use the constant
+			console.log("I've been clicked");
+			console.log(e);
+		}
+	}
+	// ..
+});
 ```
 
 ## Step 8: Refactoring Actions Handlers and Views
@@ -527,112 +529,112 @@ createCustomElement("checklist-item", {
 Let's move the action handlers and view into their own files. Create a file called `actions.js` in the `checklist` directory and move the action handlers (including the import we just updated) into it:
 
 ```js
-import { TOGGLE_CLICKED } from "../../constants"
+import { TOGGLE_CLICKED } from '../../constants';
 
 export default {
-  actionHandlers: {
-    [TOGGLE_CLICKED]: e => {
-      console.log("I've been clicked")
-      console.log(e)
-    },
-  },
-}
+	actionHandlers: {
+		[TOGGLE_CLICKED]: e => {
+			console.log("I've been clicked");
+			console.log(e);
+		}
+	}
+};
 ```
 
 Before we import the actions into `index.js`, let's create a file called `view.js` in the `checklist` directory and move the view into it and export it:
 
 ```jsx
-import "@servicenow/now-toggle"
-import { ENTER_KEY_CODE, ESC_KEY_CODE } from "../constants"
+import '@servicenow/now-toggle';
+import { ENTER_KEY_CODE, ESC_KEY_CODE } from '../constants';
 
 export default (state, { updateProperties }) => {
-  const {
-    properties: { label, editing, active },
-  } = state
+	const {
+		properties: { label, editing, active }
+	} = state;
 
-  const setEditing = editing => updateProperties({ editing })
+	const setEditing = editing => updateProperties({ editing });
 
-  const labelCell = (
-    <span
-      className="now-checklist-item-cell"
-      on-dblclick={() => setEditing(true)}
-    >
-      {label}
-    </span>
-  )
+	const labelCell = (
+		<span
+			className="now-checklist-item-cell"
+			on-dblclick={() => setEditing(true)}
+		>
+			{label}
+		</span>
+	);
 
-  const inputCell = (
-    <span className="now-checklist-item-cell" role="cell">
-      <input
-        className="now-checklist-item-input"
-        value={label}
-        hook-insert={vnode => vnode.elm.focus()}
-        on-keydown={({ keyCode, target: { value: label } }) => {
-          const newLabel = label.trim()
-          if (keyCode === ENTER_KEY_CODE && newLabel) {
-            updateProperties({ label: newLabel })
-            setEditing(false)
-          } else if (keyCode === ESC_KEY_CODE) {
-            setEditing(false)
-          }
-        }}
-        on-blur={() => setEditing(false)}
-      />
-    </span>
-  )
+	const inputCell = (
+		<span className="now-checklist-item-cell" role="cell">
+			<input
+				className="now-checklist-item-input"
+				value={label}
+				hook-insert={vnode => vnode.elm.focus()}
+				on-keydown={({ keyCode, target: { value: label } }) => {
+					const newLabel = label.trim();
+					if (keyCode === ENTER_KEY_CODE && newLabel) {
+						updateProperties({ label: newLabel });
+						setEditing(false);
+					} else if (keyCode === ESC_KEY_CODE) {
+						setEditing(false);
+					}
+				}}
+				on-blur={() => setEditing(false)}
+			/>
+		</span>
+	);
 
-  return (
-    <div className="now-checklist-item">
-      <span className="now-checklist-item-cell -center" role="cell">
-        <now-toggle checked={active} disabled={editing} />
-      </span>
-      {editing ? inputCell : labelCell}
-      <now-button-iconic
-        icon="close-outline"
-        tooltipContent="Delete"
-        size="sm"
-        variant="tertiary"
-        appendToPayload={{ testKey: "testValue" }}
-      />
-    </div>
-  )
-}
+	return (
+		<div className="now-checklist-item">
+			<span className="now-checklist-item-cell -center" role="cell">
+				<now-toggle checked={active} disabled={editing} />
+			</span>
+			{editing ? inputCell : labelCell}
+			<now-button-iconic
+				icon="close-outline"
+				tooltipContent="Delete"
+				size="sm"
+				variant="tertiary"
+				appendToPayload={{ testKey: 'testValue' }}
+			/>
+		</div>
+	);
+};
 ```
 
 Then let's rename `src/checklist/checklist-item/index.js` to `src/checklist/checklist-item/checklist-item.js` and import and replace the actions and view:
 
 ```js
-import { createCustomElement } from "@servicenow/ui-core"
-import snabbdom from "@servicenow/ui-renderer-snabbdom"
-import styles from "./styles.scss"
-import "@servicenow/now-toggle"
-import "@servicenow/now-button"
-import checklistItemAction from "./actions"
-import view from "./view"
+import { createCustomElement } from '@servicenow/ui-core';
+import snabbdom from '@servicenow/ui-renderer-snabbdom';
+import styles from './styles.scss';
+import '@servicenow/now-toggle';
+import '@servicenow/now-button';
+import checklistItemAction from './actions';
+import view from './view';
 
-createCustomElement("checklist-item", {
-  view,
-  properties: {
-    label: {
-      default: "Enter a label",
-    },
-    editing: {
-      default: false,
-    },
-    active: {
-      default: false,
-    },
-  },
-  renderer: { type: snabbdom },
-  styles,
-  ...checklistItemAction,
-})
+createCustomElement('checklist-item', {
+	view,
+	properties: {
+		label: {
+			default: 'Enter a label'
+		},
+		editing: {
+			default: false
+		},
+		active: {
+			default: false
+		}
+	},
+	renderer: { type: snabbdom },
+	styles,
+	...checklistItemAction
+});
 ```
 
 Finally, let's create a `src/checklist/checklist-item/index.js` file to import the `checklist-item.js` file:
 
 ```js
-import "./checklist-item"
+import './checklist-item';
 ```
 
 Your final directory structure should look like this:
@@ -661,42 +663,42 @@ Let's add the SCSS provided by ServiceNow to the checklist item
 Rename the styles.scss file to `checklist-item.scss` and add the following:
 
 ```scss
-@import "@servicenow/sass-kit/host";
+@import '@servicenow/sass-kit/host';
 
 :host {
-  display: block;
+	display: block;
 }
 
 .now-checklist-item {
-  display: grid;
-  align-items: center;
-  grid-template-columns: now-fn-px2rem(120px) 1fr now-fn-px2rem(32px);
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: RGB($now-color--divider-secondary);
+	display: grid;
+	align-items: center;
+	grid-template-columns: now-fn-px2rem(120px) 1fr now-fn-px2rem(32px);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: RGB($now-color--divider-secondary);
 }
 
 .now-checklist-item-cell {
-  display: flex;
-  padding: $now-global-space--sm;
+	display: flex;
+	padding: $now-global-space--sm;
 
-  &:first-child {
-    border-right-width: 1px;
-    border-right-style: solid;
-    border-right-color: RGB($now-color--divider-secondary);
-  }
+	&:first-child {
+		border-right-width: 1px;
+		border-right-style: solid;
+		border-right-color: RGB($now-color--divider-secondary);
+	}
 
-  &.-center {
-    justify-content: center;
-  }
+	&.-center {
+		justify-content: center;
+	}
 }
 
 .now-checklist-item-input {
-  margin: 0;
-  padding: 0;
-  font-size: inherit;
-  line-height: inherit;
-  font-family: inherit;
+	margin: 0;
+	padding: 0;
+	font-size: inherit;
+	line-height: inherit;
+	font-family: inherit;
 }
 ```
 
@@ -704,7 +706,7 @@ Then update the import statement in `checklist-item.js`:
 
 ```js
 // ...
-import styles from "./checklist-item.scss"
+import styles from './checklist-item.scss';
 // ...
 ```
 
@@ -723,59 +725,59 @@ Let's update the action handler so that when a checklist item is updated there's
 First let's prevent the original TOGGLE_CLICKED event from propagating up to the parent checklist component and let's define an effect ([link to Docs](https://developer.servicenow.com/dev.do#!/reference/next-experience/utah/ui-framework/main-concepts/action-handlers#effects)), which is a way of allowing us to define what custom actions we want to take when a checklist item is updated.
 
 ```jsx
-import { TOGGLE_CLICKED } from "../constants"
+import { TOGGLE_CLICKED } from '../constants';
 
 export default {
-  actionHandlers: {
-    [TOGGLE_CLICKED]: {
-      stopPropagation: true,
-      effect: ({ state, action, dispatch }) => {},
-    },
-  },
-}
+	actionHandlers: {
+		[TOGGLE_CLICKED]: {
+			stopPropagation: true,
+			effect: ({ state, action, dispatch }) => {}
+		}
+	}
+};
 ```
 
 We set the `effect` property to a function definition. This function will be invoked when the `TOGGLE_CLICKED` action is triggered. It receives an object with the following properties:
 
-- `state`: the current state of the component
-- `action`: the action that was triggered
-- `dispatch`: a function that allows us to dispatch actions
+-   `state`: the current state of the component
+-   `action`: the action that was triggered
+-   `dispatch`: a function that allows us to dispatch actions
 
 Inside the effect function definition let's disable the default action handler for `TOGGLE_CLICKED` so we can handle it ourselves. We do this by invoking the [`preventDefault`](https://developer.servicenow.com/dev.do#!/reference/next-experience/utah/ui-framework/main-concepts/action-handlers#preventing-default-action-handlers) method on the action object:
 
 ```jsx
-import { TOGGLE_CLICKED } from "../constants"
+import { TOGGLE_CLICKED } from '../constants';
 
 export default {
-  actionHandlers: {
-    [TOGGLE_CLICKED]: {
-      stopPropagation: true,
-      effect: ({ state, action, dispatch }) => {
-        action.preventDefault()
-      },
-    },
-  },
-}
+	actionHandlers: {
+		[TOGGLE_CLICKED]: {
+			stopPropagation: true,
+			effect: ({ state, action, dispatch }) => {
+				action.preventDefault();
+			}
+		}
+	}
+};
 ```
 
 Then let's get the checklist-item `itemId` by destructuring the `state.properties` object and the checklist-item `value` by destructuring the `action.payload` object. Finally let's also dispatch our own action which we'll call `CHECKLIST_ITEM_UPDATED` and we'll provide it the payload of an object with the `itemId` and the `value`:
 
 ```jsx
-import { TOGGLE_CLICKED } from "../constants"
+import { TOGGLE_CLICKED } from '../constants';
 
 export default {
-  actionHandlers: {
-    [TOGGLE_CLICKED]: {
-      stopPropagation: true,
-      effect: ({ state, action, dispatch }) => {
-        action.preventDefault()
-        const { itemId } = state.properties
-        const { value } = action.payload
-        dispatch(CHECKLIST_ITEM_UPDATED, { itemId, active: value })
-      },
-    },
-  },
-}
+	actionHandlers: {
+		[TOGGLE_CLICKED]: {
+			stopPropagation: true,
+			effect: ({ state, action, dispatch }) => {
+				action.preventDefault();
+				const { itemId } = state.properties;
+				const { value } = action.payload;
+				dispatch(CHECKLIST_ITEM_UPDATED, { itemId, active: value });
+			}
+		}
+	}
+};
 ```
 
 Right now we're not doing anything with the `CHECKLIST_ITEM_UPDATED` action, but we'll do that in a future step.

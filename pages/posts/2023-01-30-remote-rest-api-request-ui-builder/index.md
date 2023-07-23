@@ -1,14 +1,16 @@
 ---
 slug: remote-api-request-ui-builder
-date: "2023-01-30"
-title: "How to make a remote REST API request using UI Builder (ServiceNow Now Experience)"
-description: "In this tutorial you will learn how to make a REST request to a remote API from within UI Builder. This allows you to pull in external data resources into your Now Experience Configurable Workspace."
-tags: "servicenow"
+date: '2023-01-30'
+title: 'How to make a remote REST API request using UI Builder (ServiceNow Now Experience)'
+description: 'In this tutorial you will learn how to make a REST request to a remote API from within UI Builder. This allows you to pull in external data resources into your Now Experience Configurable Workspace.'
+tags: 'servicenow'
 published: true
-category: "technical"
+category: 'technical'
 ---
 
-<YouTube youTubeId="3SgY8E6T7oA" />
+import YouTube from '@components/YouTube'
+
+<YouTube id="3SgY8E6T7oA" />
 
 Watch the video tutorial or read the step by step article below.
 
@@ -84,25 +86,25 @@ The Pokemon API I'm using has a response which looks something like this:
 
 ```json
 {
-  "abilities": [
-    {
-      "ability": {
-        "name": "limber",
-        "url": "https://pokeapi.co/api/v2/ability/7/"
-      },
-      "is_hidden": false,
-      "slot": 1
-    },
-    {
-      "ability": {
-        "name": "imposter",
-        "url": "https://pokeapi.co/api/v2/ability/150/"
-      },
-      "is_hidden": true,
-      "slot": 3
-    }
-  ]
-  // ...
+	"abilities": [
+		{
+			"ability": {
+				"name": "limber",
+				"url": "https://pokeapi.co/api/v2/ability/7/"
+			},
+			"is_hidden": false,
+			"slot": 1
+		},
+		{
+			"ability": {
+				"name": "imposter",
+				"url": "https://pokeapi.co/api/v2/ability/150/"
+			},
+			"is_hidden": true,
+			"slot": 3
+		}
+	]
+	// ...
 }
 ```
 
@@ -110,15 +112,15 @@ I'm only interested in grabbing the first `ability` from the `abilities` array, 
 
 ```js
 try {
-  var r = new sn_ws.RESTMessageV2("Pokemon", "Default GET")
+	var r = new sn_ws.RESTMessageV2('Pokemon', 'Default GET');
 
-  var response = r.execute()
-  var responseBody = response.getBody()
-  var httpStatus = response.getStatusCode()
+	var response = r.execute();
+	var responseBody = response.getBody();
+	var httpStatus = response.getStatusCode();
 
-  return JSON.parse(responseBody).abilities[0].ability.name // Adding this line
+	return JSON.parse(responseBody).abilities[0].ability.name; // Adding this line
 } catch (ex) {
-  var message = ex.message
+	var message = ex.message;
 }
 ```
 
@@ -126,18 +128,18 @@ Then I wrap the above tweaked boilerplate code into a specific function that is 
 
 ```js
 function transform(input) {
-  // added function wrapper
-  try {
-    var r = new sn_ws.RESTMessageV2("Pokemon", "Default GET")
+	// added function wrapper
+	try {
+		var r = new sn_ws.RESTMessageV2('Pokemon', 'Default GET');
 
-    var response = r.execute()
-    var responseBody = response.getBody()
-    var httpStatus = response.getStatusCode()
+		var response = r.execute();
+		var responseBody = response.getBody();
+		var httpStatus = response.getStatusCode();
 
-    return JSON.parse(responseBody).abilities[0].ability.name
-  } catch (ex) {
-    var message = ex.message
-  }
+		return JSON.parse(responseBody).abilities[0].ability.name;
+	} catch (ex) {
+		var message = ex.message;
+	}
 } // added function wrapper
 ```
 
@@ -173,5 +175,5 @@ All that's left now is to bind that response to a component in our UI.
 
 ## Final notes
 
-- Transform Data Resources not only allow you to make REST API calls, they allow you to run any arbitrary server-side code.
-- In this tutorial we didn't look at _when_ the Transform Data Resource gets executed (and thus when an API call gets made). By default the setting is set to "eager" which means it runs on page load. This can be set to "explicit" which allows you to trigger the Data Resource manually e.g. through an event.
+-   Transform Data Resources not only allow you to make REST API calls, they allow you to run any arbitrary server-side code.
+-   In this tutorial we didn't look at _when_ the Transform Data Resource gets executed (and thus when an API call gets made). By default the setting is set to "eager" which means it runs on page load. This can be set to "explicit" which allows you to trigger the Data Resource manually e.g. through an event.

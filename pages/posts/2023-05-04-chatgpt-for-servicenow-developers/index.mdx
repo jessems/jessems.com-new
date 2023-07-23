@@ -1,14 +1,16 @@
 ---
 slug: chat-gpt-for-servicenow-developers
-date: "2023-04-05"
-title: "Chat GPT for ServiceNow Developers"
-description: "Chat GPT for ServiceNow Developers"
-tags: "GPT, GPT-4, LLM, ServiceNow"
+date: '2023-04-05'
+title: 'Chat GPT for ServiceNow Developers'
+description: 'Chat GPT for ServiceNow Developers'
+tags: 'GPT, GPT-4, LLM, ServiceNow'
 published: true
-category: "technical"
+category: 'technical'
 ---
 
-<YouTube youTubeId="C_USLb_x3Vg" />
+import YouTube from '@components/youtube'
+
+<YouTube id="C_USLb_x3Vg" />
 
 Chat GPT has taken the world by storm resulting in it becoming the fastest growing consumer product in history and also one of the largest in terms of users. It has proven particularly capable in the realm of programming and there are many examples of it being used to generate and improve code. In this post I explore the various use cases for using Chat GPT to make your life as a ServiceNow developer easier.
 
@@ -16,15 +18,15 @@ Some high level take-aways:
 
 1. ChatGPT and large language models more generally, excel at doing tasks for which...
 
-- ...many closely related examples exist online
-- ...customization of those existing examaples is tedious for humans (e.g. regex)
-- ...the answer is not overly complex
-- ...the task relies on manipulating text and language as opposed to doing arithmetic (e.g. Chat GPT can't count)
+-   ...many closely related examples exist online
+-   ...customization of those existing examaples is tedious for humans (e.g. regex)
+-   ...the answer is not overly complex
+-   ...the task relies on manipulating text and language as opposed to doing arithmetic (e.g. Chat GPT can't count)
 
 2. ChatGPT makes mistakes in a way that we're not used to seeing from any other system. It has a tendency to...
 
-- ...make things up that seem plausible but that are complete fabrications (e.g. non-existing methods or classes)
-- ...communicate with confidence even when it is wrong
+-   ...make things up that seem plausible but that are complete fabrications (e.g. non-existing methods or classes)
+-   ...communicate with confidence even when it is wrong
 
 ## Personal tutor
 
@@ -66,14 +68,14 @@ Prior to ES6, functions were defined using the `function` keyword and had a name
 
 ```javascript
 function add(a, b) {
-  return a + b
+	return a + b;
 }
 ```
 
 With arrow functions, the syntax is simplified and the function is anonymous by default:
 
 ```javascript
-const add = (a, b) => a + b
+const add = (a, b) => a + b;
 ```
 
 In this example, the `const` keyword is used to declare a variable called `add`, which is assigned an arrow function. The function takes two parameters, `a` and `b`, and returns their sum.
@@ -81,7 +83,7 @@ In this example, the `const` keyword is used to declare a variable called `add`,
 Arrow functions can also be used with one parameter and no parentheses:
 
 ```javascript
-const square = x => x * x
+const square = x => x * x;
 ```
 
 In this example, the `square` function takes a single parameter `x` and returns its square.
@@ -89,7 +91,7 @@ In this example, the `square` function takes a single parameter `x` and returns 
 Arrow functions also have a concise syntax for returning object literals:
 
 ```javascript
-const createPerson = (name, age) => ({ name, age })
+const createPerson = (name, age) => ({ name, age });
 ```
 
 In this example, the `createPerson` function takes two parameters, `name` and `age`, and returns an object literal with properties `name` and `age` that are set to the values of the parameters.
@@ -100,17 +102,17 @@ Here's an example that demonstrates the difference:
 
 ```javascript
 const person = {
-  name: "Alice",
-  sayName: function () {
-    console.log(this.name)
-  },
-  sayNameArrow: () => {
-    console.log(this.name)
-  },
-}
+	name: 'Alice',
+	sayName: function () {
+		console.log(this.name);
+	},
+	sayNameArrow: () => {
+		console.log(this.name);
+	}
+};
 
-person.sayName() // logs "Alice"
-person.sayNameArrow() // logs undefined
+person.sayName(); // logs "Alice"
+person.sayNameArrow(); // logs undefined
 ```
 
 In this example, the `person` object has two methods, `sayName` and `sayNameArrow`. The `sayName` method uses a regular function and logs the value of `this.name`, which is "Alice". The `sayNameArrow` method uses an arrow function and logs the value of `this.name`, which is undefined.
@@ -155,16 +157,16 @@ gs.print(rec.getRowCount());
 The issue with this code is that the single quotes used in the `strQuery` variable around the date format strings interfere with the single quotes used to delimit the string itself. You can fix this by escaping the single quotes around the date format strings or by using double quotes around the string instead. Here's an example using escaped single quotes:
 
 ```js
-var rec = new GlideRecord("cmdb_ci_computer")
+var rec = new GlideRecord('cmdb_ci_computer');
 var strQuery =
-  "u_lease.endsON2012-02-02@javascript:gs.dateGenerate('2012-02-02','start')@javascript:gs.dateGenerate('2012-02-12','end')"
-strQuery = strQuery + "^sys_class_name=cmdb_ci_computer"
-strQuery = strQuery + "^form_factor=Laptop"
-strQuery = strQuery + "^install_status=10"
-strQuery = strQuery + "^u_purchase_lease=lease"
-rec.addEncodedQuery(strQuery)
-rec.query()
-gs.print(rec.getRowCount())
+	"u_lease.endsON2012-02-02@javascript:gs.dateGenerate('2012-02-02','start')@javascript:gs.dateGenerate('2012-02-12','end')";
+strQuery = strQuery + '^sys_class_name=cmdb_ci_computer';
+strQuery = strQuery + '^form_factor=Laptop';
+strQuery = strQuery + '^install_status=10';
+strQuery = strQuery + '^u_purchase_lease=lease';
+rec.addEncodedQuery(strQuery);
+rec.query();
+gs.print(rec.getRowCount());
 ```
 
 This should execute without any errors and print the number of records returned by the query.
@@ -192,38 +194,38 @@ By defining a JSON schema for the expected response structure, you can ensure th
 Here's an example of how you can use a JSON schema to validate a REST API response in JavaScript:
 
 ```javascript
-const Ajv = require("ajv")
-const axios = require("axios")
+const Ajv = require('ajv');
+const axios = require('axios');
 
 // Define the JSON schema for the expected response
 const schema = {
-  type: "object",
-  properties: {
-    name: { type: "string" },
-    age: { type: "number" },
-    email: { type: "string", format: "email" },
-  },
-  required: ["name", "email"],
-}
+	type: 'object',
+	properties: {
+		name: { type: 'string' },
+		age: { type: 'number' },
+		email: { type: 'string', format: 'email' }
+	},
+	required: ['name', 'email']
+};
 
 // Make the API call and validate the response
 axios
-  .get("https://example.com/api/users/123")
-  .then(response => {
-    const ajv = new Ajv()
-    const validate = ajv.compile(schema)
-    const valid = validate(response.data)
+	.get('https://example.com/api/users/123')
+	.then(response => {
+		const ajv = new Ajv();
+		const validate = ajv.compile(schema);
+		const valid = validate(response.data);
 
-    if (!valid) {
-      console.error(validate.errors)
-      return
-    }
+		if (!valid) {
+			console.error(validate.errors);
+			return;
+		}
 
-    console.log(response.data)
-  })
-  .catch(error => {
-    console.error(error)
-  })
+		console.log(response.data);
+	})
+	.catch(error => {
+		console.error(error);
+	});
 ```
 
 In this example, we define a JSON schema for the expected response, and then use the Ajv library to compile the schema and validate the response. If the response is invalid, we log the validation errors to the console.
@@ -253,54 +255,56 @@ Implement error handling: When validating the response structure, handle any val
 Here's a code example using JavaScript with axios and ajv:
 
 ```js
-const axios = require("axios")
-const Ajv = require("ajv")
+const axios = require('axios');
+const Ajv = require('ajv');
 
-const ajv = new Ajv()
+const ajv = new Ajv();
 
 // Define the expected response schema
 const responseSchema = {
-  type: "object",
-  properties: {
-    data: {
-      type: "object",
-      properties: {
-        // Add the expected properties and their types here
-      },
-      required: [
-        // Add the required properties here
-      ],
-    },
-  },
-  required: ["data"],
-}
+	type: 'object',
+	properties: {
+		data: {
+			type: 'object',
+			properties: {
+				// Add the expected properties and their types here
+			},
+			required: [
+				// Add the required properties here
+			]
+		}
+	},
+	required: ['data']
+};
 
 async function makeApiCall(url) {
-  try {
-    // Make the API call
-    const response = await axios.get(url)
+	try {
+		// Make the API call
+		const response = await axios.get(url);
 
-    // Check for HTTP errors
-    if (response.status < 200 || response.status >= 300) {
-      throw new Error(`HTTP error: ${response.status} ${response.statusText}`)
-    }
+		// Check for HTTP errors
+		if (response.status < 200 || response.status >= 300) {
+			throw new Error(
+				`HTTP error: ${response.status} ${response.statusText}`
+			);
+		}
 
-    // Validate the response structure
-    const isValid = ajv.validate(responseSchema, response.data)
-    if (!isValid) {
-      console.error("API response structure changed:", ajv.errorsText())
-      // Handle the error (e.g., provide a default value, show an error message, or log the issue)
-    }
+		// Validate the response structure
+		const isValid = ajv.validate(responseSchema, response.data);
+		if (!isValid) {
+			console.error('API response structure changed:', ajv.errorsText());
+			// Handle the error (e.g., provide a default value, show an error message, or log the issue)
+		}
 
-    return response.data
-  } catch (error) {
-    console.error("Error making API call:", error.message)
-    // Handle the error (e.g., provide a default value, show an error message, or log the issue)
-  }
+		return response.data;
+	} catch (error) {
+		console.error('Error making API call:', error.message);
+		// Handle the error (e.g., provide a default value, show an error message, or log the issue)
+	}
 }
 
 // Use the makeApiCall function with your API URL
-makeApiCall("https://api.example.com/data")
+makeApiCall('https://api.example.com/data');
 ```
 
 By following this approach, you can account for changes in the API response object and handle errors gracefully.
@@ -314,80 +318,80 @@ Could you show me an example in ES5?
 ```js
 // Define the expected response structure
 var responseSchema = {
-  data: {
-    // Add the expected properties and their types here
-  },
-}
+	data: {
+		// Add the expected properties and their types here
+	}
+};
 
 function validateResponse(response) {
-  if (
-    !response ||
-    typeof response !== "object" ||
-    !response.hasOwnProperty("data")
-  ) {
-    return false
-  }
+	if (
+		!response ||
+		typeof response !== 'object' ||
+		!response.hasOwnProperty('data')
+	) {
+		return false;
+	}
 
-  var responseData = response.data
-  for (var key in responseSchema.data) {
-    if (
-      !responseData.hasOwnProperty(key) ||
-      typeof responseData[key] !== responseSchema.data[key]
-    ) {
-      return false
-    }
-  }
+	var responseData = response.data;
+	for (var key in responseSchema.data) {
+		if (
+			!responseData.hasOwnProperty(key) ||
+			typeof responseData[key] !== responseSchema.data[key]
+		) {
+			return false;
+		}
+	}
 
-  return true
+	return true;
 }
 
 function makeApiCall(url, callback) {
-  var xhr = new XMLHttpRequest()
-  xhr.open("GET", url, true)
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', url, true);
 
-  xhr.onload = function () {
-    if (xhr.status >= 200 && xhr.status < 300) {
-      var response
-      try {
-        response = JSON.parse(xhr.responseText)
-      } catch (error) {
-        console.error("Error parsing API response:", error)
-        callback(new Error("Error parsing API response"), null)
-        return
-      }
+	xhr.onload = function () {
+		if (xhr.status >= 200 && xhr.status < 300) {
+			var response;
+			try {
+				response = JSON.parse(xhr.responseText);
+			} catch (error) {
+				console.error('Error parsing API response:', error);
+				callback(new Error('Error parsing API response'), null);
+				return;
+			}
 
-      if (validateResponse(response)) {
-        callback(null, response)
-      } else {
-        console.error("API response structure changed")
-        // Handle the error (e.g., provide a default value, show an error message, or log the issue)
-        callback(new Error("API response structure changed"), null)
-      }
-    } else {
-      console.error("HTTP error:", xhr.status, xhr.statusText)
-      callback(
-        new Error("HTTP error: " + xhr.status + " " + xhr.statusText),
-        null
-      )
-    }
-  }
+			if (validateResponse(response)) {
+				callback(null, response);
+			} else {
+				console.error('API response structure changed');
+				// Handle the error (e.g., provide a default value, show an error message, or log the issue)
+				callback(new Error('API response structure changed'), null);
+			}
+		} else {
+			console.error('HTTP error:', xhr.status, xhr.statusText);
+			callback(
+				new Error('HTTP error: ' + xhr.status + ' ' + xhr.statusText),
+				null
+			);
+		}
+	};
 
-  xhr.onerror = function () {
-    console.error("Error making API call:", xhr.statusText)
-    callback(new Error("Error making API call"), null)
-  }
+	xhr.onerror = function () {
+		console.error('Error making API call:', xhr.statusText);
+		callback(new Error('Error making API call'), null);
+	};
 
-  xhr.send()
+	xhr.send();
 }
 
 // Use the makeApiCall function with your API URL
-makeApiCall("https://api.example.com/data", function (error, response) {
-  if (error) {
-    // Handle the error (e.g., provide a default value, show an error message, or log the issue)
-  } else {
-    console.log("API response:", response)
-  }
-})
+makeApiCall('https://api.example.com/data', function (error, response) {
+	if (error) {
+		// Handle the error (e.g., provide a default value, show an error message, or log the issue)
+	} else {
+		console.log('API response:', response);
+	}
+});
 ```
 
 This example uses XMLHttpRequest to make the API call, a simple response validation function to check if the response object matches the expected structure, and a callback function to handle the result of the API call. Note that ES5 doesn't support Promises, so we are using a callback-based approach.
@@ -403,68 +407,71 @@ In ServiceNow, you can use GlideHTTPRequest to make API calls and handle errors.
 ```js
 // Define the expected response structure
 var responseSchema = {
-  data: {
-    // Add the expected properties and their types here
-  },
-}
+	data: {
+		// Add the expected properties and their types here
+	}
+};
 
 function validateResponse(response) {
-  if (
-    !response ||
-    typeof response !== "object" ||
-    !response.hasOwnProperty("data")
-  ) {
-    return false
-  }
+	if (
+		!response ||
+		typeof response !== 'object' ||
+		!response.hasOwnProperty('data')
+	) {
+		return false;
+	}
 
-  var responseData = response.data
-  for (var key in responseSchema.data) {
-    if (
-      !responseData.hasOwnProperty(key) ||
-      typeof responseData[key] !== responseSchema.data[key]
-    ) {
-      return false
-    }
-  }
+	var responseData = response.data;
+	for (var key in responseSchema.data) {
+		if (
+			!responseData.hasOwnProperty(key) ||
+			typeof responseData[key] !== responseSchema.data[key]
+		) {
+			return false;
+		}
+	}
 
-  return true
+	return true;
 }
 
 function makeApiCall(url) {
-  try {
-    var request = new sn_ws.RESTMessageV2()
-    request.setHttpMethod("GET")
-    request.setEndpoint(url)
-    request.setRequestHeader("Accept", "application/json")
+	try {
+		var request = new sn_ws.RESTMessageV2();
+		request.setHttpMethod('GET');
+		request.setEndpoint(url);
+		request.setRequestHeader('Accept', 'application/json');
 
-    var response = request.execute()
-    var httpResponseStatus = response.getStatusCode()
+		var response = request.execute();
+		var httpResponseStatus = response.getStatusCode();
 
-    if (httpResponseStatus >= 200 && httpResponseStatus < 300) {
-      var responseBody = response.getBody()
-      var parsedResponse = JSON.parse(responseBody)
+		if (httpResponseStatus >= 200 && httpResponseStatus < 300) {
+			var responseBody = response.getBody();
+			var parsedResponse = JSON.parse(responseBody);
 
-      if (validateResponse(parsedResponse)) {
-        // Handle the valid response (e.g., process the data or log the result)
-        gs.info("API response: " + JSON.stringify(parsedResponse))
-      } else {
-        gs.error("API response structure changed")
-        // Handle the error (e.g., provide a default value, show an error message, or log the issue)
-      }
-    } else {
-      gs.error(
-        "HTTP error: " + httpResponseStatus + " " + response.getErrorMessage()
-      )
-      // Handle the error (e.g., provide a default value, show an error message, or log the issue)
-    }
-  } catch (error) {
-    gs.error("Error making API call: " + error)
-    // Handle the error (e.g., provide a default value, show an error message, or log the issue)
-  }
+			if (validateResponse(parsedResponse)) {
+				// Handle the valid response (e.g., process the data or log the result)
+				gs.info('API response: ' + JSON.stringify(parsedResponse));
+			} else {
+				gs.error('API response structure changed');
+				// Handle the error (e.g., provide a default value, show an error message, or log the issue)
+			}
+		} else {
+			gs.error(
+				'HTTP error: ' +
+					httpResponseStatus +
+					' ' +
+					response.getErrorMessage()
+			);
+			// Handle the error (e.g., provide a default value, show an error message, or log the issue)
+		}
+	} catch (error) {
+		gs.error('Error making API call: ' + error);
+		// Handle the error (e.g., provide a default value, show an error message, or log the issue)
+	}
 }
 
 // Use the makeApiCall function with your API URL
-makeApiCall("https://api.example.com/data")
+makeApiCall('https://api.example.com/data');
 ```
 
 This script uses GlideHTTPRequest to make the API call, validate the response structure, and handle potential errors. The validateResponse function checks if the response object matches the expected structure, and the makeApiCall function uses ServiceNow's RESTMessageV2 to make the request and handle errors. The script logs messages to the system logs with gs.info() and gs.error().
@@ -480,85 +487,88 @@ Sure! Here's the ServiceNow script example with a more complex response schema:
 ```js
 // Define the expected response structure
 var responseSchema = {
-  data: {
-    id: "string",
-    name: "string",
-    age: "number",
-    address: {
-      street: "string",
-      city: "string",
-      country: "string",
-    },
-    tags: "array",
-  },
-}
+	data: {
+		id: 'string',
+		name: 'string',
+		age: 'number',
+		address: {
+			street: 'string',
+			city: 'string',
+			country: 'string'
+		},
+		tags: 'array'
+	}
+};
 
 function validateType(value, type) {
-  if (type === "array") {
-    return Array.isArray(value)
-  }
-  return typeof value === type
+	if (type === 'array') {
+		return Array.isArray(value);
+	}
+	return typeof value === type;
 }
 
 function validateResponse(response, schema) {
-  if (!response || typeof response !== "object") {
-    return false
-  }
+	if (!response || typeof response !== 'object') {
+		return false;
+	}
 
-  for (var key in schema) {
-    var expectedType = schema[key]
-    if (
-      !response.hasOwnProperty(key) ||
-      !validateType(response[key], expectedType)
-    ) {
-      return false
-    }
+	for (var key in schema) {
+		var expectedType = schema[key];
+		if (
+			!response.hasOwnProperty(key) ||
+			!validateType(response[key], expectedType)
+		) {
+			return false;
+		}
 
-    if (typeof expectedType === "object" && !Array.isArray(expectedType)) {
-      if (!validateResponse(response[key], expectedType)) {
-        return false
-      }
-    }
-  }
+		if (typeof expectedType === 'object' && !Array.isArray(expectedType)) {
+			if (!validateResponse(response[key], expectedType)) {
+				return false;
+			}
+		}
+	}
 
-  return true
+	return true;
 }
 
 function makeApiCall(url) {
-  try {
-    var request = new sn_ws.RESTMessageV2()
-    request.setHttpMethod("GET")
-    request.setEndpoint(url)
-    request.setRequestHeader("Accept", "application/json")
+	try {
+		var request = new sn_ws.RESTMessageV2();
+		request.setHttpMethod('GET');
+		request.setEndpoint(url);
+		request.setRequestHeader('Accept', 'application/json');
 
-    var response = request.execute()
-    var httpResponseStatus = response.getStatusCode()
+		var response = request.execute();
+		var httpResponseStatus = response.getStatusCode();
 
-    if (httpResponseStatus >= 200 && httpResponseStatus < 300) {
-      var responseBody = response.getBody()
-      var parsedResponse = JSON.parse(responseBody)
+		if (httpResponseStatus >= 200 && httpResponseStatus < 300) {
+			var responseBody = response.getBody();
+			var parsedResponse = JSON.parse(responseBody);
 
-      if (validateResponse(parsedResponse, responseSchema)) {
-        // Handle the valid response (e.g., process the data or log the result)
-        gs.info("API response: " + JSON.stringify(parsedResponse))
-      } else {
-        gs.error("API response structure changed")
-        // Handle the error (e.g., provide a default value, show an error message, or log the issue)
-      }
-    } else {
-      gs.error(
-        "HTTP error: " + httpResponseStatus + " " + response.getErrorMessage()
-      )
-      // Handle the error (e.g., provide a default value, show an error message, or log the issue)
-    }
-  } catch (error) {
-    gs.error("Error making API call: " + error)
-    // Handle the error (e.g., provide a default value, show an error message, or log the issue)
-  }
+			if (validateResponse(parsedResponse, responseSchema)) {
+				// Handle the valid response (e.g., process the data or log the result)
+				gs.info('API response: ' + JSON.stringify(parsedResponse));
+			} else {
+				gs.error('API response structure changed');
+				// Handle the error (e.g., provide a default value, show an error message, or log the issue)
+			}
+		} else {
+			gs.error(
+				'HTTP error: ' +
+					httpResponseStatus +
+					' ' +
+					response.getErrorMessage()
+			);
+			// Handle the error (e.g., provide a default value, show an error message, or log the issue)
+		}
+	} catch (error) {
+		gs.error('Error making API call: ' + error);
+		// Handle the error (e.g., provide a default value, show an error message, or log the issue)
+	}
 }
 
 // Use the makeApiCall function with your API URL
-makeApiCall("https://api.example.com/data")
+makeApiCall('https://api.example.com/data');
 ```
 
 In this example, the responseSchema has been updated to include nested objects and an array. The validateType function is added to handle the 'array' type check since typeof does not return 'array' for arrays in JavaScript. The validateResponse function has been updated to accept a schema argument, so it can be used recursively to validate nested objects.
@@ -575,18 +585,18 @@ You can use a loop to iterate over the sequence of boolean values and return the
 
 ```js
 function getFirstFalseValueIndex(values) {
-  for (let i = 0; i < values.length; i++) {
-    if (!values[i]) {
-      return i
-    }
-  }
-  return -1 // Return -1 if all values are true
+	for (let i = 0; i < values.length; i++) {
+		if (!values[i]) {
+			return i;
+		}
+	}
+	return -1; // Return -1 if all values are true
 }
 
 // Example usage:
-const sequence = [true, true, false, true]
-const index = getFirstFalseValueIndex(sequence)
-console.log(index) // Output: 2
+const sequence = [true, true, false, true];
+const index = getFirstFalseValueIndex(sequence);
+console.log(index); // Output: 2
 ```
 
 In this example, the getFirstFalseValueIndex() function takes an array of boolean values as input and returns the index of the first false value in the array. The function uses a for loop to iterate over the array and returns the index of the first false value it encounters. If all values are true, the function returns -1 to indicate that no false values were found.
@@ -627,47 +637,47 @@ Can you explain this code line by line?
 
 ```js
 var Class = {
-  create: function () {
-    return function () {
-      /* This anonymous function will execute in the scope of the caller
+	create: function () {
+		return function () {
+			/* This anonymous function will execute in the scope of the caller
 		   in interpreted mode. The initalize method is a utility we provide
 		   for giving a hook into the creation of a script include in scope.
 		   Many global script includes do not have an initialize function, and
 		   therefore we should only call this.initialize when present.
 		 */
-      if (this.initialize) this.initialize.apply(this, arguments)
-    }
-  },
-}
+			if (this.initialize) this.initialize.apply(this, arguments);
+		};
+	}
+};
 
 /*
  * Old method left here for compatibility purposes. All future extension should use "extendsObject" method.
  */
 Object.extend = function (destination, source) {
-  for (var property in source) {
-    destination[property] = source[property]
-  }
-  return destination
-}
+	for (var property in source) {
+		destination[property] = source[property];
+	}
+	return destination;
+};
 
 Object.extendsObject = function (destination, source) {
-  destination = Object.clone(destination.prototype)
+	destination = Object.clone(destination.prototype);
 
-  for (var property in source) {
-    destination[property] = source[property]
-  }
-  return destination
-}
+	for (var property in source) {
+		destination[property] = source[property];
+	}
+	return destination;
+};
 
 Object.clone = function (obj) {
-  var clone = Class.create()
+	var clone = Class.create();
 
-  for (var property in obj) {
-    clone[property] = obj[property]
-  }
+	for (var property in obj) {
+		clone[property] = obj[property];
+	}
 
-  return clone
-}
+	return clone;
+};
 ```
 
 ### Response
@@ -688,7 +698,7 @@ create: function() {
 This is a method on the `Class` object literal that returns an anonymous function.
 
 ```javascript
-if (this.initialize) this.initialize.apply(this, arguments)
+if (this.initialize) this.initialize.apply(this, arguments);
 ```
 
 If the `this` object has an `initialize` method, it will be called and passed in any arguments provided to the anonymous function that is returned.
@@ -713,9 +723,9 @@ This is a method on the `Object` prototype that can be used to copy properties f
 
 ```javascript
 for (var property in source) {
-  destination[property] = source[property]
+	destination[property] = source[property];
 }
-return destination
+return destination;
 ```
 
 This loops through all properties on the `source` object and assigns each one to the corresponding property on the `destination` object. Finally, the `destination` object is returned.
@@ -728,27 +738,27 @@ This closes the `extend` method.
 
 ```javascript
 Object.extendsObject = function (destination, source) {
-  destination = Object.clone(destination.prototype)
+	destination = Object.clone(destination.prototype);
 
-  for (var property in source) {
-    destination[property] = source[property]
-  }
-  return destination
-}
+	for (var property in source) {
+		destination[property] = source[property];
+	}
+	return destination;
+};
 ```
 
 This is a method on the `Object` prototype that can be used to copy properties from one object to another. This method is different from the `extend` method in that it copies properties to a new object created from the prototype of the `destination` object, rather than copying properties directly to the `destination` object.
 
 ```javascript
 Object.clone = function (obj) {
-  var clone = Class.create()
+	var clone = Class.create();
 
-  for (var property in obj) {
-    clone[property] = obj[property]
-  }
+	for (var property in obj) {
+		clone[property] = obj[property];
+	}
 
-  return clone
-}
+	return clone;
+};
 ```
 
 This is a method on the `Object` prototype that can be used to create a new object with the same properties as an existing object. This method uses the `Class.create` method to create a new object and then loops through all properties on the input object, assigning each one to the corresponding property on the new object. Finally, the new object is returned.
@@ -762,230 +772,232 @@ If you feed an entire script file into ChatGPT and ask it to summarize it for yo
 Explain what this Script Include does and explain it like I'm 5:
 
 ```js
-gs.include("PrototypeServer")
+gs.include('PrototypeServer');
 
-var IndexCreator = Class.create()
+var IndexCreator = Class.create();
 
 IndexCreator.prototype = {
-  initialize: function (tableName, fieldNames, unique, email, index_name) {
-    this.tableName = tableName
-    this.fieldNames = fieldNames
-    if (index_name) this.indexName = index_name
-    else this.indexName = "index"
-    this.unique = unique
-    this.email = email
-  },
+	initialize: function (tableName, fieldNames, unique, email, index_name) {
+		this.tableName = tableName;
+		this.fieldNames = fieldNames;
+		if (index_name) this.indexName = index_name;
+		else this.indexName = 'index';
+		this.unique = unique;
+		this.email = email;
+	},
 
-  execute: function (savedUpdateSetId) {
-    if (!gs.hasRole("admin") && gs.isInteractive()) return
+	execute: function (savedUpdateSetId) {
+		if (!gs.hasRole('admin') && gs.isInteractive()) return;
 
-    var start = new GlideDateTime()
-    var al = GlideStringUtil.split(this.fieldNames)
-    var id = new GlideIndexDescriptor(this.tableName, this.indexName, al)
-    this.actualName = id.getIndexName()
-    if (this.unique) id.setUnique(true)
-    var answer = false
-    var exists = id.hasIndex()
-    if (exists) id.close()
-    else {
-      answer = id.create()
-      id.close()
-      var end = new GlideDateTime()
-      if (!answer) this.errorCode = id.getErrorCode()
-      else {
-        this._createIndexRecord(savedUpdateSetId)
-        var tu = new SNC.TableRotationSynchronizer(this.tableName)
-        if (tu.isValid()) tu.synchronize()
-      }
-    }
-    this._sendNotification(exists, answer, start, end)
-    return answer || exists
-  },
+		var start = new GlideDateTime();
+		var al = GlideStringUtil.split(this.fieldNames);
+		var id = new GlideIndexDescriptor(this.tableName, this.indexName, al);
+		this.actualName = id.getIndexName();
+		if (this.unique) id.setUnique(true);
+		var answer = false;
+		var exists = id.hasIndex();
+		if (exists) id.close();
+		else {
+			answer = id.create();
+			id.close();
+			var end = new GlideDateTime();
+			if (!answer) this.errorCode = id.getErrorCode();
+			else {
+				this._createIndexRecord(savedUpdateSetId);
+				var tu = new SNC.TableRotationSynchronizer(this.tableName);
+				if (tu.isValid()) tu.synchronize();
+			}
+		}
+		this._sendNotification(exists, answer, start, end);
+		return answer || exists;
+	},
 
-  schedule: function () {
-    if (!gs.hasRole("admin")) return
+	schedule: function () {
+		if (!gs.hasRole('admin')) return;
 
-    var script = "gs.include('IndexCreator');"
-    script +=
-      "var c = new IndexCreator('" +
-      this.tableName +
-      "', '" +
-      this.fieldNames +
-      "', " +
-      this.unique +
-      ", '" +
-      this.email +
-      "', '" +
-      this.indexName +
-      "');"
-    script += "c.execute('" + GlideUpdateSet.get() + "');"
-    GlideRunScriptJob.scheduleScript(script)
-  },
+		var script = "gs.include('IndexCreator');";
+		script +=
+			"var c = new IndexCreator('" +
+			this.tableName +
+			"', '" +
+			this.fieldNames +
+			"', " +
+			this.unique +
+			", '" +
+			this.email +
+			"', '" +
+			this.indexName +
+			"');";
+		script += "c.execute('" + GlideUpdateSet.get() + "');";
+		GlideRunScriptJob.scheduleScript(script);
+	},
 
-  /**
-   * Inserts a sys_index record after an index was successfully created.
-   * Attempts to use the update set that was current when index creation was
-   * scheduled, but uses the current update set if the saved one is not valid.
-   */
-  _createIndexRecord: function (savedUpdateSetId) {
-    //try to change the current update set to whatever it was when the index creation was scheduled
-    var updateSetChanged = false
-    var updateSet = new GlideUpdateSet()
-    var currUpdateSetId = GlideUpdateSet.get()
-    if (
-      typeof savedUpdateSetId !== "undefined" &&
-      currUpdateSetId != savedUpdateSetId
-    ) {
-      var updateSetGR = new GlideRecord("sys_update_set")
-      updateSetGR.addQuery("state", "in progress")
-      updateSetGR.addQuery("sys_id", savedUpdateSetId)
-      updateSetGR.query()
-      if (updateSetGR.next()) {
-        updateSet.set(savedUpdateSetId)
-        updateSetChanged = true
-        gs.log(
-          "Changing current update set for sys_index creation from " +
-            currUpdateSetId +
-            " to " +
-            savedUpdateSetId
-        )
-      } else
-        gs.log(
-          "Not changing current update set for sys_index creation. Saved update set " +
-            savedUpdateSetId +
-            " is not in progress or does not exist"
-        )
-    } else
-      gs.log(
-        "Not changing current update set for sys_index creation. Saved update set is the same as the current update set (or undefined)"
-      )
+	/**
+	 * Inserts a sys_index record after an index was successfully created.
+	 * Attempts to use the update set that was current when index creation was
+	 * scheduled, but uses the current update set if the saved one is not valid.
+	 */
+	_createIndexRecord: function (savedUpdateSetId) {
+		//try to change the current update set to whatever it was when the index creation was scheduled
+		var updateSetChanged = false;
+		var updateSet = new GlideUpdateSet();
+		var currUpdateSetId = GlideUpdateSet.get();
+		if (
+			typeof savedUpdateSetId !== 'undefined' &&
+			currUpdateSetId != savedUpdateSetId
+		) {
+			var updateSetGR = new GlideRecord('sys_update_set');
+			updateSetGR.addQuery('state', 'in progress');
+			updateSetGR.addQuery('sys_id', savedUpdateSetId);
+			updateSetGR.query();
+			if (updateSetGR.next()) {
+				updateSet.set(savedUpdateSetId);
+				updateSetChanged = true;
+				gs.log(
+					'Changing current update set for sys_index creation from ' +
+						currUpdateSetId +
+						' to ' +
+						savedUpdateSetId
+				);
+			} else
+				gs.log(
+					'Not changing current update set for sys_index creation. Saved update set ' +
+						savedUpdateSetId +
+						' is not in progress or does not exist'
+				);
+		} else
+			gs.log(
+				'Not changing current update set for sys_index creation. Saved update set is the same as the current update set (or undefined)'
+			);
 
-    this._createIndexRecord0()
+		this._createIndexRecord0();
 
-    if (updateSetChanged) {
-      updateSet.set(currUpdateSetId)
-      gs.log(
-        "After sys_index creation, changing current update set back to " +
-          currUpdateSetId +
-          " from " +
-          savedUpdateSetId
-      )
-    }
-  },
+		if (updateSetChanged) {
+			updateSet.set(currUpdateSetId);
+			gs.log(
+				'After sys_index creation, changing current update set back to ' +
+					currUpdateSetId +
+					' from ' +
+					savedUpdateSetId
+			);
+		}
+	},
 
-  _createIndexRecord0: function () {
-    gs.log(
-      "Attempting to insert sys_index record for table '" +
-        this.tableName +
-        "', fields '" +
-        this.fieldNames +
-        "' and unique = " +
-        this.unique
-    )
-    if (this._hasIndexRecord()) {
-      gs.log("Index record already exists, skipping insert")
-      return
-    }
+	_createIndexRecord0: function () {
+		gs.log(
+			"Attempting to insert sys_index record for table '" +
+				this.tableName +
+				"', fields '" +
+				this.fieldNames +
+				"' and unique = " +
+				this.unique
+		);
+		if (this._hasIndexRecord()) {
+			gs.log('Index record already exists, skipping insert');
+			return;
+		}
 
-    var dbgr = new GlideRecord("sys_db_object")
-    dbgr.addQuery("name", this.tableName)
-    dbgr.query()
-    if (!dbgr.next()) {
-      gs.log(
-        "Could not find sys_db_object record for table " +
-          this.tableName +
-          ", skipping insert"
-      )
-      return
-    }
+		var dbgr = new GlideRecord('sys_db_object');
+		dbgr.addQuery('name', this.tableName);
+		dbgr.query();
+		if (!dbgr.next()) {
+			gs.log(
+				'Could not find sys_db_object record for table ' +
+					this.tableName +
+					', skipping insert'
+			);
+			return;
+		}
 
-    var gr = new GlideRecord("sys_index")
-    var gList = this._createGlideListOfColumns()
-    if (gList == null) return
+		var gr = new GlideRecord('sys_index');
+		var gList = this._createGlideListOfColumns();
+		if (gList == null) return;
 
-    gr.setValue("index_col_name", gList)
-    gr.setValue("col_name_string", this.fieldNames)
-    gr.setValue("logical_table_name", this.tableName)
-    gr.setValue("table", dbgr.getValue("sys_id"))
-    gr.setValue("unique_index", this.unique)
-    gr.insert()
-  },
+		gr.setValue('index_col_name', gList);
+		gr.setValue('col_name_string', this.fieldNames);
+		gr.setValue('logical_table_name', this.tableName);
+		gr.setValue('table', dbgr.getValue('sys_id'));
+		gr.setValue('unique_index', this.unique);
+		gr.insert();
+	},
 
-  _hasIndexRecord: function () {
-    var gr = new GlideRecord("sys_index")
-    gr.addQuery("logical_table_name", this.tableName)
-    gr.addQuery("col_name_string", this.fieldNames)
-    gr.query()
-    return gr.next()
-  },
+	_hasIndexRecord: function () {
+		var gr = new GlideRecord('sys_index');
+		gr.addQuery('logical_table_name', this.tableName);
+		gr.addQuery('col_name_string', this.fieldNames);
+		gr.query();
+		return gr.next();
+	},
 
-  _createGlideListOfColumns: function () {
-    //returns a glidelist of column sys_ids for this index
-    var al = this.fieldNames.split(",")
-    var gList = ""
-    var gtd = GlideTableDescriptor.get(this.tableName)
-    if (!gtd.isValid()) {
-      gs.warn(
-        "Cannot create index record, table '" +
-          this.tableName +
-          "' is not valid"
-      )
-      return null
-    }
+	_createGlideListOfColumns: function () {
+		//returns a glidelist of column sys_ids for this index
+		var al = this.fieldNames.split(',');
+		var gList = '';
+		var gtd = GlideTableDescriptor.get(this.tableName);
+		if (!gtd.isValid()) {
+			gs.warn(
+				"Cannot create index record, table '" +
+					this.tableName +
+					"' is not valid"
+			);
+			return null;
+		}
 
-    for (var i = 0; i < al.length; i += 1) {
-      var ed = gtd.getElementDescriptor(al[i])
-      if (ed != null) {
-        gList += ed.getUniqueID() + ","
-      } else {
-        gs.warn(
-          "Cannot create index record, column '" + al[i] + "' does not exist"
-        )
-        return null
-      }
-    }
+		for (var i = 0; i < al.length; i += 1) {
+			var ed = gtd.getElementDescriptor(al[i]);
+			if (ed != null) {
+				gList += ed.getUniqueID() + ',';
+			} else {
+				gs.warn(
+					"Cannot create index record, column '" +
+						al[i] +
+						"' does not exist"
+				);
+				return null;
+			}
+		}
 
-    return gList
-  },
+		return gList;
+	},
 
-  _sendNotification: function (exists, success, start, end) {
-    if (!this.email) return
+	_sendNotification: function (exists, success, start, end) {
+		if (!this.email) return;
 
-    var subject = "Index Creation Results : "
-    if (exists) subject += "SKIPPED (see body for details)"
-    else if (success) subject += "SUCCESS"
-    else subject += "FAILURE (see body for details)"
+		var subject = 'Index Creation Results : ';
+		if (exists) subject += 'SKIPPED (see body for details)';
+		else if (success) subject += 'SUCCESS';
+		else subject += 'FAILURE (see body for details)';
 
-    var body = "Index creation began at " + start.getDisplayValue() + "\n"
-    if (exists) {
-      body += "Index creation skipped:\n"
-      body +=
-        "Requested index for table (" +
-        this.tableName +
-        ") on columns (" +
-        this.fieldNames +
-        ") already exists."
-    } else if (success) {
-      body +=
-        "Index creation completed successfully at " +
-        end.getDisplayValue() +
-        "\n"
-      body += "Generated Index Name : " + this.actualName
-    } else {
-      body +=
-        "Index creation FAILED at " +
-        end.getDisplayValue() +
-        " with error code:\n"
-      body += this.errorCode
-    }
+		var body = 'Index creation began at ' + start.getDisplayValue() + '\n';
+		if (exists) {
+			body += 'Index creation skipped:\n';
+			body +=
+				'Requested index for table (' +
+				this.tableName +
+				') on columns (' +
+				this.fieldNames +
+				') already exists.';
+		} else if (success) {
+			body +=
+				'Index creation completed successfully at ' +
+				end.getDisplayValue() +
+				'\n';
+			body += 'Generated Index Name : ' + this.actualName;
+		} else {
+			body +=
+				'Index creation FAILED at ' +
+				end.getDisplayValue() +
+				' with error code:\n';
+			body += this.errorCode;
+		}
 
-    var mail = new GlideEmailOutbound()
-    mail.setSubject(subject)
-    mail.addRecipient(this.email)
-    mail.setBody(body)
-    mail.save()
-  },
-}
+		var mail = new GlideEmailOutbound();
+		mail.setSubject(subject);
+		mail.addRecipient(this.email);
+		mail.setBody(body);
+		mail.save();
+	}
+};
 ```
 
 ### Response
@@ -1034,7 +1046,7 @@ That being said, it is important to use this technique judiciously and ensure th
 
 ```javascript
 // Turn regex into a string // Prompt
-var regexString = regex.toString() // Response
+var regexString = regex.toString(); // Response
 ```
 
 ## Writing tests
@@ -1047,47 +1059,47 @@ Can you write a Jasmine 3.1 test for the following script include (ServiceNow)?
 
 ```js
 var Class = {
-  create: function () {
-    return function () {
-      /* This anonymous function will execute in the scope of the caller
+	create: function () {
+		return function () {
+			/* This anonymous function will execute in the scope of the caller
 		   in interpreted mode. The initalize method is a utility we provide
 		   for giving a hook into the creation of a script include in scope.
 		   Many global script includes do not have an initialize function, and
 		   therefore we should only call this.initialize when present.
 		 */
-      if (this.initialize) this.initialize.apply(this, arguments)
-    }
-  },
-}
+			if (this.initialize) this.initialize.apply(this, arguments);
+		};
+	}
+};
 
 /*
  * Old method left here for compatibility purposes. All future extension should use "extendsObject" method.
  */
 Object.extend = function (destination, source) {
-  for (var property in source) {
-    destination[property] = source[property]
-  }
-  return destination
-}
+	for (var property in source) {
+		destination[property] = source[property];
+	}
+	return destination;
+};
 
 Object.extendsObject = function (destination, source) {
-  destination = Object.clone(destination.prototype)
+	destination = Object.clone(destination.prototype);
 
-  for (var property in source) {
-    destination[property] = source[property]
-  }
-  return destination
-}
+	for (var property in source) {
+		destination[property] = source[property];
+	}
+	return destination;
+};
 
 Object.clone = function (obj) {
-  var clone = Class.create()
+	var clone = Class.create();
 
-  for (var property in obj) {
-    clone[property] = obj[property]
-  }
+	for (var property in obj) {
+		clone[property] = obj[property];
+	}
 
-  return clone
-}
+	return clone;
+};
 ```
 
 ### Response
@@ -1095,62 +1107,62 @@ Object.clone = function (obj) {
 Sure! Here's an example Jasmine 3.1 test for the script include:
 
 ```javascript
-describe("Class", function () {
-  describe("create", function () {
-    it("should create an instance of a class with an initialize method", function () {
-      var MyClass = Class.create()
-      var instance = new MyClass()
-      spyOn(instance, "initialize")
+describe('Class', function () {
+	describe('create', function () {
+		it('should create an instance of a class with an initialize method', function () {
+			var MyClass = Class.create();
+			var instance = new MyClass();
+			spyOn(instance, 'initialize');
 
-      expect(instance instanceof MyClass).toBe(true)
-      expect(instance.initialize).toBeDefined()
-      expect(instance.initialize).toHaveBeenCalled()
-    })
+			expect(instance instanceof MyClass).toBe(true);
+			expect(instance.initialize).toBeDefined();
+			expect(instance.initialize).toHaveBeenCalled();
+		});
 
-    it("should create an instance of a class without an initialize method", function () {
-      var MyClass = Class.create()
-      var instance = new MyClass()
+		it('should create an instance of a class without an initialize method', function () {
+			var MyClass = Class.create();
+			var instance = new MyClass();
 
-      expect(instance instanceof MyClass).toBe(true)
-      expect(instance.initialize).toBeUndefined()
-    })
-  })
+			expect(instance instanceof MyClass).toBe(true);
+			expect(instance.initialize).toBeUndefined();
+		});
+	});
 
-  describe("extend", function () {
-    it("should extend the destination object with the properties of the source object", function () {
-      var destination = { a: 1 }
-      var source = { b: 2 }
+	describe('extend', function () {
+		it('should extend the destination object with the properties of the source object', function () {
+			var destination = { a: 1 };
+			var source = { b: 2 };
 
-      Object.extend(destination, source)
+			Object.extend(destination, source);
 
-      expect(destination.a).toBe(1)
-      expect(destination.b).toBe(2)
-    })
-  })
+			expect(destination.a).toBe(1);
+			expect(destination.b).toBe(2);
+		});
+	});
 
-  describe("extendsObject", function () {
-    it("should return a clone of the destination object with the properties of the source object", function () {
-      var destination = { a: 1 }
-      var source = { b: 2 }
+	describe('extendsObject', function () {
+		it('should return a clone of the destination object with the properties of the source object', function () {
+			var destination = { a: 1 };
+			var source = { b: 2 };
 
-      var result = Object.extendsObject(destination, source)
+			var result = Object.extendsObject(destination, source);
 
-      expect(result.a).toBeUndefined()
-      expect(result.b).toBe(2)
-    })
-  })
+			expect(result.a).toBeUndefined();
+			expect(result.b).toBe(2);
+		});
+	});
 
-  describe("clone", function () {
-    it("should create a clone of the object with the same properties", function () {
-      var object = { a: 1, b: 2 }
+	describe('clone', function () {
+		it('should create a clone of the object with the same properties', function () {
+			var object = { a: 1, b: 2 };
 
-      var clone = Object.clone(object)
+			var clone = Object.clone(object);
 
-      expect(clone.a).toBe(1)
-      expect(clone.b).toBe(2)
-    })
-  })
-})
+			expect(clone.a).toBe(1);
+			expect(clone.b).toBe(2);
+		});
+	});
+});
 ```
 
 This test suite covers all of the methods in the script include and verifies that they behave as expected. It tests that the `Class.create` method creates instances of a class with or without an `initialize` method, that the `Object.extend` method extends the destination object with the properties of the source object, that the `Object.extendsObject` method returns a clone of the destination object with the properties of the source object, and that the `Object.clone` method creates a clone of the object with the same properties.
@@ -1169,76 +1181,79 @@ Could you convert this to ES5 and replace console.log invocations with gs.info a
 
 ```js
 function createMachine(stateMachineDefinition) {
-  const machine = {
-    value: stateMachineDefinition.initialState,
-    transition(currentState, event) {
-      const currentStateDefinition = stateMachineDefinition[currentState]
-      const destinationTransition = currentStateDefinition.transitions[event]
-      if (!destinationTransition) {
-        return
-      }
-      const destinationState = destinationTransition.target
-      const destinationStateDefinition =
-        stateMachineDefinition[destinationState]
+	const machine = {
+		value: stateMachineDefinition.initialState,
+		transition(currentState, event) {
+			const currentStateDefinition = stateMachineDefinition[currentState];
+			const destinationTransition =
+				currentStateDefinition.transitions[event];
+			if (!destinationTransition) {
+				return;
+			}
+			const destinationState = destinationTransition.target;
+			const destinationStateDefinition =
+				stateMachineDefinition[destinationState];
 
-      destinationTransition.action()
-      currentStateDefinition.actions.onExit()
-      destinationStateDefinition.actions.onEnter()
+			destinationTransition.action();
+			currentStateDefinition.actions.onExit();
+			destinationStateDefinition.actions.onEnter();
 
-      machine.value = destinationState
+			machine.value = destinationState;
 
-      return machine.value
-    },
-  }
-  return machine
+			return machine.value;
+		}
+	};
+	return machine;
 }
 
 const machine = createMachine({
-  initialState: "off",
-  off: {
-    actions: {
-      onEnter() {
-        console.log("off: onEnter")
-      },
-      onExit() {
-        console.log("off: onExit")
-      },
-    },
-    transitions: {
-      switch: {
-        target: "on",
-        action() {
-          console.log('transition action for "switch" in "off" state')
-        },
-      },
-    },
-  },
-  on: {
-    actions: {
-      onEnter() {
-        console.log("on: onEnter")
-      },
-      onExit() {
-        console.log("on: onExit")
-      },
-    },
-    transitions: {
-      switch: {
-        target: "off",
-        action() {
-          console.log('transition action for "switch" in "on" state')
-        },
-      },
-    },
-  },
-})
+	initialState: 'off',
+	off: {
+		actions: {
+			onEnter() {
+				console.log('off: onEnter');
+			},
+			onExit() {
+				console.log('off: onExit');
+			}
+		},
+		transitions: {
+			switch: {
+				target: 'on',
+				action() {
+					console.log(
+						'transition action for "switch" in "off" state'
+					);
+				}
+			}
+		}
+	},
+	on: {
+		actions: {
+			onEnter() {
+				console.log('on: onEnter');
+			},
+			onExit() {
+				console.log('on: onExit');
+			}
+		},
+		transitions: {
+			switch: {
+				target: 'off',
+				action() {
+					console.log('transition action for "switch" in "on" state');
+				}
+			}
+		}
+	}
+});
 
-let state = machine.value
-console.log(`current state: ${state}`)
-state = machine.transition(state, "switch")
-console.log(`current state: ${state}`)
-state = machine.transition(state, "switch")
-console.log(`current state: ${state}`)
+let state = machine.value;
+console.log(`current state: ${state}`);
+state = machine.transition(state, 'switch');
+console.log(`current state: ${state}`);
+state = machine.transition(state, 'switch');
+console.log(`current state: ${state}`);
 ```
 
 ### Response
@@ -1247,75 +1262,77 @@ Sure! Here's the ES5 version of the code with gs.info replacing console.log:
 
 ```js
 function createMachine(stateMachineDefinition) {
-  var machine = {
-    value: stateMachineDefinition.initialState,
-    transition: function (currentState, event) {
-      var currentStateDefinition = stateMachineDefinition[currentState]
-      var destinationTransition = currentStateDefinition.transitions[event]
-      if (!destinationTransition) {
-        return
-      }
-      var destinationState = destinationTransition.target
-      var destinationStateDefinition = stateMachineDefinition[destinationState]
+	var machine = {
+		value: stateMachineDefinition.initialState,
+		transition: function (currentState, event) {
+			var currentStateDefinition = stateMachineDefinition[currentState];
+			var destinationTransition =
+				currentStateDefinition.transitions[event];
+			if (!destinationTransition) {
+				return;
+			}
+			var destinationState = destinationTransition.target;
+			var destinationStateDefinition =
+				stateMachineDefinition[destinationState];
 
-      destinationTransition.action()
-      currentStateDefinition.actions.onExit()
-      destinationStateDefinition.actions.onEnter()
+			destinationTransition.action();
+			currentStateDefinition.actions.onExit();
+			destinationStateDefinition.actions.onEnter();
 
-      machine.value = destinationState
+			machine.value = destinationState;
 
-      return machine.value
-    },
-  }
-  return machine
+			return machine.value;
+		}
+	};
+	return machine;
 }
 
 var machine = createMachine({
-  initialState: "off",
-  off: {
-    actions: {
-      onEnter: function () {
-        gs.info("off: onEnter")
-      },
-      onExit: function () {
-        gs.info("off: onExit")
-      },
-    },
-    transitions: {
-      switch: {
-        target: "on",
-        action: function () {
-          gs.info('transition action for "switch" in "off" state')
-        },
-      },
-    },
-  },
-  on: {
-    actions: {
-      onEnter: function () {
-        gs.info("on: onEnter")
-      },
-      onExit: function () {
-        gs.info("on: onExit")
-      },
-    },
-    transitions: {
-      switch: {
-        target: "off",
-        action: function () {
-          gs.info('transition action for "switch" in "on" state')
-        },
-      },
-    },
-  },
-})
+	initialState: 'off',
+	off: {
+		actions: {
+			onEnter: function () {
+				gs.info('off: onEnter');
+			},
+			onExit: function () {
+				gs.info('off: onExit');
+			}
+		},
+		transitions: {
+			switch: {
+				target: 'on',
+				action: function () {
+					gs.info('transition action for "switch" in "off" state');
+				}
+			}
+		}
+	},
+	on: {
+		actions: {
+			onEnter: function () {
+				gs.info('on: onEnter');
+			},
+			onExit: function () {
+				gs.info('on: onExit');
+			}
+		},
+		transitions: {
+			switch: {
+				target: 'off',
+				action: function () {
+					gs.info('transition action for "switch" in "on" state');
+				}
+			}
+		}
+	}
+});
 
-var state = machine.value
-gs.info("current state: " + state)
-state = machine.transition(state, "switch")
-gs.info("current state: " + state)
-state = machine.transition(state, "switch")
-gs.info("current state: " + state)
+var state = machine.value;
+gs.info('current state: ' + state);
+state = machine.transition(state, 'switch');
+gs.info('current state: ' + state);
+state = machine.transition(state, 'switch');
+gs.info('current state: ' + state);
 ```
 
 [And this works when plugged into a ServiceNow Backgground Script]
@@ -1336,25 +1353,25 @@ Sure! Here's an example in ES5 that extracts the parameters from the given URL u
 
 ```js
 var url =
-  "https://dev91497.service-now.com/incident_list.do?sysparm_query=caller_id%3Djavascript%3Ags.getUserID()%5Eactive%3Dtrue%5Euniversal_requestISEMPTY&sysparm_view=ess"
+	'https://dev91497.service-now.com/incident_list.do?sysparm_query=caller_id%3Djavascript%3Ags.getUserID()%5Eactive%3Dtrue%5Euniversal_requestISEMPTY&sysparm_view=ess';
 
 // Regular expression to match the query string parameters
-var regex = /[?&]([^=#]+)=([^&#]*)/g
+var regex = /[?&]([^=#]+)=([^&#]*)/g;
 
 // Object to store the parameter key-value pairs
-var params = {}
+var params = {};
 
 // Iterate over each parameter in the query string
 while ((match = regex.exec(url))) {
-  // Get the key and value of the parameter
-  var key = decodeURIComponent(match[1].replace(/\+/g, " "))
-  var value = decodeURIComponent(match[2].replace(/\+/g, " "))
-  // Add the key-value pair to the params object
-  params[key] = value
+	// Get the key and value of the parameter
+	var key = decodeURIComponent(match[1].replace(/\+/g, ' '));
+	var value = decodeURIComponent(match[2].replace(/\+/g, ' '));
+	// Add the key-value pair to the params object
+	params[key] = value;
 }
 
 // Log the params object
-gs.info(params)
+gs.info(params);
 ```
 
 This should log the following output in the ServiceNow background script log:
@@ -1455,19 +1472,19 @@ This error might occur when you are trying to use a GlideElement (a field in a r
 For example, suppose `record` is a GlideRecord, and `field` is a field in that record. Instead of doing this:
 
 ```javascript
-var problematicString = record.field
+var problematicString = record.field;
 ```
 
 You should do this:
 
 ```javascript
-var fixedString = "" + record.field
+var fixedString = '' + record.field;
 ```
 
 or
 
 ```javascript
-var fixedString = record.field.toString()
+var fixedString = record.field.toString();
 ```
 
 Either of these methods will explicitly convert the GlideElement to a String before using it.
@@ -1488,15 +1505,15 @@ What methods exist on GlideRecord in ServiceNow?
 
 GlideRecord is a JavaScript object in ServiceNow that represents a table record. It has many methods that allow you to interact with records in the table. Here are some of the most commonly used methods on GlideRecord:
 
-- addEncodedQuery(query): Adds a query to the GlideRecord. The query must be encoded.
-- query(): Executes the query on the GlideRecord.
-- next(): Moves to the next record in the GlideRecord.
-- getValue(columnName): Gets the value of a column in the current GlideRecord.
-- setValue(columnName, value): Sets the value of a column in the current GlideRecord.
-- insert(): Inserts a new record using the values in the GlideRecord.
-- update(): Updates the current record using the values in the GlideRecord.
-- deleteRecord(): Deletes the current record from the table.
-- getDisplayValue(): Gets a display value for the current record.
+-   addEncodedQuery(query): Adds a query to the GlideRecord. The query must be encoded.
+-   query(): Executes the query on the GlideRecord.
+-   next(): Moves to the next record in the GlideRecord.
+-   getValue(columnName): Gets the value of a column in the current GlideRecord.
+-   setValue(columnName, value): Sets the value of a column in the current GlideRecord.
+-   insert(): Inserts a new record using the values in the GlideRecord.
+-   update(): Updates the current record using the values in the GlideRecord.
+-   deleteRecord(): Deletes the current record from the table.
+-   getDisplayValue(): Gets a display value for the current record.
 
 There are many other methods on GlideRecord, but these are some of the most commonly used.
 
@@ -1510,30 +1527,30 @@ What other methods are there?
 
 Here are some additional methods on the `GlideRecord` object in ServiceNow:
 
-- `addActiveQuery()`: Adds a query that selects only active records.
-- `addEncodedQuery(query)`: Adds an encoded query string to the GlideRecord.
-- `addJoinTable(table):` Adds a table to the GlideRecord query by creating a join between the current table and another table.
-- `canCreate()`: Determines whether the current user can create a new record.
-- `canDelete()`: Determines whether the current user can delete the current record.
-- `canRead()`: Determines whether the current user can read the current record.
-- `canWrite()`: Determines whether the current user can modify the current record.
-- `chooseWindow()` : Pop up a list of records for selection.
-- `deleteMultiple()`: Deletes all the records in the current GlideRecord that match the query conditions.
-- `get()`: Retrieves the value of the specified field.
-- `getEncodedQuery()`: Retrieves the encoded query string that is set on the GlideRecord.
-- `getTableName()`: Returns the name of the table associated with the GlideRecord.
-- `hasAttachments()`: Determines whether the current record has attachments.
-- `insert()`: Inserts a new record into the table.
-- `isActionAborted()`: Determines whether the user aborted the current transaction.
-- `isValid()`: Determines whether the GlideRecord is valid.
-- `newRecord()`: Initializes the GlideRecord for a new record and sets the defaults.
-- `next()`: Moves to the next record in the GlideRecord.
-- `setQuery(query)`: Sets an SQL-like query string on the GlideRecord.
-- `update()`: Updates the current record in the table.
-- `setValue(field, value)`: Sets the value of a field on the GlideRecord.
-- `setValueWithDisplayValue(field, value)`: Sets the value of a field with a display value on the GlideRecord.
-- `sysID`: Retrieves the sys_id value of the current GlideRecord.
-- `deleteRecord()`: Deletes the current record from the table.
+-   `addActiveQuery()`: Adds a query that selects only active records.
+-   `addEncodedQuery(query)`: Adds an encoded query string to the GlideRecord.
+-   `addJoinTable(table):` Adds a table to the GlideRecord query by creating a join between the current table and another table.
+-   `canCreate()`: Determines whether the current user can create a new record.
+-   `canDelete()`: Determines whether the current user can delete the current record.
+-   `canRead()`: Determines whether the current user can read the current record.
+-   `canWrite()`: Determines whether the current user can modify the current record.
+-   `chooseWindow()` : Pop up a list of records for selection.
+-   `deleteMultiple()`: Deletes all the records in the current GlideRecord that match the query conditions.
+-   `get()`: Retrieves the value of the specified field.
+-   `getEncodedQuery()`: Retrieves the encoded query string that is set on the GlideRecord.
+-   `getTableName()`: Returns the name of the table associated with the GlideRecord.
+-   `hasAttachments()`: Determines whether the current record has attachments.
+-   `insert()`: Inserts a new record into the table.
+-   `isActionAborted()`: Determines whether the user aborted the current transaction.
+-   `isValid()`: Determines whether the GlideRecord is valid.
+-   `newRecord()`: Initializes the GlideRecord for a new record and sets the defaults.
+-   `next()`: Moves to the next record in the GlideRecord.
+-   `setQuery(query)`: Sets an SQL-like query string on the GlideRecord.
+-   `update()`: Updates the current record in the table.
+-   `setValue(field, value)`: Sets the value of a field on the GlideRecord.
+-   `setValueWithDisplayValue(field, value)`: Sets the value of a field with a display value on the GlideRecord.
+-   `sysID`: Retrieves the sys_id value of the current GlideRecord.
+-   `deleteRecord()`: Deletes the current record from the table.
 
 Note that some of these methods may be available only in specific versions of ServiceNow or may require certain security permissions to be granted to the user executing the script.
 
@@ -1556,45 +1573,45 @@ Certainly! Here are some examples of using `setValueWithDisplayValue()` method o
 Example 1: Setting a date field with display value
 
 ```javascript
-var gr = new GlideRecord("incident")
-gr.addQuery("number", "INC000123")
-gr.query()
+var gr = new GlideRecord('incident');
+gr.addQuery('number', 'INC000123');
+gr.query();
 
 if (gr.next()) {
-  gr.setValueWithDisplayValue("due_date", "12/31/2023")
-  gr.update()
+	gr.setValueWithDisplayValue('due_date', '12/31/2023');
+	gr.update();
 }
 ```
 
 Example 2: Setting a reference field with display value
 
 ```javascript
-var gr = new GlideRecord("incident")
-gr.addQuery("number", "INC000123")
-gr.query()
+var gr = new GlideRecord('incident');
+gr.addQuery('number', 'INC000123');
+gr.query();
 
 if (gr.next()) {
-  var userGr = new GlideRecord("sys_user")
-  userGr.addQuery("user_name", "jsmith")
-  userGr.query()
+	var userGr = new GlideRecord('sys_user');
+	userGr.addQuery('user_name', 'jsmith');
+	userGr.query();
 
-  if (userGr.next()) {
-    gr.setValueWithDisplayValue("assigned_to", userGr.getValue("sys_id"))
-    gr.update()
-  }
+	if (userGr.next()) {
+		gr.setValueWithDisplayValue('assigned_to', userGr.getValue('sys_id'));
+		gr.update();
+	}
 }
 ```
 
 Example 3: Setting a choice field with display value
 
 ```javascript
-var gr = new GlideRecord("incident")
-gr.addQuery("number", "INC000123")
-gr.query()
+var gr = new GlideRecord('incident');
+gr.addQuery('number', 'INC000123');
+gr.query();
 
 if (gr.next()) {
-  gr.setValueWithDisplayValue("priority", "High")
-  gr.update()
+	gr.setValueWithDisplayValue('priority', 'High');
+	gr.update();
 }
 ```
 

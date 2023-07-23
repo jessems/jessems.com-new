@@ -1,192 +1,194 @@
 ---
 slug: outliner-list
-title: "A historical list of outlining software"
-date: "2020-12-07"
-description: "A historical list of outlining software"
+title: 'A historical list of outlining software'
+date: '2020-12-07'
+description: 'A historical list of outlining software'
 categories: [outlining]
 published: true
 redirects:
-  - "/outliner-history"
+    - '/outliner-history'
 ---
 
-*Last update: December 10th, 2020*
+_Last update: December 10th, 2020_
 
 This is a chronological overview of outlining software applications. I will be updating this list incrementally.
 
-# ThinkTank (Mac/PC, 1984-1987)
+## ThinkTank (Mac/PC, 1984-1987)
 
-## Summary
+### Summary
 
 Released in June 1984, ThinkTank 128 was one the first electronic outlining applications and the precursor to MORE.
 
-## Screenshots
+### Screenshots
 
 ![](./images/thinktank128.png)
 
 https://www.youtube.com/watch?v=OFp0Y1DukdQ
 
-## Platforms
+### Platforms
 
 Mac/PC
 
-## Lifetime
+### Lifetime
 
 1984 - 1987
 
-## Features
+### Features
 
-- Expand / collapse items
-- Drag and drop items to re-order
-- Hoisting
+-   Expand / collapse items
+-   Drag and drop items to re-order
+-   Hoisting
 
-## More Reading
+### More Reading
 
 http://scripting.com/dwiner/outlinersProgramming.html
-# MORE (Mac, 1986)
 
-## Summary
+## MORE (Mac, 1986)
+
+### Summary
 
 Outliner with the ability to switch between the outline view, a tree chart view and a chart list view (which was suitable for presentations).
 
-## Platforms
+### Platforms
 
 Macintosh
 
-## Lifetime
+### Lifetime
 
 1986
 
-## Features
+### Features
 
-- Hide / unhide subordinate items
-- Drag and drop items to re-order
-- Tree chart view
-- Bullet chart view
-- Hierarchy-level-specific text formatting
-## Screenshots
+-   Hide / unhide subordinate items
+-   Drag and drop items to re-order
+-   Tree chart view
+-   Bullet chart view
+-   Hierarchy-level-specific text formatting
+
+### Screenshots
 
 ![](./images/more-outliner.png)
 
+## KAMAS ("CP/M"/DOS, 1984-1993)
 
-
-# KAMAS ("CP/M"/DOS, 1984-1993)
-
-## Summary
+### Summary
 
 The first outliner for the CP/M with basic keyboard driven outlining capabilities and an internal programming language. Probably the first outliner to introduce the convention of indenting out outdenting with tab and shift+tab respectively. The DOS version shipped without the internal programming language.
 
-## Screenshots
+### Screenshots
 
 ![](./images/kamas.png)
 
-## More Reading
+### More Reading
 
 https://web.archive.org/web/20020321122910/https://www.jlarue.com/outlinersredux.html
 https://en.wikipedia.org/wiki/KAMAS_(program)
 http://archive.today/2020.05.31-144922/http://blog.fogus.me/2020/05/20/8-bit-spiritua/
 
-# Out-Think (DOS, 1986)
+## Out-Think (DOS, 1986)
 
-## Summary
+### Summary
 
 Simplified version of KAMAS without its programming facilities.
 
-## More Reading
+### More Reading
 
 https://archive.org/stream/PROFILES_Volume_4_Number_1_1986-07_Kaypro_Corp_US#page/n19/mode/2up
 https://en.wikipedia.org/wiki/KAMAS_(program)
 
-# PC-Outline (DOS, 1987)
+## PC-Outline (DOS, 1987)
 
-## Summary
+### Summary
 
 An MSDOS text outliner program created by Brown Bag Software and a competitor to ThinkTank.
 
-## Screenshots
+### Screenshots
 
 ![](./images/pc-outline.png)
-## Platforms
+
+### Platforms
 
 MSDOS
 
-## Lifetime
+### Lifetime
 
 ? - 1987
 
-## Features
+### Features
 
-- Move items
-- Mark / unmark items
-- Copy / move marks
-- Join / divide items
-- Sort outline level
-- Multi-window (up to 9, resizable)
-- Printing options
+-   Move items
+-   Mark / unmark items
+-   Copy / move marks
+-   Join / divide items
+-   Sort outline level
+-   Multi-window (up to 9, resizable)
+-   Printing options
 
-## More Reading
+### More Reading
 
 https://www.danielsays.com/ssg-dossw-pco334.html
 
-# GrandView (DOS, 1987-1990)
+## GrandView (DOS, 1987-1990)
 
-## Summary
+### Summary
 
 First outliner supporting color. GrandView combined features of a traditional outliner with a spreadsheet (columnar metadata).
-## Screenshots
+
+### Screenshots
 
 ![](./images/grandview.png)
 
-## Features
+### Features
 
-- Hide / unhide subordinate items
-- Drag and drop items to re-order
-- Hierarchy-level-specific text formatting
-- Named ranges
+-   Hide / unhide subordinate items
+-   Drag and drop items to re-order
+-   Hierarchy-level-specific text formatting
+-   Named ranges
 
-## More Reading
+### More Reading
 
 https://welcometosherwood.wordpress.com/2009/10/10/grandview/
 https://www.atarimagazines.com/compute/issue139/114_GrandView_20.php
 https://books.google.ch/books?id=Eq0wALnyM_MC&q=%22grandview%22+%22friend%22+outliner&pg=PA34&redir_esc=y#v=snippet&q=%22grandview%22%20%22friend%22%20outliner&f=false
 
-# Acta (Mac, 1986-1993)
+## Acta (Mac, 1986-1993)
 
-## Summary
+### Summary
 
 Version 1.3 was bundled with Living Videotext's MORE in 1987 and Acta evolved into Opal.
 
-## Screenshots
+### Screenshots
 
 ![](./images/acta-3.png)
 
-## More Reading
+### More Reading
 
 https://archive.vn/AGWFc
 http://archive.today/2020.12.08-073941/http://a-sharp.com/acta/
 
-# ECCO Pro (Windows, 1993-1997)
+## ECCO Pro (Windows, 1993-1997)
 
-## Summary
+### Summary
 
 Ecco Pro was a personal information manager software based on an outliner, and supporting folders similar to spreadsheet columns that allow filtering and sorting of information based upon user defined criteria. It was seen to have an easier learning curve than GrandView. At the same time, its novel and complicated mix of features may have prevented it from gaining mainstream adoption.
 
-## Lifetime
+### Lifetime
 
 1993-1997
 
-## Screenshots
+### Screenshots
 
 ![](./images/ecco-pro-2.png)
 
-## Features
+### Features
 
-- Basic outliner functionality
-- Tags
-- Columns with meta data
-- Clipping tool to add highlighted text to your outline
-- Sync with PalmPilot
+-   Basic outliner functionality
+-   Tags
+-   Columns with meta data
+-   Clipping tool to add highlighted text to your outline
+-   Sync with PalmPilot
 
-## More Reading
+### More Reading
 
 http://archive.today/2020.12.09-052442/https://www.theguardian.com/technology/2007/jul/26/comment.guardianweeklytechnologysection
 https://en.wikipedia.org/wiki/Ecco_Pro
@@ -196,200 +198,195 @@ http://archive.today/2020.12.10-045221/https://medium.com/@rice.doug/ecco-pro-in
 https://web.archive.org/web/20080205164526/http://www.thenakedpc.com/dan/pims/ecco.html
 https://web.archive.org/web/20080202162758/http://www.eccorocks.com/
 
-# Action Outline (Windows, 2000-2012)
+## Action Outline (Windows, 2000-2012)
 
-## Summary
+### Summary
 
-Simple two-pane outliner for Windows with a tree-like file explorer pane combined with a document viewer pane. 
+Simple two-pane outliner for Windows with a tree-like file explorer pane combined with a document viewer pane.
 
-## Developer
+### Developer
 
 Green Parrots Software
 
-## Screenshots
+### Screenshots
 
 ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fjessems-second-brain%2FSqsgwo-OMv.png?alt=media&token=72aa4cce-9929-49b3-ad6b-5b080baf6c23)
 
-## Features
+### Features
 
-- Basic outliner features
-- Ability to minimize to the Windows System Tray and easily pop up to paste a piece of text
-- Tabbed interface for opening multiple documents
-- Different text styling options
-- Tags
-- Printing
-- Rich media inside outlines (Images)
+-   Basic outliner features
+-   Ability to minimize to the Windows System Tray and easily pop up to paste a piece of text
+-   Tabbed interface for opening multiple documents
+-   Different text styling options
+-   Tags
+-   Printing
+-   Rich media inside outlines (Images)
 
-## More reading
+### More reading
 
 http://archive.today/2020.12.10-052846/https://www.actionoutline.com/
 
-# TAO (Mac)
+## TAO (Mac)
 
-## Screenshots
+### Screenshots
 
 ![](./images/tao.png)
 
-# Opal (Mac, 2006-)
+## Opal (Mac, 2006-)
 
-## Summary
+### Summary
 
-A succesor to Acta from its creator David Dunham. 
+A succesor to Acta from its creator David Dunham.
 
-## Screenshots
+### Screenshots
 
 ![](./images/opal.png)
 
-## Features
+### Features
 
-- Basic outliner features
-- Checkboxes
-- Formatting
-- Search
+-   Basic outliner features
+-   Checkboxes
+-   Formatting
+-   Search
 
-## More Reading
+### More Reading
 
 http://archive.today/2020.12.08-074855/http://a-sharp.com/acta/history.html
 
-# ConnectedText (Windows, 2011-2016 [Discontinued])
+## ConnectedText (Windows, 2011-2016 [Discontinued])
 
-## Summary
+### Summary
 
 ConnectedText brands itself as a "Personal Wiki". It has a very basic editor with an outliner option. It was somewhat unique in that it was one of the first PIM tools to generate a visual graph representation of your notes. There's also the ability to embed Python scripts that run on the page.
 
-## Status
+### Status
 
 Discontinued
 
-## Screenshots
+### Screenshots
 
 ![](./images/connectedtext-1.png)
 
 ![](./images/connectedtext-2.png)
 
-## More Reading
+### More Reading
 
 https://www.connectedtext.com/
 https://web.archive.org/web/20190421085255/http://takingnotenow.blogspot.com/search/label/ConnectedText
 
-# UV Outliner (Windows)
+## UV Outliner (Windows)
 
-# VisualOutliner (Windows)
+## VisualOutliner (Windows)
 
-## More Reading
+### More Reading
 
 https://www.visualoutliner.com/
 
-# InfoQube
+## InfoQube
 
-## Summary
+### Summary
 
 Information Manager with support for multiple views, including an outliner. Free Windows app built as a successor to Ecco Pro. An outliner with columns, allowing search, filter, sort. Includes a rich text pane for larger content / web links. Fully portable. Tries to do everything which Connected Text can do and more but without the markup language so everything is done through a GUI and with tables of properties and context menus.
 
-## Screenshots
+### Screenshots
 
 ![](https://firebasestorage.googleapis.com/v0/b/firescript-577a2.appspot.com/o/imgs%2Fapp%2Fjessems-second-brain%2FA-5GRPTzhh.png?alt=media&token=ad8175d6-fa9a-43a9-a40b-51195000ac37)
 
 ![](https://scontent-zrh1-1.xx.fbcdn.net/v/t31.0-8/17158948_1552965351397456_3839135424993641723_o.png?_nc_cat=111&ccb=2&_nc_sid=cdbe9c&_nc_ohc=484OVJiofjYAX_KEcPg&_nc_ht=scontent-zrh1-1.xx&oh=f10a5ded79e469dc831f07583b741ee5&oe=5FEC4328)
 
-## Features
+### Features
 
-- Gantt Charts
-- Pull in data from remote databases
-- Integrated Calendar
-- Integrated Web Clipper
-- Spreadsheet Capabilities
-    - Pivot Tables
-    - Charts
-- Item Formatting
-    - Rule Based
-- Markdown support
+-   Gantt Charts
+-   Pull in data from remote databases
+-   Integrated Calendar
+-   Integrated Web Clipper
+-   Spreadsheet Capabilities
+    -   Pivot Tables
+    -   Charts
+-   Item Formatting
+    -   Rule Based
+-   Markdown support
 
-## More Reading
+### More Reading
 
-- https://www.reddit.com/r/design_critiques/comments/ggocxu/infoqube_outliner_free_app_your_comments_please/
-- https://pauljmiller.wordpress.com/2018/03/29/a-review-of-infoqube/
+-   https://www.reddit.com/r/design_critiques/comments/ggocxu/infoqube_outliner_free_app_your_comments_please/
+-   https://pauljmiller.wordpress.com/2018/03/29/a-review-of-infoqube/
 
-# MyInfo (Windows, 2000-today)
+## MyInfo (Windows, 2000-today)
 
-## Summary
+### Summary
 
-Bare bones outliner. 
+Bare bones outliner.
 
-## Status
+### Status
 
 Active
 
-## Screenshots
+### Screenshots
 
 ![](./images/myinfo.png)
 
-# Features
+### Features
 
-- Basic outliner functionality
-- Multiple columns
-- Formatting
-- Embedding PDFs
-- Transclusion
-- Templates
+-   Basic outliner functionality
+-   Multiple columns
+-   Formatting
+-   Embedding PDFs
+-   Transclusion
+-   Templates
 
-## More Reading
+### More Reading
 
-- https://en.wikipedia.org/wiki/MyInfo
-- http://www.loosewireblog.com/2006/03/an_outliner_tha.html
-- https://www.bitsdujour.com/software/myinfo
-- https://manual.myinfoapp.com
-- http://archive.today/2020.12.12-061630/https://pauljmiller.wordpress.com/2018/10/23/a-comparative-review-of-four-note-taking-programs/
+-   https://en.wikipedia.org/wiki/MyInfo
+-   http://www.loosewireblog.com/2006/03/an_outliner_tha.html
+-   https://www.bitsdujour.com/software/myinfo
+-   https://manual.myinfoapp.com
+-   http://archive.today/2020.12.12-061630/https://pauljmiller.wordpress.com/2018/10/23/a-comparative-review-of-four-note-taking-programs/
 
-# Accordia IT
+## Accordia IT
 
-# Zoot
+## Zoot
 
-# InfoSelect
+## InfoSelect
 
-# Microsoft Word Outline View
+## Microsoft Word Outline View
 
-# UltraRecall
+## UltraRecall
 
-# Cherry Tree
+## Cherry Tree
 
-## More Reading
+### More Reading
 
 https://www.giuspen.com/cherrytree/
 
-# Jot+
+## Jot+
 
-# TreePad
+## TreePad
 
-# Inspiration
+## Inspiration
 
-# The Brain
+## The Brain
 
-# The Archive
+## The Archive
 
-## More Reading
+## Vim Outliner
 
+## Mindomo (Web-based)
 
-
-# Vim Outliner
-
-# Mindomo (Web-based)
-
-## More Reading
+### More Reading
 
 https://www.mindomo.com/
 
-# Little Outliner (Web-based)
+## Little Outliner (Web-based)
 
-# Workflowy (Web-based)
+## Workflowy (Web-based)
 
-# Dynalist (Web-based)
+## Dynalist (Web-based)
 
-# Checkvist (Web-based)
+## Checkvist (Web-based)
 
-# Roam Research (Web-based)
+## Roam Research (Web-based)
 
-# LeoEditor
+## LeoEditor
 
 http://leoeditor.com/
-

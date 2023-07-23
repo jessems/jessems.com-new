@@ -1,14 +1,16 @@
 ---
 slug: next-experience-custom-component-counter
-date: "2023-03-02"
-title: "Creating a counter - Next Experience custom component development"
+date: '2023-03-02'
+title: 'Creating a counter - Next Experience custom component development'
 description: "A tutorial how to create a counter component using ServiceNow's Next UI Experience."
-tags: "servicenow"
+tags: 'servicenow'
 published: true
-category: "technical"
+category: 'technical'
 ---
 
-<YouTube youTubeId="rLqIjxjgnjk" />
+import YouTube from '@components/youtube'
+
+<YouTube id="rLqIjxjgnjk" />
 
 The official docs (as of this writing) for creating a custom Next Experience "Counter Component" can be found [here](https://developer.servicenow.com/dev.do#!/reference/next-experience/tokyo/ui-framework/examples/counter), but they seem to be outdated. In some cases that means steps are [wrong](https://www.servicenow.com/community/developer-forum/setinitialstate-not-working-in-now-cli-develop-but-works-in/m-p/1455415) and it's not clear what the correct step should be. In this tutorial I hope to clarify such gaps by sharing what I did to achieve the same results.
 
@@ -50,19 +52,19 @@ Inside `src/x-<number>-counter-component/index.js` we can expand our return func
 
 ```js
 return (
-  <div>
-    // Add this 👇
-    <h2>Click Counter</h2>
-    <span>
-      <button type="button">Increment</button>
-    </span>
-    <span>
-      <button type="button">Clear</button>
-    </span>
-    <div>Value: </div>
-    //
-  </div>
-)
+	<div>
+		// Add this 👇
+		<h2>Click Counter</h2>
+		<span>
+			<button type="button">Increment</button>
+		</span>
+		<span>
+			<button type="button">Clear</button>
+		</span>
+		<div>Value: </div>
+		//
+	</div>
+);
 ```
 
 In the official docs they mention a disclaimer here:
@@ -83,16 +85,16 @@ To do this first add an `initialState` property to the object we pass to `create
 
 ```js
 //...
-createCustomElement("x-733577-counter-component", {
-  renderer: { type: snabbdom },
-  view,
-  styles,
-  // Add this 👇
-  initialState: {
-    tally: 0,
-  },
-  //
-})
+createCustomElement('x-733577-counter-component', {
+	renderer: { type: snabbdom },
+	view,
+	styles,
+	// Add this 👇
+	initialState: {
+		tally: 0
+	}
+	//
+});
 ```
 
 This gives us access to the `tally` state value inside the component. Since the `state` variable is already being passed into our component we can access it by [destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) the `state` object inside our component.
@@ -109,20 +111,20 @@ Now that we've set the initial value for `tally` we can use it in our render tem
 
 ```js
 const view = (state, { updateState }) => {
-  const { tally } = state
-  return (
-    <div>
-      <h2>Click Counter</h2>
-      <span>
-        <button type="button">Increment</button>
-      </span>
-      <span>
-        <button type="button">Clear</button>
-      </span>
-      <div>Value: {tally}</div> // Using tally here
-    </div>
-  )
-}
+	const { tally } = state;
+	return (
+		<div>
+			<h2>Click Counter</h2>
+			<span>
+				<button type="button">Increment</button>
+			</span>
+			<span>
+				<button type="button">Clear</button>
+			</span>
+			<div>Value: {tally}</div> // Using tally here
+		</div>
+	);
+};
 ```
 
 The result should be a component which displays `0` as the tally value.
@@ -141,27 +143,30 @@ So we do something like this:
 
 ```js
 const view = (state, { updateState }) => {
-  const { tally } = state
-  return (
-    <div>
-      <h2>Click Counter</h2>
-      <span>
-        <button
-          type="button"
-          on-click={() => updateState({ tally: tally + 1 })}
-        >
-          Increment
-        </button>
-      </span>
-      <span>
-        <button type="button" on-click={() => updateState({ tally: 0 })}>
-          Clear
-        </button>
-      </span>
-      <div>Value: {tally}</div>
-    </div>
-  )
-}
+	const { tally } = state;
+	return (
+		<div>
+			<h2>Click Counter</h2>
+			<span>
+				<button
+					type="button"
+					on-click={() => updateState({ tally: tally + 1 })}
+				>
+					Increment
+				</button>
+			</span>
+			<span>
+				<button
+					type="button"
+					on-click={() => updateState({ tally: 0 })}
+				>
+					Clear
+				</button>
+			</span>
+			<div>Value: {tally}</div>
+		</div>
+	);
+};
 ```
 
 The result should be an interactive counter:
@@ -175,24 +180,24 @@ When we scaffolded the project it should have created a `styles.scss` file in `s
 ```scss
 // src/x-<number>-counter-component/styles.scss
 .counter {
-  margin: 15px;
+	margin: 15px;
 }
 
 h2 {
-  font-family: Arial;
-  color: seagreen;
+	font-family: Arial;
+	color: seagreen;
 }
 
 button {
-  margin: 4px;
-  padding: 8px;
-  border: 1px solid darkgray;
+	margin: 4px;
+	padding: 8px;
+	border: 1px solid darkgray;
 }
 
 h3 {
-  align-content: center;
-  font-size: 16px;
-  margin: 12px;
+	align-content: center;
+	font-size: 16px;
+	margin: 12px;
 }
 ```
 
@@ -206,19 +211,19 @@ Before we deploy our component let's make sure we change its name from the defau
 
 ```json
 {
-  "components": {
-    "x-733577-counter-component": {
-      "innerComponents": [],
-      "uiBuilder": {
-        "associatedTypes": ["global.core", "global.landing-page"],
-        "label": "Counter component", // Change this
-        "icon": "document-outline",
-        "description": "My counter component", // and possibly this
-        "category": "primitives"
-      }
-    }
-  },
-  "scopeName": "x_733577_jessems_0"
+	"components": {
+		"x-733577-counter-component": {
+			"innerComponents": [],
+			"uiBuilder": {
+				"associatedTypes": ["global.core", "global.landing-page"],
+				"label": "Counter component", // Change this
+				"icon": "document-outline",
+				"description": "My counter component", // and possibly this
+				"category": "primitives"
+			}
+		}
+	},
+	"scopeName": "x_733577_jessems_0"
 }
 ```
 
@@ -234,7 +239,7 @@ If you then navigate to UI Builder the component should be available for you to 
 
 ## More resources
 
-- [The original official counter tutorial](https://developer.servicenow.com/dev.do#!/reference/next-experience/tokyo/ui-framework/examples/counter)
-- [Component State (Official Docs)](https://developer.servicenow.com/dev.do#!/reference/next-experience/tokyo/ui-framework/main-concepts/state)
-- [Official ServiceNow GitHub repository with custom Next Component Examples](https://github.com/ServiceNowDevProgram/now-experience-component-examples/tree/quebec)
-- [setInitialState() is mentioned in a tutorial, but isn't an existing method](https://www.servicenow.com/community/developer-forum/setinitialstate-not-working-in-now-cli-develop-but-works-in/m-p/1455415)
+-   [The original official counter tutorial](https://developer.servicenow.com/dev.do#!/reference/next-experience/tokyo/ui-framework/examples/counter)
+-   [Component State (Official Docs)](https://developer.servicenow.com/dev.do#!/reference/next-experience/tokyo/ui-framework/main-concepts/state)
+-   [Official ServiceNow GitHub repository with custom Next Component Examples](https://github.com/ServiceNowDevProgram/now-experience-component-examples/tree/quebec)
+-   [setInitialState() is mentioned in a tutorial, but isn't an existing method](https://www.servicenow.com/community/developer-forum/setinitialstate-not-working-in-now-cli-develop-but-works-in/m-p/1455415)

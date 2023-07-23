@@ -1,0 +1,17 @@
+[
+    {
+        "source": "/pingcoin",
+        "destination": "https://play.google.com/store/apps/details?id=com.pingcoin.android.pingcoin",
+        "permanent": true
+    },
+    {
+        "source": "/axova-case-study",
+        "destination": "/portfolio/axova.pdf",
+        "permanent": true
+    },
+    {
+        "source": "/nftflex-figma",
+        "destination": "https://www.figma.com/file/w4XAj0YiFTR4SCAltO48oL/NFT-Flex",
+        "permanent": true
+    }
+]
