@@ -3,17 +3,6 @@ const path = require('path');
 const RSS = require('rss');
 const matter = require('gray-matter');
 
-// New function to check if a path is a file
-async function isFile(path) {
-	try {
-		const stat = await fs.stat(path);
-		return stat.isFile();
-	} catch (err) {
-		console.error(`Error checking if path is a file: ${path}`, err);
-		return false;
-	}
-}
-
 async function generate() {
 	const feed = new RSS({
 		title: 'Your Name',
@@ -27,14 +16,15 @@ async function generate() {
 
 	await Promise.all(
 		posts.map(async name => {
-			const postPath = path.join(__dirname, '..', 'pages', 'posts', name);
+			const filePath = path.join(__dirname, '..', 'pages', 'posts', name);
 
-			// If the path is not a file, return and skip it
-			if (name.startsWith('index.') || !(await isFile(postPath))) {
+			// Check if filePath is not a file
+			const stat = await fs.stat(filePath);
+			if (name.startsWith('index.') || stat.isDirectory()) {
 				return;
 			}
 
-			const content = await fs.readFile(postPath);
+			const content = await fs.readFile(filePath);
 			const frontmatter = matter(content);
 
 			feed.item({
