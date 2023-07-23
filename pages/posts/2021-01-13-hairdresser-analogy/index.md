@@ -1,14 +1,14 @@
 ---
 slug: hairdresser-analogy
-date: "2021-01-13"
-title: "The Hairdresser Analogy"
-description: "The Hairdresser Analogy"
-categories: ["privacy"]
-keywords: ["privacy", "whatsapp", "facebook"]
+date: '2021-01-13'
+title: 'The Hairdresser Analogy'
+description: 'The Hairdresser Analogy'
+categories: ['privacy']
+keywords: ['privacy', 'whatsapp', 'facebook']
 published: true
 ---
 
-![The Rummaging Hairdresser](hairdresser-analogy.jpg)
+![The Rummaging Hairdresser](images/hairdresser-analogy.jpg)
 
 _This is a thought exercise to help explore what is okay (and what isn't) when it comes to the exchange between personal information and the provision of a personalised service._
 
