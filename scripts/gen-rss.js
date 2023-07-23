@@ -18,7 +18,6 @@ async function generate() {
 		posts.map(async name => {
 			const filePath = path.join(__dirname, '..', 'pages', 'posts', name);
 
-			// Check if filePath is not a file
 			const stat = await fs.stat(filePath);
 			if (name.startsWith('index.') || stat.isDirectory()) {
 				return;
@@ -27,12 +26,17 @@ async function generate() {
 			const content = await fs.readFile(filePath);
 			const frontmatter = matter(content);
 
+			// Check if tag exists, if not, use an empty string
+			const tags = frontmatter.data.tag
+				? frontmatter.data.tag.split(', ')
+				: [];
+
 			feed.item({
 				title: frontmatter.data.title,
 				url: '/posts/' + name.replace(/\.mdx?/, ''),
 				date: frontmatter.data.date,
 				description: frontmatter.data.description,
-				categories: frontmatter.data.tag.split(', '),
+				categories: tags,
 				author: frontmatter.data.author
 			});
 		})
