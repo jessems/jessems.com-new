@@ -1,0 +1,61 @@
+---
+---
+
+
+
+
+```
+brew install clojure/tools/clojure
+```
+
+What is leiningen?
+
+```
+brew install leiningen
+```
+
+Then in your normal terminal type in 
+
+```{bash}
+lein new app temp
+```
+
+I took the next parts from a youtube video [^1]
+
+Then open it up in Visual Studio Code:
+
+```
+cd temp
+code .
+```
+
+Install the Calva Extension
+
+Then jack in by typing shift + cmd + P and typing `calva jack`. 
+
+Select the option:
+
+`Calva: Start a Project REPL and Connect...`
+
+
+Then shift + cmd + P again and type in `calva load` and select the option:
+
+`Calva: Load Current Namespace in REPL...`
+
+This will change the name state in the REPL window to where you're at.
+
+
+```
+lein repl
+```
+
+Then press shift + command + P to open the command dialog.
+
+Type to select "Clojure: Connect to a running nREPL
+
+What is a REPL?
+
+
+
+[^1] [https://www.youtube.com/watch?v=BmeuZGgMnO4](https://www.youtube.com/watch?v=BmeuZGgMnO4) 
+

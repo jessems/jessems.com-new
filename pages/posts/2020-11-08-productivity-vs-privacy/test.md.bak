@@ -1,0 +1,63 @@
+
+
+
+
+
+## There has been an increase in privacy-preserving applications recently
+
+In recent years there's been a steady growth in privacy focused companies. Some examples that have reached large-scale adoption are [ProtonMail](https://protonmail.com), [Signal](https://signal.com), and [DuckDuckGo](https://duckduckgo.com). These are companies that have put privacy front and center to their value proposition and can be considered *privacy-preserving products*. Although I believe the goal of preserving user privacy is something that should be celebrated, I've come to believe it is often inherently in tension with the goal of advancing user productivity. In this essay I explore this tension.
+
+## Some of these apps use e2e encryption
+
+What all privacy-preserving products have in common is a promise of a higher standard of data stewardship than their non-privacy-preserving competitors. Depending on the use case and the product[x], this often means they converge on encrypting their user's data end-to-end. Instead of the usual encryption in transit (protection from eavesdroppers) and encryption at rest (protection from unauthorized access), services like Signal and ProtonMail enable their users to hide data from anyone except the intended recipient, which — crucially — includes the service providers themselves.
+
+This category of encryption, known as end-to-end encryption (e2e), has found adopters in those ranging from principled libertarians to journalists and human rights activitists whose lives may depend on their conversations remaining private.
+
+## This is a sign that e2e encrypted apps are becoming usable, which is a major victory
+
+The mass adoption of Signal (more than 10 million downloads on the Google Play Store [x]) and ProtonMail (more than 10 million users in 2018 [x]) can be considered a monumental victory for advocates of e2e encryption [x]. These figures do not signal that this technology has recently become viable – open source implementations have been around for ages. Rather this is a clear signal (no pun intended) that e2e encryption has finally become usable.
+
+Encrypting emails end-to-end has been possible since at least 1999 when the reference implementation of Pretty Good Privacy (PGP) was released. Due to a myriad of reasons this software wasn't user friendly and has remained so ever since. Escaping this local minimum is a major victory for privacy advocates everywhere.
+
+## Even though this is an achievement, non-privacy preserving apps have an advantage over privacy-preserving ones: increased user productivity
+
+Even though privacy-preserving apps are reaching mainstream adoption, they still trail their non-privacy-preserving competition in a crucial domain: productivity. 
+
+## The way apps are getting better is they are making people more productive
+
+Software products and services are tools and like any tool they help us go from one situation to another. Be it sending a customer an invoice, scheduling a calendar event, composing a document — software products are tools that allow us to transform our circumstances.
+
+Without software, we would still be working through the same tasks, just slower, using analog methods. Software makes us more productive, and better software makes us even more productive.
+
+## They are doing this by (1) optimizing for functional flows through specialized SaaS applications
+
+Kevin A. Kwok in his essay "The Arc of Collaboration" 
+
+Knowledge of the functional flow can be difficult to come by if your reputation is based on leaving your users alone.
+
+## And (2) by allowing collaboration to happen inside the applications
+
+## There are all kinds of tasks within a functional flow that can be made quicker, better if user data can be leveraged
+
+## Privacy-preserving products cannot leverage user data, so they underperform w/r to productivity
+
+## There are some additional angles where tension with privacy exists
+
+### The extended enterprise
+
+### Interoperability
+
+### Integrations and apps
+
+## Conversely, more productive options might not be available because of privacy concerns
+
+An email client like Superhuman might make you more productive, but it can be standard security policy not to allow any non-standard email software due to security concerns. Why do those security concerns exist? And would they persist if Superhuman did not have access to the plaintext of your emails? I doubt it.
+
+## Closing thoughts
+
+
+[x] DuckDuckGo, for instance, as a search engine, by virtue of the service it provides, needs to see your search query, so rather than encrypting it end-to-end, they promise not to track you.
+[x] A company isn't necessarily infringing on user privacy if they aggregate search statistics. But in order to do, the level of access they require puts them in a position where abuse could happen.
+[x] https://www.wired.com/story/signal-encrypted-messaging-features-mainstream/#:~:text=When%20WIRED%20profiled%20Marlinspike%20in,the%20Google%20Play%20Store's%20count.
+[x] https://en.wikipedia.org/wiki/ProtonMail#:~:text=As%20of%20January%202017%2C%20ProtonMail,by%20the%20end%20of%202018.
+[x] If one wants to be generous and count WhatsApp in there as well, the figure goes up to billions
