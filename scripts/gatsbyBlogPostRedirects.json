@@ -400,6 +400,11 @@
     "permanent": true
   },
   {
+    "source": "/chat-gpt-for-servicenow-developers",
+    "destination": "/posts/2023-05-04-chatgpt-for-servicenow-developers",
+    "permanent": true
+  },
+  {
     "source": "/running-powershell-scripts-programmatically-with-servicenow",
     "destination": "/posts/2023-05-31-running-powershell-scripts-programmatically-with-servicenow",
     "permanent": true
