@@ -11,11 +11,7 @@ category: 'technical'
 This code gets the current date in a desired format e.g. dd.MM.YYYY or dd/MM/YYYY
 
 ```js
-var gdt = new GlideDateTime(); // Get today's date as a GlideDateTime object
-var myDate = gdt.getDate(); // Get the date only as a string e.g. 2023-08-18
-
 var gd = new GlideDate(); // Create a GlideDate object
-gd.setValue(myDate); // Set its value to the current date
 
 gs.info(gd.getByFormat('dd.MM.yyyy')); // Get a formatted string e.g. 18.08.2023
 gs.info(gd.getByFormat('dd/MM/yyyy')); // Get a formatted string e.g. 18/08/2023
