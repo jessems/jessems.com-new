@@ -1,0 +1,71 @@
+title AI-first ServiceNow Development
+
+style wardley
+
+component Technical User [1, 0.6] label [-32, -12]
+component Non-Technical [1, 0.4] label [-50, -11]
+
+component Code Productivity [0.9, 0.10] label [-31, -34]
+component No-Code Productivity [0.85, 0.06] label [-29, 10]
+
+component IDE Code Completion [0.71, 0.30] label [-27, -54]
+component Web Code Completion [0.71, 0.41] label [-19, -55]
+
+component Agent Driven Development [0.67, 0.03] label [5, -12]
+
+component VS Code [0.41, 0.30] label [3, -12]
+
+component Text-to-Flow Features [0.69, 0.15] label [-25, -35]
+
+component ServiceNow Model Finetuning [0.28, 0.07] label [-48, -60]
+
+component Access to Customers [0.23, 0.10] inertia label [-55, 10]
+
+component Code Completion API [0.35, 0.22] (build) label [18, -12]
+
+component Access to LLM APIs [0.14, 0.20] inertia label [-54, 2]
+
+component Web IDE [0.46, 0.46] inertia
+
+component sn-script-sync [0.03, 0.48] label [9, -19] inertia
+
+Non-Technical->Code Productivity
+Technical User->No-Code Productivity
+Code Productivity->IDE Code Completion
+Code Productivity->Agent Driven Development
+Agent Driven Development->ServiceNow Model Finetuning
+Code Completion->ServiceNow Model Finetuning
+No-Code Productivity->ServiceNow Model Finetuning
+No-Code Productivity->Text-to-Flow Features
+Text-to-Flow Features->ServiceNow Model Finetuning
+No-Code Productivity->Agent Driven Development
+Code Productivity->VS Code
+Developer Platform->Access to Customers
+Developer Platform->Access to LLM APIs
+Developer Platform->VS Code
+
+Developer Platform->Web IDE
+Code Completion->Web IDE
+
+VS Code->sn-script-sync
+VS Code->IDE Code Completion
+component AI-first UI [0.59, 0.22] (build) label [18, -21]
+Web Code Completion->Web IDE
+Code Productivity->Web Code Completion
+Code Completion API (build)->ServiceNow Model Finetuning
+Code Completion API (build)->ServiceNow Model Finetuning
+ServiceNow Model Finetuning->Code Completion API (build)
+ServiceNow Model Finetuning->Code Completion API
+VS Code->Code Completion API
+component Sync Tool [0.09, 0.37] (build) label [-8, -30]
+evolve Sync Tool 0.9
+VS Code->Sync Tool
+Access to Customers->Sync Tool
+Access to LLM APIs->Sync Tool
+Agent Driven Development->AI-first UI
+Agent Driven Development->VS Code
+AI-first UI->Sync Tool
+AI-first UI->Access to Customers
+Code Completion API->Access to LLM APIs
+AI-first UI->Access to LLM APIs
+ServiceNow Model Finetuning->Access to LLM APIs
