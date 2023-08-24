@@ -8,7 +8,7 @@ published: true
 category: 'non-technical'
 ---
 
-![](images/20230824161604.png)
+![](/images/20230824161604.png)
 
 This was initially posted as a Twitter thread here: https://twitter.com/jessems/status/1694713563779420620
 
