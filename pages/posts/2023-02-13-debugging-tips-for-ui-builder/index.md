@@ -1,14 +1,14 @@
 ---
 slug: debugging-tips-for-ui-builder
-date: "2023-02-13"
-title: "Debugging tips for UI Builder (ServiceNow Now Experience)"
-description: "In this tutorial you will learn some tips on how to debug inside UI Builder"
-tags: "servicenow"
+date: '2023-02-13'
+title: 'Debugging tips for UI Builder (ServiceNow Now Experience)'
+description: 'In this tutorial you will learn some tips on how to debug inside UI Builder'
+tags: 'servicenow'
 published: true
-category: "technical"
+category: 'technical'
 ---
 
-<YouTube youTubeId="1XjtMwKFx6U" />
+<YouTube id="1XjtMwKFx6U" />
 
 Watch the video tutorial or read the tips below.
 
@@ -56,7 +56,7 @@ You can log any event by creating a Page Script with the following script:
  * @param {ApiHelpers} params.helpers
  */
 function handler({ api, event, helpers, imports }) {
-  console.log(event)
+	console.log(event);
 }
 ```
 
@@ -81,7 +81,7 @@ All you need to do is to create a Page Script with the following script:
  * @param {ApiHelpers} params.helpers
  */
 function handler({ api, event, helpers, imports }) {
-  console.log(api.state)
+	console.log(api.state);
 }
 ```
 

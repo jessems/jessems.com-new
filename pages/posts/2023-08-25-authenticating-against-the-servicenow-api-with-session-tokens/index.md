@@ -8,7 +8,7 @@ published: true
 category: 'technical'
 ---
 
-<YouTube youTubeId="9BrbjkHiivk" />
+<YouTube id="9BrbjkHiivk" />
 
 ServiceNow provides various REST API endpoints that can be used to interact with an instance. The most well known endpoint is the [Table API](https://docs.servicenow.com/en-US/bundle/vancouver-api-reference/page/integrate/inbound-rest/concept/c_TableAPI.html) which can be used to create, read, update and delete records, as well as perform other operations.
 
