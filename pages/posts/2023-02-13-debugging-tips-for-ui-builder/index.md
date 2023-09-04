@@ -8,6 +8,8 @@ published: true
 category: 'technical'
 ---
 
+import YouTube from '@components/youtube'
+
 <YouTube id="1XjtMwKFx6U" />
 
 Watch the video tutorial or read the tips below.
