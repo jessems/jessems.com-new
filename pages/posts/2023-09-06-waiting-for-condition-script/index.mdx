@@ -1,8 +1,8 @@
 ---
 slug: waiting-for-condition-script
 date: "2023-09-06"
-title: "Waiting for Condition Script"
-description: "Waiting for Condition Script"
+title: "Waiting for Condition Script in ServiceNow"
+description: "Waiting for Condition Script in ServiceNow"
 tags: "servicenow"
 published: true
 category: "technical"
@@ -10,9 +10,11 @@ category: "technical"
 
 Sometimes as a ServiceNow developer you perform some kind of action in your code which triggers a Business Rule (or another asynchronous process) and you want to wait around for the result.
 
-How do you do this? ServiceNow's JavaScript engine, Rhino, doesn't support `setTimeout` and it runs on ES5 so it doesn't support `Promise`s or `async`/`await`.
+How do you do this? 
 
-There's an undocumented native API `gs.sleep()` which waiting function which blocks the current execution context, but it doesn't work in global scope.
+ServiceNow's JavaScript engine, Rhino, doesn't support `setTimeout` and it runs on ES5 so it doesn't support Promises or async/await.
+
+There's `gs.sleep()` which is an out-of-the-box method which blocks the current execution context, but it doesn't work in global scope.
 
 You can write your own sleep / wait function using something like this:
 
