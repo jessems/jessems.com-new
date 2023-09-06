@@ -1,0 +1,69 @@
+---
+slug: waiting-for-condition-script
+date: "2023-09-06"
+title: "Waiting for Condition Script"
+description: "Waiting for Condition Script"
+tags: "servicenow"
+published: true
+category: "technical"
+---
+
+Sometimes as a ServiceNow developer you perform some kind of action in your code which triggers a Business Rule (or another asynchronous process) and you want to wait around for the result.
+
+How do you do this? ServiceNow's JavaScript engine, Rhino, doesn't support `setTimeout` and it runs on ES5 so it doesn't support `Promise`s or `async`/`await`.
+
+There's an undocumented native API `gs.sleep()` which waiting function which blocks the current execution context, but it doesn't work in global scope.
+
+You can write your own sleep / wait function using something like this:
+
+```js
+var waitForSeconds = 10;
+var endSleep = new GlideDateTime().getNumericValue() + waitForSeconds * 1000;
+while (new GlideDateTime().getNumericValue() < endSleep) {
+    // intentionally wait
+}
+```
+
+If you want to also check for a condition, you can do something like this:
+
+```js
+var waitForCondition = function (func, timeout) {
+	var startTime = new GlideDateTime().getNumericValue();
+	var endTime = startTime + timeout * 1000; // convert timeout to milliseconds
+
+	while (new GlideDateTime().getNumericValue() < endTime) {
+		var result = func();
+
+		// If the condition is met, we're done!
+		if (result) {
+			return true;
+		}
+
+		// Sleep for 1 second before checking again
+		var endSleep = new GlideDateTime().getNumericValue() + 1000;
+		while (new GlideDateTime().getNumericValue() < endSleep) {
+			// intentionally wait
+		}
+	}
+
+	// Condition not met within timeout
+	return false;
+};
+```
+This function takes in a condition function, which evaluates a condition, as well as a timeout in seconds. It will check the condition every second until the condition is met or the timeout is reached.
+
+And you can use it as follows:
+
+```js
+var openIncidentsExist = function () {
+    var grIncident = new GlideRecord('incident');
+    grIncident.addQuery('status', '1');
+    grIncident.query();
+
+    return grIncident.hasNext();
+};
+
+waitForCondition(checkForOpenIncidents, 10);
+// Returns false if no open incidents exist after 10 seconds
+// Returns true if open incidents exist within 10 seconds
+```
