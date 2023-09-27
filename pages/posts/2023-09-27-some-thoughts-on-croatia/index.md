@@ -12,7 +12,7 @@ As I'm writing this I'm sitting in Split airport after spending a couple of days
 
 I had never been to Croatia so I was very curious what my experience would be like. I feel a natural affinity towards slavic people, perhaps due to me Polish roots, which piqued my interest in Croatia. That said, slavic countries can be a bit rough for a pampered North-Western European as myself. We feel a bit antsy when we cannot use English to communicate and the general threat of getting robbed or pickpocketed is higher than at home. Here are some of my thoughts.
 
-![](images/20230927091154.png)
+![](./images/20230927091154.png)
 
 We stayed relatively nearby our rented complex near Split in the South of Croatia, a region also known as Dalmatia. We were located a 10 minute walk away from the beach, a trip we would make on a daily basis. The beaches where we were, were sandy and the water quite warm and clean. It's the best type of sand: soft and clean. The water remains shallow for long stretches, allowing you to wade far out from the shoreline.
 
