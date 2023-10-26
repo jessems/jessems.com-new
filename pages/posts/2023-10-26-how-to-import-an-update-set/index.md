@@ -12,3 +12,7 @@ After you've exported an update set to XML, you can import it as follows:
 
 1. Navigate to **System Update Sets > Retrieved Update Sets**
 2. Click on the Related Link "Import Update Set from XML"
+
+## Continuing work on an exported update set
+
+This [isn't possible](https://www.servicenow.com/community/developer-forum/re-importing-xml-update-sets-and-continuing-to-work-in-them/m-p/2232156). All you can do is import the update set, preview it and commit it. Then continue work in a new update set.
