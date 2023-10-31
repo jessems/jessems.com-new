@@ -1,11 +1,11 @@
 ---
 slug: opening-modal-from-a-record-in-configurable-workspaces
-date: "2023-03-24"
-title: "Opening a modal from a record in Configurable Workspaces"
-description: "How to open a modal from a record in Configurable Workspaces, configured through UI Builder."
-tags: "ServiceNow, UI Builder, Next Experience"
+date: '2023-03-24'
+title: 'Opening a modal from a record in Configurable Workspaces'
+description: 'How to open a modal from a record in Configurable Workspaces, configured through UI Builder.'
+tags: 'ServiceNow, UI Builder, Next Experience'
 published: true
-category: "technical"
+category: 'technical'
 ---
 
 ## Prerequisites
@@ -41,13 +41,13 @@ category: "technical"
    ![](./images/20230324195603.png)
 4. Enter the following script where we pass the `sysId` received through the URL parameter as a JS template variable.
 
-   ```js
-   function evaluateProperty({ api, helpers }) {
-     return `Only ${api.context.props.sysId}`
-   }
-   ```
+    ```js
+    function evaluateProperty({ api, helpers }) {
+    	return `Only ${api.context.props.sysId}`;
+    }
+    ```
 
-   ![](./images/20230324195734.png)
+    ![](./images/20230324195734.png)
 
 5. Click "Apply" for the script and "Save" on the top right of the window to save your changes. Now the `table` and `sysId` variables are configured to be passed from from the modal, through the URL into the our Variant.
 
@@ -59,13 +59,13 @@ category: "technical"
 
 4. Here we need to set the Parent Macroponent (`parent_macroponent`) to whatever page we want our Page to appear within.
 
-   - Since we want to create a Modal on the Record page we need fill in the CSM/FSM Configurable Workspace Record Macroponent here. But if you click on the lookup icon you may find multiple Macroponents listed all with the name "Record". Which one do we need to pick?
+    - Since we want to create a Modal on the Record page we need fill in the CSM/FSM Configurable Workspace Record Macroponent here. But if you click on the lookup icon you may find multiple Macroponents listed all with the name "Record". Which one do we need to pick?
 
-   - To answer this we need to open the CSM/FSM Configurable Workspace Experience in UI builder in a new tab. There, in the overview of Pages, we need to look for the Page/Macroponent where want to the Modal to appear. In our case it's the Record so the "Record Default" variant sounds like the right one. ![](./images/20230324163651.png)
-   - Click on it to open it and click on the hamburger menu on the top left again and navigate to "Open page definition".
-   - On the Page Definition right click the top bar and select "Copy sys_id" to grab the `sys_id`.
-   - Go back to the tab where you have the `sys_ux_app_route` record open. Use the SN Utils double click function to double click on the name of the "Parent Macroponent" field to open its machine readable value in a browser alert modal.
-   - Paste in the `sys_id` from your clipboard and click save and see the display name ("Record") appear. ![](./images/20230324164124.gif)
+    - To answer this we need to open the CSM/FSM Configurable Workspace Experience in UI builder in a new tab. There, in the overview of Pages, we need to look for the Page/Macroponent where want to the Modal to appear. In our case it's the Record so the "Record Default" variant sounds like the right one. ![](./images/20230324163651.png)
+    - Click on it to open it and click on the hamburger menu on the top left again and navigate to "Open page definition".
+    - On the Page Definition right click the top bar and select "Copy sys_id" to grab the `sys_id`.
+    - Go back to the tab where you have the `sys_ux_app_route` record open. Use the SN Utils double click function to double click on the name of the "Parent Macroponent" field to open its machine readable value in a browser alert modal.
+    - Paste in the `sys_id` from your clipboard and click save and see the display name ("Record") appear. ![](./images/20230324164124.gif)
 
 5. The Parent Macroponent Composition Element ID defines which part of the Macroponent our UI Builder Page should appear in. Since we want it to appear in a modal we can use the CSM/FSM Configurable Workspace's built-in modal, which has Element ID `modalContainerViewport`. ![](./images/20230324165016.png)
 6. Leave the other fields as is and click "Update" to save the record.
@@ -75,7 +75,7 @@ category: "technical"
 
 At this point we've created a Page & Variant and we've told ServiceNow we want it to show up on the CSM/FSM Configurable Workspace record Macroponent linked to the `modalContainerViewport`.
 
-In the previous tutorial we added a button to the Record page of a Workspace, but we stopped short of making that button do anything.
+In the [previous tutorial](https://jessems.com/posts/2023-03-13-adding-an-action-bar-button-to-a-configurable-workspace) we added a button to the Record page of a Workspace, but we stopped short of making that button do anything.
 
 What's left is for us to connect the button with the Modal. What's more we want to pass information from the Record to the Modal. What's left for us is mapping the Button click event to the Modal launch event. Te way this is done is through a UX Add-on Event Mapping Record (sys_ux_addon_event_mapping).
 
@@ -88,37 +88,37 @@ What's left is for us to connect the button with the Modal. What's more we want 
 7. Selecting a Macroponent should load the options for the "Target Event" dropdown. Set this field to "[Record Page] Open modal". (If you want to trigger a different event, such as opening a tab, you need to select a different target event here.)
 8. Finally in the "Target Payload Mapping" field we need to paste this JSON object. It defines which fields we'll be able to send to the Modal and you don't have to alter the structure for other use cases. We'll only be using "route" and "fields".
 
-   ```json
-   {
-     "type": "MAP_CONTAINER",
-     "container": {
-       "route": {
-         "type": "EVENT_PAYLOAD_BINDING",
-         "binding": {
-           "address": ["route"]
-         }
-       },
-       "size": {
-         "type": "EVENT_PAYLOAD_BINDING",
-         "binding": {
-           "address": ["size"]
-         }
-       },
-       "fields": {
-         "type": "EVENT_PAYLOAD_BINDING",
-         "binding": {
-           "address": ["fields"]
-         }
-       },
-       "params": {
-         "type": "EVENT_PAYLOAD_BINDING",
-         "binding": {
-           "address": ["params"]
-         }
-       }
-     }
-   }
-   ```
+    ```json
+    {
+    	"type": "MAP_CONTAINER",
+    	"container": {
+    		"route": {
+    			"type": "EVENT_PAYLOAD_BINDING",
+    			"binding": {
+    				"address": ["route"]
+    			}
+    		},
+    		"size": {
+    			"type": "EVENT_PAYLOAD_BINDING",
+    			"binding": {
+    				"address": ["size"]
+    			}
+    		},
+    		"fields": {
+    			"type": "EVENT_PAYLOAD_BINDING",
+    			"binding": {
+    				"address": ["fields"]
+    			}
+    		},
+    		"params": {
+    			"type": "EVENT_PAYLOAD_BINDING",
+    			"binding": {
+    				"address": ["params"]
+    			}
+    		}
+    	}
+    }
+    ```
 
 9. Finally click Submit to save the record.
    ![](./images/20230324183047.png)
@@ -132,15 +132,15 @@ The last remaining step is for us to define the payload of the event. Back in [t
    ![](./images/20230324184825.png)
 3. In the Payload field fill in the JSON object below. The `route` key tells SN where to look for our Page and we can use the `field` key to pass variables from the current context:
 
-   ```js
-    {
-      "route": "crazy-page",
-      "fields": {
-        "table": "{{table}}",
-        "sysId": "{{sysId}}"
-      }
-    }
-   ```
+    ```js
+     {
+       "route": "crazy-page",
+       "fields": {
+         "table": "{{table}}",
+         "sysId": "{{sysId}}"
+       }
+     }
+    ```
 
 4. Finally click Update to save the record. ![](./images/20230324185215.png)
 
@@ -165,10 +165,10 @@ If you want to change the modal size, you can do so easily by adding a `size` ke
 
 ## Resources
 
-- [Official ServiceNow Guide on Declarative Actions](https://www.servicenow.com/community/next-experience-articles/introduction-to-declarative-actions/ta-p/2332003)
-- [Arnoud Kooi's Declarative Action From Record Page Video](https://www.youtube.com/watch?v=C8KDDHUvNO8)
-- [Brad Tilton's Add a Button to the List Component Video](https://www.youtube.com/watch?v=lTDa8nFRvmU)
-- Special thanks to [Roy Wallimann](https://www.servicenow.com/community/user/viewprofilepage/user-id/270338) who wrote an internal BitHawk tutorial on triggering modals in workspaces
+-   [Official ServiceNow Guide on Declarative Actions](https://www.servicenow.com/community/next-experience-articles/introduction-to-declarative-actions/ta-p/2332003)
+-   [Arnoud Kooi's Declarative Action From Record Page Video](https://www.youtube.com/watch?v=C8KDDHUvNO8)
+-   [Brad Tilton's Add a Button to the List Component Video](https://www.youtube.com/watch?v=lTDa8nFRvmU)
+-   Special thanks to [Roy Wallimann](https://www.servicenow.com/community/user/viewprofilepage/user-id/270338) who wrote an internal BitHawk tutorial on triggering modals in workspaces
 
 ```
 
