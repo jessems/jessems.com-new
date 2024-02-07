@@ -21,3 +21,27 @@ if (grTable.next()) {
 	gs.info(evaluator.evaluateScript(gl, 'u_script', ''));
 }
 ```
+
+## Loading functions into scope
+
+This method also works if you are not returning a specific value in the script field, but rather defining a function that you want to call from another script. For instance, if you have a `u_custom_script` field that looks like this:
+
+```js
+function helloWorld() {
+	gs.info('Hello, world!');
+}
+```
+
+Running the following:
+
+```js
+var grTable = new GlideRecord('target_table');
+grTable.query();
+
+if (grTable.next()) {
+	var evaluator = new GlideScopedEvaluator();
+	gs.info(evaluator.evaluateScript(gl, 'u_custom_script', ''));
+}
+```
+
+Will yield: `Hello, world!` in the logs.
