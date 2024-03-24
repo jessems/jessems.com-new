@@ -1,11 +1,11 @@
 ---
 slug: how-to-set-the-cc-field-on-an-email-notification-in-servicenow
-date: "2023-07-12"
-title: "How to set the cc field on an email notification in ServiceNow"
-description: "How to set the cc field on an email notification in ServiceNow"
-tags: "servicenow"
+date: '2023-07-12'
+title: 'How to set the cc field on an email notification in ServiceNow'
+description: 'How to set the cc field on an email notification in ServiceNow'
+tags: 'servicenow'
 published: true
-category: "technical"
+category: 'technical'
 ---
 
 In order to set the cc field on an email notification in ServiceNow you need to create a Mail Script (`sys_script_mail`) record.
@@ -13,7 +13,7 @@ In order to set the cc field on an email notification in ServiceNow you need to 
 The script should look something like this:
 
 ```js
-;(function runMailScript(current, template, email, email_action, event) {
+(function runMailScript(current, template, email, email_action, event) {
   email.addAddress(
     "cc",
     "email"
@@ -25,13 +25,13 @@ The script should look something like this:
 If you want to fill the email and name fields dynamically you could do something like the following (depending on what record you're using to trigger the notification):
 
 ```js
-;(function runMailScript(current, template, email, email_action, event) {
-  email.addAddress(
-    "cc",
-    current.requester.email.toString(),
-    current.requester.name.toString()
-  )
-})(current, template, email, email_action, event)
+(function runMailScript(current, template, email, email_action, event) {
+	email.addAddress(
+		'cc',
+		current.requester.email.toString(),
+		current.requester.name.toString()
+	);
+})(current, template, email, email_action, event);
 ```
 
 Note the call to `toString()` on the email and name fields. Without this ServiceNow will complain because you're trying to pass a ScopedGlideElement object as a string:
