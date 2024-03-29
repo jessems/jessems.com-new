@@ -438,5 +438,10 @@
     "source": "/the-unreasonable-effectiveness-of-sequence-diagrams-in-mermaidjs",
     "destination": "/posts/2023-07-22-the-unreasonable-effectiveness-of-sequence-diagrams-in-mermaidjs",
     "permanent": true
+  },
+  {
+    "source": "/mermaid-sequence-diagrams",
+    "destination": "/posts/2023-07-22-the-unreasonable-effectiveness-of-sequence-diagrams-in-mermaidjs",
+    "permanent": true
   }
 ]
