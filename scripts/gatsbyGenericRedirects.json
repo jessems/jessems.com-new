@@ -13,10 +13,5 @@
         "source": "/nftflex-figma",
         "destination": "https://www.figma.com/file/w4XAj0YiFTR4SCAltO48oL/NFT-Flex",
         "permanent": true
-    },
-    {
-        "source": "https://jessems.com/mermaid-sequence-diagrams",
-        "destination": "https://jessems.com/posts/2023-07-22-the-unreasonable-effectiveness-of-sequence-diagrams-in-mermaidjs",
-        "permanent": true
     }
 ]
