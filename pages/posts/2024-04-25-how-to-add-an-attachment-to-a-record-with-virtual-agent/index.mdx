@@ -1,0 +1,33 @@
+---
+slug: how-to-add-an-attachment-to-a-record-with-virtual-agent
+date: '2024-04-25'
+title: 'How to add an attachment to a record with virtual agent'
+description: 'How to add an attachment to a record with virtual agent'
+tags: 'ServiceNow, Virtual Agent'
+published: true
+category: 'technical'
+---
+
+import { Steps } from 'nextra/components';
+
+Attachments are not one of the standard input options when creating a record in a Virtual Agent Topic. However, you can use a script to add an attachment to a record. Here is an example of how you can do this:
+
+<Steps>
+
+### Add a File Picker component to your topic flow
+
+![](./images/20240425061801.png)
+
+### After the record creation, add a Script Action
+
+Add the following script:
+
+```javascript
+(function execute() {
+    vaSystem.attachToRecord(vaInputs.screenshot.getValue(), 'incident', vaInputs.incident_id);
+})()
+```
+
+Where `screenshot` is the variable that stores the attachment, `incident` is the table name, and `incident_id` is the sys_id of the record you created.
+
+</Steps>
