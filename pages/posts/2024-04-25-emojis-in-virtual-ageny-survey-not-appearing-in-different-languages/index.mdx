@@ -1,0 +1,44 @@
+---
+slug: emojis-in-virtual-ageny-survey-not-appearing-in-different-languages
+date: "2024-04-25"
+title: "Emojis in virtual ageny survey not appearing in different languages"
+description: "Emojis in virtual ageny survey not appearing in different languages"
+tags: "ServiceNow, Virtual Agent"
+published: true
+category: "technical"
+---
+import { Steps } from 'nextra/components';
+
+When you configure Virtual Agent to be multi-lingual and you choose to use the end-of-conversation survey, the emojis don't work.
+
+![](./images/20240425081147.png)
+
+You can solve this as follows:
+
+<Steps>
+
+### Navigate to the `asmt_metric_definition` table and filter by package
+
+Navigate to the `asmt_metric_definition` table (`/asmt_metric_definition` with SN Utils).
+
+Set up a filter to filter for the Package `Virtual Agent Topic Blocks`.
+
+![](./images/20240425081501.png)
+
+### Change your session language to the target language
+
+The previous step will only display the records that correspond to your current session language. To edit the records from other languages, change your session language (`/lang <language code>` with SN Utils, or via the user preferences).
+
+![](./images/20240425081704.png)
+
+### Update the records
+
+Here are the emoji characters that are used by ServiceNow by default:
+
+😀, 😐, 😔
+
+And here's the end result:
+
+![](./images/20240425082100.png)
+
+</Steps>
