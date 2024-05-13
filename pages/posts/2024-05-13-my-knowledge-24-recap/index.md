@@ -22,7 +22,7 @@ Given that Knowledge is a conference on enterprise software — a concept with a
 
 To be fair to ServiceNow, there certainly were things they shared later on in the conference that were genuinely impressive, innovative and exciting (more on that later). Knowledge as a conference, though, (and I was warned about this) is heavy on marketing and light on the the rest. That is to say, the conventional wisdom shared with me is that one should look past the hyperbole and look instead at all the other stuff on offer. Which, by the way, is easier said than done, when walking around at the conference was made to feel like walking around a neon green AI-themed casino.
 
-![](images/20240513065234.png)
+![](./images/20240513065234.png)
 
 For anyone at Knowledge 24 it was made obvious that ServiceNow is betting big on AI. In fact, it was hard to find a session not explicitly linked to AI. So much so, that one could easily forget that, as of this writing, ServiceNow's AI features are still packaged behind one of its most premium subscription tiers. For all the spotlight given to the new AI capabilities, there was comparatively little attention for how these capabilities will be priced. What does a future look like where "AI reaches every corner of the business" if said business cannot afford said AI? This question went painfully unanswered.
 
