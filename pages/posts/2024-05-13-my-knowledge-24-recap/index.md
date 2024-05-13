@@ -18,7 +18,7 @@ All that being said, certain aspects of the conference were still bewildering to
 
 Given that Knowledge is a conference on enterprise software — a concept with about as much overlap with rock stars as a chess club has with fight club — I didn't have "CEO dressed as a Bond villain, wooping and fist pumping on stage" on my bingo card. Then again, maybe enterprise software is orders of magnitudes cooler than I make it out to be.
 
-![A wooping Bill McDermott](./images/2024-05-12_17.29.51_1715528251283_0.gif)
+![A wooping Bill McDermott](./images/2024-05-12_17.29.51_1715528251283_0_opt.gif)
 
 To be fair to ServiceNow, there certainly were things they shared later on in the conference that were genuinely impressive, innovative and exciting (more on that later). Knowledge as a conference, though, (and I was warned about this) is heavy on marketing and light on the the rest. That is to say, the conventional wisdom shared with me is that one should look past the hyperbole and look instead at all the other stuff on offer. Which, by the way, is easier said than done, when walking around at the conference was made to feel like walking around a neon green AI-themed casino.
 
