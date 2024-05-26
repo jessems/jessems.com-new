@@ -1,0 +1,31 @@
+---
+slug: how-to-clear-chat-history-in-virtual-agent
+date: '2024-05-26'
+title: 'How to clear chat history in virtual agent'
+description: 'How to clear chat history in virtual agent'
+tags: 'Virtual Agent, ServiceNow'
+published: true
+category: 'technical'
+---
+
+By default ServiceNow's virtual agent chat widget will display your chat history from previous sessions.
+
+![](./images/20240526081550.png)
+
+You can disable this feature by editing the `sp_widget` record itself with default name `Virtual Agent Service Portal Widget`.
+
+There in the `client_script` field we can extend the setting of the `$ctrl.vaSource` property.
+
+```javascript {7} filename="client_script" /&sysparm_skip_load_history=true/
+$ctrl.toggleWindow = function () {
+    if $(ctrl.isWindowVisible) {
+        // Leave as is
+    } else {
+        if ($ctrl.firstPress) {
+            // Leave as is
+            $ctrl.vaSource = '/$sn-va-web-client-app.do?sysparm_nostack=true&sysparm_stack=no&sysparm_skip_load_history=true';
+            // Leave as is
+        }
+    }
+}
+```
