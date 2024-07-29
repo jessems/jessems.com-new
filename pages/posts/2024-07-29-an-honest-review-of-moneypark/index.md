@@ -84,38 +84,19 @@ After the call they sent me a list of documents to provide them with before our 
 -   **Last tax return** (Steuererklärung)
 -   **Current proof of total equity/total assets** (Aktueller Nachweis gesamtes Eigenkapital/Gesamtvermögen)
 -   **Complete pension fund certificate** (incl. supplementary pension fund) (Vollständiger Pensionskasseausweis inkl. Zusatzpensionskasse)
-    -   <Highlight>You can get this from your pension fund.</Highlight>
 -   **Current debt enforcement information** (_Aktuelle Betreibungsauskunft_)
-    -   <Highlight>
-        	You can order a _Betreibungsregisterauszug_ from your municipality.
-        </Highlight>
 -   **Life and risk insurance** (_Lebens- und Risicoversicherungen_)
 
 #### Documents pertaining to the property:
 
 -   **Sales documentation with 7-10 photos** (interior and exterior view incl. kitchen, bathroom and living room)
-    -   <Highlight>Got this from our real estate agent.</Highlight>
 -   **Building insurance certificate** (incl. indication of m3 and year of construction) (_Gebäudeversicherungsausweis_)
-    -   <Highlight>
-        	Our house was in Ticino and wasn't insured, so we couldn't provide
-        	this.
-        </Highlight>
 -   **Land register extract** (not older than 6 months) (_Grundbuchauszug_)
-    -   <Highlight>Got this from our real estate agent.</Highlight>
 -   **Floor plan** (incl. gross / net living space) (_Grundrisspläne_)
-    -   <Highlight>Got this from our real estate agent.</Highlight>
 -   **Land purchase contract / reservation contract** (draft if necessary) (_Kaufvertrag / Reservationsvertrag_)
-    -   <Highlight>
-        	We were not near a purchase, so didn't provide this.
-        </Highlight>
 -   **Listing of renovations in the last 20 years** (what / when / amount)
-    -   <Highlight>We didn't have this.</Highlight>
 -   **Condominium owner regulations** (_Stockwerkeigentumsreglement_)
-    -   <Highlight>
-        	This wasn't relevant to us because we bought a detached house.
-        </Highlight>
 -   **Usage and management regulations** (_Nutzungs- und Verwaltungsordnung_)
-    -   <Highlight>Same as above, wasn't relevant to us.</Highlight>
 
 ### 05.04 The first meeting
 
