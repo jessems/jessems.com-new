@@ -38,7 +38,7 @@ FieldValueRetriever.prototype = Object.extendsObject(AbstractAjaxProcessor, {
 
       var result = {};
       fields.split(',').forEach(function (field) {
-        result[field] = gr.getValue(field);
+        result[field] = gr.getValue(field) || '';
       });
 
       return JSON.stringify(result);
