@@ -20,6 +20,6 @@ You can use scripted filters in combination with `gs.getUser()` API as follows:
 javascript: gs.getUser().getLanguage();
 ```
 
-![](images/20250115102703.png)
+![](./images/20250115102703.png)
 
 It's interesting to note that `gs.getSession().getLanguage()` doesn't work as a scripted filter. Even though it does work in, say, a background script.
