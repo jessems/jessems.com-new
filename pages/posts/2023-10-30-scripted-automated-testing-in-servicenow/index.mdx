@@ -1,0 +1,95 @@
+---
+slug: scripted-automated-testing-in-servicenow
+date: '2023-10-30'
+title: 'Scripted Automated Testing in ServiceNow'
+description: 'Scripted Automated Testing in ServiceNow'
+tags: 'servicenow, automated testing'
+published: true
+category: 'technical'
+---
+
+This is a collection of tips for automated programmatic testing in ServiceNow.
+
+## Add a comment which includes the name of the file to make your tests searchable
+
+Server Side ATF Scripts don't have descriptive names in the platform. When they sync to your local machine through sn-script-sync, they show up as `sys_atf_step` records with names like `RunServerSideScript-1771.variable-script`. To make them easier to find, I add a comment on the first line with the name of the file. Then at least I can find them using CMD/CTRL + SHIFT + F in VS Code.
+
+```js filename="RunServerSideScript-1771.variable-script"
+// ScriptIncludeName
+
+describe('ScriptIncludeName tests', function () {
+	it('should do something', function () {
+		// test code
+	});
+});
+```
+
+## Using fit to focus on certain test cases
+
+## Define a variable outside of the describe block, so that you can set it in a `beforeAll` or `beforeEach` block and access it in an `it` block
+
+## Make sure you use getValue
+
+## Use toBe() so you can add the second argument
+
+## Put Test Steps of different scopes in dedicated suites
+
+There's an error I've run into when I try to include test steps of different scopes in a single globally scoped test suite. It complains that it doesn't recognize the jasmine methods such as `describe`:
+
+```text
+JavaException: java.lang.SecurityException: describe undefined, maybe missing global qualifier
+```
+
+You can solve this by putting the test steps of different scopes in separate suites. You can then still encapsulate all of them in a globally scoped suite.
+
+import { FileTree } from 'nextra/components'
+ 
+<FileTree>
+  <FileTree.Folder name="Parent Suite (Global)" defaultOpen>
+    <FileTree.Folder name="Child Suite (Scope #1)" defaultOpen>
+      <FileTree.File name="Test (Scope #1)" />
+	</FileTree.Folder>
+	<FileTree.Folder name="Child Suite (Scope #2)" defaultOpen>
+      <FileTree.File name="Test (Scope #2)" />
+	</FileTree.Folder>
+	<FileTree.Folder name="Child Suite (Global)" defaultOpen>
+      <FileTree.File name="Test (Global)" />
+    </FileTree.Folder>
+  </FileTree.Folder>
+</FileTree>
+
+## How to test data broker scripts
+
+```js
+		beforeAll(function () {
+			var GET_SERVER_DATA_DATA_BROKER = 'bd855e8487daf910cc53a8290cbb3547';
+			var grDataBroker = new GlideRecord('sys_ux_data_broker_transform');
+			grDataBroker.get(GET_SERVER_DATA_DATA_BROKER);
+			var gse = new GlideScopedEvaluator();
+			gse.evaluateScript(grDataBroker, 'script');
+	});
+```
+
+## How to use a delay/sleep in programmatic tests
+
+Servicenow has some guidance [here](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB1737777).
+
+```js
+(function(outputs, steps, params, stepResult, assertEqual) {
+
+    // add test script here
+
+    var counter = 0;
+
+    var timeout = 560; // this is set to 9 minutes. You can change the time according to your requirement. Time is in seconds.
+
+    while (counter <= timeout){
+
+        counter++;
+
+        sn_atf.AutomatedTestingFramework.waitOneSecond();
+
+    }
+
+})(outputs, steps, params, stepResult, assertEqual);
+```
