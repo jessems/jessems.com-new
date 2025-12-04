@@ -1,11 +1,11 @@
 ---
 slug: how-to-create-a-clickable-breadboard-in-miro
-date: "2021-05-19"
-title: "How to create a clickable breadboard in Miro"
-description: "A quick tutorial on how to create a clickable prototype in Miro"
-tags: "miro, design"
-category: "technical article"
+date: '2021-05-19'
+title: How to create a clickable breadboard in Miro
+description: A quick tutorial on how to create a clickable prototype in Miro
+category: technical article
 published: true
+tag: 'miro, design'
 ---
 
 I got the idea of breadboards from Ryan Singer in his book [Shape Up](https://basecamp.com/shapeup).

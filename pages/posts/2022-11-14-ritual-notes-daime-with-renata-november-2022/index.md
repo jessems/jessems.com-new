@@ -1,11 +1,11 @@
 ---
 slug: daime-with-renata
-date: "2022-11-14"
-title: "Ritual Notes: Daime with Renata November 2022"
-description: "Ritual Notes"
-tags: "daime, healing"
+date: '2022-11-14'
+title: 'Ritual Notes: Daime with Renata November 2022'
+description: Ritual Notes
 published: true
-category: "ritual notes"
+category: ritual notes
+tag: 'daime, healing'
 ---
 
 Ritual: **Santo Daime — Concentracão + Cruzerinho**

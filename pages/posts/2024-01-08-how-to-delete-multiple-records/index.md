@@ -1,11 +1,11 @@
 ---
 slug: how-to-delete-multiple-records
 date: '2024-01-08'
-title: 'How to delete multiple records'
-description: 'How to delete multiple records'
-tags: 'ServiceNow'
+title: How to delete multiple records
+description: How to delete multiple records
 published: true
-category: 'technical'
+category: technical
+tag: servicenow
 ---
 
 Below is the best way I know to delete multiple records using scripting. No need to put deleteMultiple() in a while loop, it will iterate over the records by itself.

@@ -1,11 +1,11 @@
 ---
 slug: what-is-the-graph
-date: "2021-03-10"
-title: "What is The Graph"
-description: "What is the Graph?"
-tags: "blockchain"
-category: "technical article"
+date: '2021-03-10'
+title: What is The Graph
+description: What is the Graph?
+category: technical article
 published: true
+tag: blockchain
 ---
 
 [The Graph](https://thegraph.com/) makes it easy for developers to retrieve data that is stored on public blockchains such as Ethereum (for simplicity's sake I will simply refer to "blockchains such as Ethereum" as simply: "Ethereum"). It does this by indexing the Ethereum blockchain and making these indexes available through an API.

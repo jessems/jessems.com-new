@@ -1,11 +1,11 @@
 ---
 slug: catalog-task-from-script
-date: "2022-11-22"
-title: "Creating a Catalog Task from a script in Service Now"
-description: ""
-tags: "servicenow, technical"
+date: '2022-11-22'
+title: Creating a Catalog Task from a script in Service Now
+description: ''
 published: true
-category: "technical"
+category: technical
+tag: 'servicenow, technical'
 ---
 
 Although the Flow Designer has a built-in Action for creating a new Task, sometimes you may want to create one programmatically. Here is how you can do that. The required fields on the `sc_task` table are `short_description` and `assignment_group`.

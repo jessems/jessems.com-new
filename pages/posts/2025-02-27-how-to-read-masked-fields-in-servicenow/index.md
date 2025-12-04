@@ -1,11 +1,11 @@
 ---
 slug: how-to-read-masked-fields-in-servicenow
 date: '2025-02-27'
-title: 'How to read masked fields in ServiceNow'
-description: 'How to read masked fields in ServiceNow'
-tags: 'servicenow'
+title: How to read masked fields in ServiceNow
+description: How to read masked fields in ServiceNow
 published: true
-category: 'technical'
+category: technical
+tag: servicenow
 ---
 
 ## Problem

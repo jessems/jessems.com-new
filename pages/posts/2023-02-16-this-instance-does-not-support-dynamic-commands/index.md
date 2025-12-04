@@ -1,11 +1,13 @@
 ---
 slug: this-instance-does-not-support-dynamic-commands
-date: "2023-02-16"
-title: "Resolving the warning: This instance does not support dynamic commands. Functionality will be limited."
-description: "In this tutorial you will learn how to create custom UI Builder components"
-tags: "servicenow"
+date: '2023-02-16'
+title: >-
+  Resolving the warning: This instance does not support dynamic commands.
+  Functionality will be limited.
+description: In this tutorial you will learn how to create custom UI Builder components
 published: true
-category: "technical"
+category: technical
+tag: servicenow
 ---
 
 When first connecting to your ServiceNow instance via the ServiceNow CLI you might see the following warning:

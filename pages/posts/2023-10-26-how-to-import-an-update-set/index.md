@@ -1,11 +1,11 @@
 ---
 slug: how-to-import-an-update-set
 date: '2023-10-26'
-title: 'How to import an update set'
-description: 'How to import an update set'
-tags: 'Update Set, ServiceNow'
+title: How to import an update set
+description: How to import an update set
 published: true
-category: 'technical'
+category: technical
+tag: 'update set, servicenow'
 ---
 
 After you've exported an update set to XML, you can import it as follows:

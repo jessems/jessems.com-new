@@ -1,11 +1,11 @@
 ---
 slug: accessing-record-field-values-in-ui-builder
 date: '2025-01-16'
-title: 'Accessing record field values in UI Builder'
-description: 'Accessing record field values in UI Builder'
-tags: 'ui builder'
+title: Accessing record field values in UI Builder
+description: Accessing record field values in UI Builder
 published: true
-category: 'technical'
+category: technical
+tag: ui builder
 ---
 
 ## Problem

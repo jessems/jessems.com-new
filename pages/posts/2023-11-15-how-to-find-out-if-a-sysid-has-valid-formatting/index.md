@@ -1,11 +1,11 @@
 ---
 slug: how-to-find-out-if-a-sysid-has-valid-formatting
 date: '2023-11-15'
-title: 'How to find out if a sysId has valid formatting'
+title: How to find out if a sysId has valid formatting
 description: ''
-tags: 'ServiceNow'
 published: true
-category: 'technical'
+category: technical
+tag: servicenow
 ---
 
 Sometimes you want to check whether a field contains a valid sysId without doing a lookup with `GlideRecord`. In those cases you can use the following method:

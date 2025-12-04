@@ -1,11 +1,11 @@
 ---
 slug: how-to-pass-catalog-item-variables-to-catalog-tasks-sc_task
 date: '2024-10-25'
-title: 'How to pass catalog item variables to catalog tasks (sc_task)'
+title: How to pass catalog item variables to catalog tasks (sc_task)
 description: ''
-tags: ''
 published: true
 category: ''
+tag: ''
 ---
 
 ## Requirement

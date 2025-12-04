@@ -1,11 +1,11 @@
 ---
 slug: how-to-change-name-of-custom-next-component
-date: "2023-02-22"
-title: "How to change the name of a custom next component."
-description: "A brief quick guide on how to change the name of a custom next component."
-tags: "servicenow"
+date: '2023-02-22'
+title: How to change the name of a custom next component.
+description: A brief quick guide on how to change the name of a custom next component.
 published: true
-category: "technical"
+category: technical
+tag: servicenow
 ---
 
 ## Problem

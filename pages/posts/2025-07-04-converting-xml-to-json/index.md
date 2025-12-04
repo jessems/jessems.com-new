@@ -1,11 +1,11 @@
 ---
 slug: converting-xml-to-json
 date: '2025-07-04'
-title: 'Converting XML to JSON'
-description: 'Converting XML to JSON'
-tags: 'servicenow'
+title: Converting XML to JSON
+description: Converting XML to JSON
 published: true
-category: 'technical'
+category: technical
+tag: servicenow
 ---
 
 I used to use `XMLDocument` to convert XML to JSON, as it has a handy pretty print functionality for XML. However, you cannot call it from scoped apps. So this is the current best way to do it:

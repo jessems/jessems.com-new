@@ -1,11 +1,11 @@
 ---
 slug: best-practices-for-deploying-virtual-agent-implementations
 date: '2024-07-30'
-title: 'Best practices for deploying Virtual Agent implementations'
+title: Best practices for deploying Virtual Agent implementations
 description: ''
-tags: ''
 published: true
 category: ''
+tag: ''
 ---
 
 As of this writing, ServiceNow isn't entirely clear on what the best practices are with regards to deploying a Virtual Agent implementation. Typically the moving parts are (1) VA Topics, (2) NLU models and (3) Misc. configurations.

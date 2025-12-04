@@ -1,11 +1,11 @@
 ---
 slug: validating-email-address-on-a-catalog-item
-date: "2022-12-05"
-title: "Validating an email address"
-description: ""
-tags: "servicenow, technical"
+date: '2022-12-05'
+title: Validating an email address
+description: ''
 published: true
-category: "technical"
+category: technical
+tag: 'servicenow, technical'
 ---
 
 Sometimes you may want to include an email address field on a catalog item in service now.

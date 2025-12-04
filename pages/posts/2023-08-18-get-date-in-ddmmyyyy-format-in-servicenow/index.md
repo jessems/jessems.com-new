@@ -1,11 +1,11 @@
 ---
 slug: get-date-in-ddmmyyyy-format-in-servicenow
 date: '2023-08-18'
-title: 'Get date in DD.MM.YYYY format in ServiceNow'
-description: 'et date in DD.MM.YYYY format in ServiceNow'
-tags: 'servicenow, date'
+title: Get date in DD.MM.YYYY format in ServiceNow
+description: et date in DD.MM.YYYY format in ServiceNow
 published: true
-category: 'technical'
+category: technical
+tag: 'servicenow, date'
 ---
 
 This code gets the current date in a desired format e.g. dd.MM.YYYY or dd/MM/YYYY

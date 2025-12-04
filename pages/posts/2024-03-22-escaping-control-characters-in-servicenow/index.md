@@ -1,11 +1,13 @@
 ---
 slug: escaping-control-characters-in-servicenow
 date: '2024-03-22'
-title: 'Escaping control characters in ServiceNow'
-description: "How to escape control characters such as \n in ServiceNow"
-tags: 'ServiceNow'
+title: Escaping control characters in ServiceNow
+description: |-
+  How to escape control characters such as 
+   in ServiceNow
 published: true
-category: 'technical'
+category: technical
+tag: servicenow
 ---
 
 Sometimes when you want to make an API request and you want to send a long string which contains newlines (`\n`), you might run into issues. Recently I got this error for instance:

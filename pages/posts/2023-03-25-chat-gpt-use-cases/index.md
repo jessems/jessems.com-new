@@ -1,11 +1,11 @@
 ---
 slug: chat-gpt-use-cases
-date: "2023-03-25"
-title: "Chat GPT Use Cases (Mostly Technical)"
-description: "A collection of GPT use cases from across the internet"
-tags: "GPT, GPT-4, LLM"
+date: '2023-03-25'
+title: Chat GPT Use Cases (Mostly Technical)
+description: A collection of GPT use cases from across the internet
 published: true
-category: "technical"
+category: technical
+tag: 'gpt, gpt-4, llm'
 ---
 
 ## Debugging

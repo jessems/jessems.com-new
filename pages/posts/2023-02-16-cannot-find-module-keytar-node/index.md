@@ -1,11 +1,13 @@
 ---
 slug: cannot-find-module-build-release-keytar-node
-date: "2023-02-16"
-title: "Resolving Error: Cannot find module '../build/Release/keytar.node'"
-description: "How to resolve the error Error: Cannot find module '../build/Release/keytar.node'"
-tags: "servicenow"
+date: '2023-02-16'
+title: 'Resolving Error: Cannot find module ''../build/Release/keytar.node'''
+description: >-
+  How to resolve the error Error: Cannot find module
+  '../build/Release/keytar.node'
 published: true
-category: "technical"
+category: technical
+tag: servicenow
 ---
 
 While trying to get started with local development of custom Next Experience components I ran into the following issue after installing the ServiceNow CLI and the `ui-component` extension.

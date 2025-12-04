@@ -1,11 +1,11 @@
 ---
 slug: interesting-servicenow-projects
 date: '2024-07-16'
-title: 'Interesting ServiceNow Projects'
+title: Interesting ServiceNow Projects
 description: ''
-tags: ''
 published: true
 category: ''
+tag: ''
 ---
 
 Occasionally I come across interesting projects built around the ServiceNow platform. Some are ServiceNow scripts, others are browser extensions, and some even fall outside of those categories. Here are a few that I've found worth remembering:

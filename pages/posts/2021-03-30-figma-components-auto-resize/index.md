@@ -1,11 +1,11 @@
 ---
 slug: how-to-create-figma-components-that-auto-resize-to-fit-their-contents
-date: "2021-03-21"
-title: "How to create Figma components that auto-resize to fit their contents"
-description: "How to create Figma components that auto-resize to fit their contents"
-tags: "figma, design"
-category: "technical article"
+date: '2021-03-21'
+title: How to create Figma components that auto-resize to fit their contents
+description: How to create Figma components that auto-resize to fit their contents
+category: technical article
 published: true
+tag: 'figma, design'
 ---
 
 ## The problem

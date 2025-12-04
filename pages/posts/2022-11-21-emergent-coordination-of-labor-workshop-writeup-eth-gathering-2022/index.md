@@ -1,11 +1,11 @@
 ---
 slug: emergent-coordination-of-labor-eth-gathering-2022
-date: "2022-11-21"
-title: "Emergent Coordination of Labor Workshop Writeup: ETH Gathering 2022"
-description: "Workshop writeup"
-tags: "web3, dao"
+date: '2022-11-21'
+title: 'Emergent Coordination of Labor Workshop Writeup: ETH Gathering 2022'
+description: Workshop writeup
 published: true
-category: "facilitation"
+category: facilitation
+tag: 'web3, dao'
 ---
 
 We (Deep Work) ran a relatively new workshop format at ETH Gathering 2022. The goal of this workshop is to help a group of people coordinate their labor.

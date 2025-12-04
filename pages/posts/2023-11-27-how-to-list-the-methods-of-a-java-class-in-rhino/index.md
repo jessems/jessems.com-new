@@ -1,11 +1,11 @@
 ---
 slug: how-to-list-the-methods-of-a-java-class-in-rhino
 date: '2023-11-27'
-title: 'How to list the methods of a Java class in Rhino'
-description: 'How to list the methods of a Java class in Rhino'
-tags: 'ServiceNow'
+title: How to list the methods of a Java class in Rhino
+description: How to list the methods of a Java class in Rhino
 published: true
-category: 'technical'
+category: technical
+tag: servicenow
 ---
 
 ServiceNow runs on the Rhino JavaScript engine which itself runs on Java. I don't know much about its inner workings, but I do know that certain Java classes are exposed to the JavaScript layer and most of these are not documented.

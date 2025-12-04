@@ -1,11 +1,16 @@
 ---
 slug: remote-api-request-ui-builder
 date: '2023-01-30'
-title: 'How to make a remote REST API request using UI Builder (ServiceNow Now Experience)'
-description: 'In this tutorial you will learn how to make a REST request to a remote API from within UI Builder. This allows you to pull in external data resources into your Now Experience Configurable Workspace.'
-tags: 'servicenow'
+title: >-
+  How to make a remote REST API request using UI Builder (ServiceNow Now
+  Experience)
+description: >-
+  In this tutorial you will learn how to make a REST request to a remote API
+  from within UI Builder. This allows you to pull in external data resources
+  into your Now Experience Configurable Workspace.
 published: true
-category: 'technical'
+category: technical
+tag: servicenow
 ---
 
 import YouTube from '@components/YouTube'

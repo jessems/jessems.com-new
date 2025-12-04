@@ -1,11 +1,11 @@
 ---
 slug: filter-by-the-current-users-language
 date: '2025-01-15'
-title: "Filter by the current user's language"
-description: "Filter by the current user's language"
-tags: 'servicenow'
+title: Filter by the current user's language
+description: Filter by the current user's language
 published: true
-category: 'technical'
+category: technical
+tag: servicenow
 ---
 
 ## Problem

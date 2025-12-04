@@ -1,11 +1,11 @@
 ---
 slug: how-to-delete-a-record-in-servicenow-via-script
 date: '2024-07-15'
-title: 'How to delete a record in ServiceNow via script'
+title: How to delete a record in ServiceNow via script
 description: ''
-tags: ''
 published: true
 category: ''
+tag: ''
 ---
 
 ## Deleting a single record

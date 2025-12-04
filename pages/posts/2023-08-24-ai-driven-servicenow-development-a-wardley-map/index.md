@@ -3,9 +3,9 @@ slug: ai-driven-servicenow-development-a-wardley-map
 date: '2023-08-24'
 title: 'AI Driven ServiceNow Development: A Wardley Map'
 description: 'AI Driven ServiceNow Development: A Wardley Map'
-tags: 'Wardley Maps, ServiceNow, AI'
 published: true
-category: 'non-technical'
+category: non-technical
+tag: 'wardley maps, servicenow, ai'
 ---
 
 ![](./images/20230824161604.png)

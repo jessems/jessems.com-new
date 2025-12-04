@@ -1,11 +1,11 @@
 ---
 slug: installing-chebpy-on-google-colab
-date: "2021-02-23"
-title: "Installing chebpy on google colab"
-description: "Installing chebpy on google colab"
-category: "technical article"
-tags: "python, chebpy"
+date: '2021-02-23'
+title: Installing chebpy on google colab
+description: Installing chebpy on google colab
+category: technical article
 published: true
+tag: 'python, chebpy'
 ---
 
 When you try to install the `chebpy` package on Google Colab like so:

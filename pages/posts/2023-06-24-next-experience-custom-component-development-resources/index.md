@@ -1,11 +1,11 @@
 ---
 slug: next-experience-custom-component-development-resources
-date: "2023-06-24"
-title: "Next Experience Custom Component Development Resources"
-description: "Resources for building custom Next components"
-tags: "servicenow, next, react, ui-framework, custom-component"
+date: '2023-06-24'
+title: Next Experience Custom Component Development Resources
+description: Resources for building custom Next components
 published: true
-category: "technical"
+category: technical
+tag: 'servicenow, next, react, ui-framework, custom-component'
 ---
 
 This is a collection of resources I've found useful when developing custom components for ServiceNow's Next Experience.

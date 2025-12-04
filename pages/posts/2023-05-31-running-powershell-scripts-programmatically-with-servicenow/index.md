@@ -1,11 +1,11 @@
 ---
 slug: running-powershell-scripts-programmatically-with-servicenow
-date: "2023-05-31"
-title: "Running PowerShell scripts programmatically with ServiceNow"
-description: "Running PowerShell scripts programmatically with ServiceNow"
-tags: "servicenow, powershell"
+date: '2023-05-31'
+title: Running PowerShell scripts programmatically with ServiceNow
+description: Running PowerShell scripts programmatically with ServiceNow
 published: true
-category: "technical"
+category: technical
+tag: 'servicenow, powershell'
 ---
 
 I've created an extended and updated version of John J. Andersen's [2013 PowerShellProbe class](https://john-james-andersen.com/blog/service-now/powershell-probe-and-utility-for-servicenow.html) for ServiceNow. It allows you to run custom PowerShell scripts on a MID Server from a Script Include or Background script. You can get it [here](https://gist.github.com/jessems/5a5f78209c3cd24f93dbf24906f521ea).

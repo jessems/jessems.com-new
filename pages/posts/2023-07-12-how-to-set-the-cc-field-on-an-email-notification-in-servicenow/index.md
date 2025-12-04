@@ -1,11 +1,11 @@
 ---
 slug: how-to-set-the-cc-field-on-an-email-notification-in-servicenow
 date: '2023-07-12'
-title: 'How to set the cc field on an email notification in ServiceNow'
-description: 'How to set the cc field on an email notification in ServiceNow'
-tags: 'servicenow'
+title: How to set the cc field on an email notification in ServiceNow
+description: How to set the cc field on an email notification in ServiceNow
 published: true
-category: 'technical'
+category: technical
+tag: servicenow
 ---
 
 In order to set the cc field on an email notification in ServiceNow you need to create a Mail Script (`sys_script_mail`) record.

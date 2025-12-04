@@ -1,11 +1,11 @@
 ---
 slug: some-thoughts-on-croatia
 date: '2023-09-27'
-title: 'Some thoughts on Croatia'
-description: 'Some thoughts on Croatia'
-tags: 'croatia, notes'
+title: Some thoughts on Croatia
+description: Some thoughts on Croatia
 published: true
-category: 'non-technical'
+category: non-technical
+tag: 'croatia, notes'
 ---
 
 As I'm writing this I'm sitting in Split airport after spending a couple of days with my university fraternity celebrating our 25th anniversary. We rented what can best be described as a repurposed hotel of sorts which was able to house the 27 of us. There was an empty reception at the entrance and each floor had 3-4 rooms for 2 people or more.

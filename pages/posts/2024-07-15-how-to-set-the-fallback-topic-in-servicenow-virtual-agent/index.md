@@ -1,11 +1,11 @@
 ---
 slug: how-to-set-the-fallback-topic-in-servicenow-virtual-agent
 date: '2024-07-15'
-title: 'How to set the fallback topic in ServiceNow Virtual Agent'
-description: 'How to set the fallback topic in ServiceNow Virtual Agent'
-tags: 'ServiceNow, Virtual Agent, Chatbot, Fallback Topic'
+title: How to set the fallback topic in ServiceNow Virtual Agent
+description: How to set the fallback topic in ServiceNow Virtual Agent
 published: true
-category: 'technical'
+category: technical
+tag: 'servicenow, virtual agent, chatbot, fallback topic'
 ---
 
 Virtual Agent has a default Topic which is routes the user to if Topic Discovery doesn't yield a different Topic.

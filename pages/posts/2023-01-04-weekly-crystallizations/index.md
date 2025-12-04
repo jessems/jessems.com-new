@@ -1,11 +1,11 @@
 ---
 slug: weekly-crystallizations
-date: "2023-01-04"
-title: "Weekly Crystallizations"
-description: ""
-tags: "sensemaking"
+date: '2023-01-04'
+title: Weekly Crystallizations
+description: ''
 published: true
-category: "essay"
+category: essay
+tag: sensemaking
 ---
 
 This is the welcome email that goes out to new subscribers of [Weekly Crystallizations](jessems.substack.com).

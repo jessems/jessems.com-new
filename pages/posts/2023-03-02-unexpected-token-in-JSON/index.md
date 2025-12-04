@@ -1,11 +1,13 @@
 ---
 slug: unexpected-token-in-json-at-position-0
-date: "2023-03-02"
-title: "Resolving: Unexpected token < in JSON at position 0"
-description: "How to resolve: Unexpected token < in JSON at position 0 in 'https://<instance-name>.service-now.com/api/now/table/sys_properties':"
-tags: "servicenow"
+date: '2023-03-02'
+title: 'Resolving: Unexpected token < in JSON at position 0'
+description: >-
+  How to resolve: Unexpected token < in JSON at position 0 in
+  'https://<instance-name>.service-now.com/api/now/table/sys_properties':
 published: true
-category: "technical"
+category: technical
+tag: servicenow
 ---
 
 If you've tried to start the local development server with the ServiceNow CLI like so:

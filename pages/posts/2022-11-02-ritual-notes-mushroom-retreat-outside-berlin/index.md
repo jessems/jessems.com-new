@@ -1,11 +1,11 @@
 ---
 slug: mushroom-retreat-outside-berlin-2022
-date: "2022-11-02"
-title: "Ritual Notes: Mushroom Retreat Outside Berlin 2022"
-description: "Ritual Notes"
-tags: "mushrooms, healing"
+date: '2022-11-02'
+title: 'Ritual Notes: Mushroom Retreat Outside Berlin 2022'
+description: Ritual Notes
 published: true
-category: "ritual notes"
+category: ritual notes
+tag: 'mushrooms, healing'
 ---
 
 ![](./images/20221102070951.png)

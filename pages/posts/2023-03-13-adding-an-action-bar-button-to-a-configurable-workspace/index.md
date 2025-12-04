@@ -1,11 +1,11 @@
 ---
 slug: adding-an-action-bar-button-to-a-configurable-workspace
-date: "2023-03-13"
-title: "Adding an action bar button to a configurable workspace"
-description: "How to add a button to the action bar on a form in a configurable workspace."
-tags: "servicenow"
+date: '2023-03-13'
+title: Adding an action bar button to a configurable workspace
+description: How to add a button to the action bar on a form in a configurable workspace.
 published: true
-category: "technical"
+category: technical
+tag: servicenow
 ---
 
 ## What we'll be building

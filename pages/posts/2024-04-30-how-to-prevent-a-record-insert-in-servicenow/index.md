@@ -1,11 +1,11 @@
 ---
 slug: how-to-prevent-a-record-insert-in-servicenow
 date: '2024-04-30'
-title: 'How to prevent a record insert in ServiceNow'
-description: 'How to prevent a record insert in ServiceNow'
-tags: 'ServiceNow'
+title: How to prevent a record insert in ServiceNow
+description: How to prevent a record insert in ServiceNow
 published: true
-category: 'technical'
+category: technical
+tag: servicenow
 ---
 
 You can make a field mandatory via its dictionary definition, but this still allows for scripted / server-side inserts.

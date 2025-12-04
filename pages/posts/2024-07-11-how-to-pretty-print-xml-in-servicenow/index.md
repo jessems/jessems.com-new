@@ -1,11 +1,11 @@
 ---
 slug: how-to-pretty-print-xml-in-servicenow
 date: '2024-07-11'
-title: 'How to pretty print XML in ServiceNow'
-description: 'How to pretty print XML in ServiceNow'
-tags: 'ServiceNow'
+title: How to pretty print XML in ServiceNow
+description: How to pretty print XML in ServiceNow
 published: true
-category: 'technical'
+category: technical
+tag: servicenow
 ---
 
 Sometimes it's helpful to pretty print certain entities like JSON objects or XML. For JSON objects, luckily, we have `JSNO.stringify(yourVar, null, 2)`, which nicely outputs the JSON object.

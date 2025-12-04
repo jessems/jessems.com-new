@@ -1,11 +1,11 @@
 ---
 slug: fixing-intellisense-in-vscode-using-tailwind-on-a-mac
-date: "2022-10-21"
-title: "Fixing intellisense in vscode using tailwind on a mac"
-description: "A quick tutorial on how to get intellisense working with tailwind on a mac"
-tags: "tailwind, reactjs"
+date: '2022-10-21'
+title: Fixing intellisense in vscode using tailwind on a mac
+description: A quick tutorial on how to get intellisense working with tailwind on a mac
 published: true
-category: "technical article"
+category: technical article
+tag: 'tailwind, reactjs'
 ---
 
 When setting up Tailwind the maintainers recommend that you install the Tailwind extension in VSCode. One of the features of this extension is intellisense (autocomplete).

@@ -1,11 +1,11 @@
 ---
 slug: deleting-records-after-a-transoform-map-completes
 date: '2023-12-21'
-title: 'Deleting records after a transform map completes'
-description: 'Deleting records after a transform map completes'
-tags: 'ServiceNow'
+title: Deleting records after a transform map completes
+description: Deleting records after a transform map completes
 published: true
-category: 'technical'
+category: technical
+tag: servicenow
 ---
 
 After a transform script completes, you may want to delete certain records depending on some condition. For instance, if you're periodically importing a list of job openings from an external API, you may want to delete the job opening records as soon as they're no longer included in the API response.

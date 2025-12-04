@@ -1,11 +1,11 @@
 ---
 slug: remove-html-from-string-in-servicenow
 date: '2024-12-15'
-title: 'Remove HTML from string in ServiceNow'
-description: 'Remove HTML from string in ServiceNow'
-tags: 'servicenow, javascript, html, string'
+title: Remove HTML from string in ServiceNow
+description: Remove HTML from string in ServiceNow
 published: true
-category: 'technical'
+category: technical
+tag: 'servicenow, javascript, html, string'
 ---
 
 ## Problem

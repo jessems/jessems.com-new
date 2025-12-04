@@ -1,11 +1,11 @@
 ---
 slug: using-gslog-from-scoped-apps
 date: '2024-07-08'
-title: 'Using gs.log from scoped apps'
+title: Using gs.log from scoped apps
 description: ''
-tags: ''
 published: true
 category: ''
+tag: ''
 ---
 
 There are different ways of logging in ServiceNow, but one cool thing about using `gs.log()` is that you can specify a second argument, `source` which shows up as a separate column in the syslog table. This makes it easy to filter for your logs.

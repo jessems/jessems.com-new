@@ -1,11 +1,11 @@
 ---
 slug: how-to-run-a-script-in-a-field-from-another-script
 date: '2024-02-07'
-title: 'How to run a script in a field from another script'
-description: 'How to run a script in a field from another script'
-tags: 'ServiceNow'
+title: How to run a script in a field from another script
+description: How to run a script in a field from another script
 published: true
-category: 'technical'
+category: technical
+tag: servicenow
 ---
 
 You may want to run a piece of JavaScript which is defined on a field on a particular record. This may or may not be a `script` field.

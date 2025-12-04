@@ -1,11 +1,16 @@
 ---
 slug: 2024-05-02-fixing-cannot-commit-update-set-update-scope-id-is-different
-date: "2024-05-02"
-title: "Fixing 'Cannot commit Update Set: Update scope id is different than update set scope id' errors in exported update sets"
-description: ""Fixing 'Cannot commit Update Set: Update scope id is different than update set scope id' errors in exported update sets""
-tags: "ServiceNow"
+date: '2024-05-02'
+title: >-
+  Fixing 'Cannot commit Update Set: Update scope id is different than update set
+  scope id' errors in exported update sets
+description: ''
+Fixing 'Cannot commit Update Set: >-
+  Update scope id is different than update set scope id' errors in exported
+  update sets""
 published: true
-category: "technical"
+category: technical
+tag: servicenow
 ---
 
 There is an issue that occurs with update sets in ServiceNow where, inadvertently, updates within a given scope are assigned to an update set in a different scope. I'm still unclear on how this happens precisely, but it seems to be a common issue.

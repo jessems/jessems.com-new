@@ -1,11 +1,11 @@
 ---
 slug: advice-for-organizing-update-sets
-date: "2023-06-30"
-title: "Advice for Organizing Update Sets"
-description: ""
-tags: ""
+date: '2023-06-30'
+title: Advice for Organizing Update Sets
+description: ''
 published: false
-category: ""
+category: ''
+tag: ''
 ---
 
 ## Use the Add to Update Set plugin and its convention

@@ -1,11 +1,11 @@
 ---
 slug: file-enumitemsty-not-found
 date: '2023-09-03'
-title: 'File enumitem.sty not found'
-description: 'File enumitem.sty not found'
-tags: 'latex, pandoc'
+title: File enumitem.sty not found
+description: File enumitem.sty not found
 published: true
-category: 'technical'
+category: technical
+tag: 'latex, pandoc'
 ---
 
 I was trying to convert a markdown file to PDF on my M1 Mac using this pandoc command:

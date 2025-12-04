@@ -1,11 +1,11 @@
 ---
 slug: deleting-records-after-a-transform-map
 date: '2024-01-10'
-title: 'Deleting records after a transform map'
-description: 'Deleting records after a transform map'
-tags: 'ServiceNow'
+title: Deleting records after a transform map
+description: Deleting records after a transform map
 published: true
-category: 'technical'
+category: technical
+tag: servicenow
 ---
 
 There are two ways to delete records after a transform map:

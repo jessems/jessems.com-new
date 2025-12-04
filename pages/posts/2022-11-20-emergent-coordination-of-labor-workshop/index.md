@@ -1,11 +1,11 @@
 ---
 slug: emergent-coordination-of-labor-workshop
-date: "2022-11-20"
-title: "Emergent Coordination of Labor Workshop"
-description: "Workshop description"
-tags: "web3, dao"
+date: '2022-11-20'
+title: Emergent Coordination of Labor Workshop
+description: Workshop description
 published: true
-category: "facilitation"
+category: facilitation
+tag: 'web3, dao'
 ---
 
 This is a workshop format that we ran at the ETH Gathering 2022. It's particularly useful for a group of people (regardless if they know each other) to coordinate on (1) what work needs to be done? and (2) who's going to do it. It's an alternative to a central committee or person dictating what works needs to be done.

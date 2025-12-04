@@ -1,0 +1,111 @@
+---
+slug: using-typescript-with-the-servicenow-sdk
+date: '2024-07-16'
+title: Using TypeScript with the ServiceNow SDK
+description: Using TypeScript with the ServiceNow SDK
+published: true
+category: technical
+tag: 'servicenow, typescript, sdk'
+---
+
+import { Steps } from 'nextra/components'
+
+asd
+
+<Steps>
+### Add a TSConfig file
+
+Create a `tsconfig.json` file that looks like this:
+
+```json filename="tsconfig.json"
+{
+    "compilerOptions": {
+       "outDir": "dist/module",
+       "rootDir": "src",
+       "allowJs": true,
+   },
+   "include": ["./src/**/*"]
+ }
+ ```
+
+### Install TypeScript
+
+```bash
+npm install typescript@latest --save-dev
+```
+
+This will create a `package.json` file and a `package-Lock.json` file in your project directory. The `package.json` file should look like this:
+
+```json
+{
+  "devDependencies": {
+    "typescript": "^5.5.3" // Whatever TypeScript version is the latest
+  }
+}
+```
+
+### Add devDependencies
+
+Add the following devDependencies to your `package.json` file:
+
+```json {4-6}
+{
+    // ...
+    "devDependencies": {
+        "@servicenow/eslint-plugin-sdk-app-plugin": "*",
+        "@servicenow/glide": "^25.0.3",
+        "eslint": "8.50.0",
+        "typescript": "^5.5.3"
+    }
+}
+
+```
+
+### Add a build script
+
+Add a build script to your `package.json` file:
+
+```json
+{
+    // ...
+    "scripts": {
+        "build": "tsc --build --clean && tsc --build && now-sdk build"
+    }
+}
+```
+
+### Compile your TypeScript files into JavaScript modules
+
+```bash
+npm run build
+```
+
+### Deploy your application
+
+```bash
+now-sdk deploy
+```
+
+Note that at this point the now-sdk will output an overview of the files that were updated, but that this overview might be wrong. It was for me, as it consistently showed that 0 files were updated:
+
+```bash
+Printing most recent installation stats for x_comp_test:
+
+        summary_complete_status: complete
+        deployment_started: 2024-07-16 12:21:06
+        deployment_finished: 2024-07-16 12:21:06
+        added: 0
+        updated: 0
+        deleted: 0
+        skipped: 0
+        skipped_and_not_different: 0
+        skipped_error: 0
+        sys_id: 65676c7bdb130250553e8f8d13961990
+```
+
+</Steps>
+
+## References
+
+- [Using TypeScript (Official Docs)](https://docs.servicenow.com/bundle/washingtondc-api-reference/page/script/sdk/concept/using-typescript.html)
+- [ServiceNow SDK TypeScript Example (GitHub)](https://github.com/patrickw14/servicenow-sdk-typescript-example/blob/main/tsconfig.json)

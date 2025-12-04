@@ -1,11 +1,11 @@
 ---
 slug: my-knowledge-24-recap
 date: '2024-05-13'
-title: 'My Knowledge 24 Recap'
-description: 'My Knowledge 24 Recap'
-tags: 'ServiceNow, Knowledge'
+title: My Knowledge 24 Recap
+description: My Knowledge 24 Recap
 published: true
 category: ''
+tag: 'servicenow, knowledge'
 ---
 
 I just came back from ServiceNow's yearly "Knowledge" conference as a first-time participant. I came away moderately impressed and hopeful. Which one could chalk up as a win for ServiceNow, given that my starting point was: somewhat disillusioned about ServiceNow as a platform (the developer experience in particular) & bewildered by the unbridled enthusiasm seen among many of its staunchest acolytes.

@@ -1,11 +1,11 @@
 ---
 slug: sleep-in-serverside-scripts
 date: '2024-03-15'
-title: 'Sleep in server-side scripts'
-description: 'Sleep in server-side scripts'
-tags: 'ServiceNow'
+title: Sleep in server-side scripts
+description: Sleep in server-side scripts
 published: true
-category: 'technical'
+category: technical
+tag: servicenow
 ---
 
 Sometimes you want to delay the execution of a server-side script. For example, you might want to wait until a record is updated before continuing. You can use the `gs.sleep` function to delay the execution of a script.

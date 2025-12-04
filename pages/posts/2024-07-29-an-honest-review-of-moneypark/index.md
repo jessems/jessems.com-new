@@ -1,11 +1,11 @@
 ---
 slug: an-honest-review-of-moneypark
 date: '2024-07-29'
-title: 'An honest review of Moneypark'
-description: 'An honest review of Moneypark'
-tags: ''
+title: An honest review of Moneypark
+description: An honest review of Moneypark
 published: true
 category: ''
+tag: ''
 ---
 
 My wife and I recently took out a mortgage through Moneypark. It was a mixed experience and I thought sharing our experience would be useful to others.

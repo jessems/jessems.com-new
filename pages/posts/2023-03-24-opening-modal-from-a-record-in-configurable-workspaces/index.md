@@ -1,11 +1,13 @@
 ---
 slug: opening-modal-from-a-record-in-configurable-workspaces
 date: '2023-03-24'
-title: 'Opening a modal from a record in Configurable Workspaces'
-description: 'How to open a modal from a record in Configurable Workspaces, configured through UI Builder.'
-tags: 'ServiceNow, UI Builder, Next Experience'
+title: Opening a modal from a record in Configurable Workspaces
+description: >-
+  How to open a modal from a record in Configurable Workspaces, configured
+  through UI Builder.
 published: true
-category: 'technical'
+category: technical
+tag: 'servicenow, ui builder, next experience'
 ---
 
 ## Prerequisites
@@ -53,11 +55,12 @@ category: 'technical'
 
 ## Step 3: Configure the Variant
 
-2. Click on the hamburger menu on the top left and navigate to Developer > Open variant collection record. This will open the `sys_ux_screen_type`.
-3. On the `sys_ux_screen_type` record open the UX App Routes tab in the Related Lists section. It should have one entry called "Crazy Page" based on what we defined in Step 1. Click it to open the UX App Route record.
+1. Click on the hamburger menu on the top left and navigate to Developer > Open variant collection record. This will open the `sys_ux_screen_type`.
+
+2. On the `sys_ux_screen_type` record open the UX App Routes tab in the Related Lists section. It should have one entry called "Crazy Page" based on what we defined in Step 1. Click it to open the UX App Route record.
    ![](./images/20230324162742.png)
 
-4. Here we need to set the Parent Macroponent (`parent_macroponent`) to whatever page we want our Page to appear within.
+3. Here we need to set the Parent Macroponent (`parent_macroponent`) to whatever page we want our Page to appear within.
 
     - Since we want to create a Modal on the Record page we need fill in the CSM/FSM Configurable Workspace Record Macroponent here. But if you click on the lookup icon you may find multiple Macroponents listed all with the name "Record". Which one do we need to pick?
 
@@ -68,7 +71,9 @@ category: 'technical'
     - Paste in the `sys_id` from your clipboard and click save and see the display name ("Record") appear. ![](./images/20230324164124.gif)
 
 5. The Parent Macroponent Composition Element ID defines which part of the Macroponent our UI Builder Page should appear in. Since we want it to appear in a modal we can use the CSM/FSM Configurable Workspace's built-in modal, which has Element ID `modalContainerViewport`. ![](./images/20230324165016.png)
+
 6. Leave the other fields as is and click "Update" to save the record.
+
 7. Note: Make sure to keep your UI Builder Page open in a tab. As of this writing there is a weird bug which makes it disappear from the Experience page once you set the Parent Macroponent Composition Element ID.
 
 ## Step 3: Create a UX Add-on Event Mapping
