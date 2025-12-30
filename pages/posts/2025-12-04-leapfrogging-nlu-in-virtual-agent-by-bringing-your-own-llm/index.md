@@ -3,7 +3,7 @@ slug: leapfrogging-nlu-in-virtual-agent-by-bringing-your-own-llm
 date: '2025-07-04'
 title: Leapfrogging NLU in Virtual Agent by Bringing Your Own LLM
 description: Skip ServiceNow's brittle NLU Workbench entirely by integrating an external LLM for topic discovery in Virtual Agent—a future-ready architecture without Pro licensing costs
-published: false
+published: true
 category: technical
 tag: 'servicenow, virtual agent, now assist'
 ---
