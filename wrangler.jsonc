@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "main": ".open-next/worker.js",
+  "name": "jessems-nextra",
+  "compatibility_date": "2025-01-01",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "global_fetch_strictly_public"
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "routes": [
+    { "pattern": "jessems.com", "zone_name": "jessems.com" },
+    { "pattern": "jessems.com/*", "zone_name": "jessems.com" },
+    { "pattern": "www.jessems.com", "zone_name": "jessems.com" },
+    { "pattern": "www.jessems.com/*", "zone_name": "jessems.com" }
+  ]
+}
