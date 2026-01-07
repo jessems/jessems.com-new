@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="800px" height="500px" viewBox="-0.5 -0.5 800 500" content="&lt;mxfile host=&quot;app.diagrams.net&quot;&gt;&lt;diagram name=&quot;Azure Infrastructure&quot;&gt;&lt;mxGraphModel dx=&quot;800&quot; dy=&quot;500&quot; grid=&quot;1&quot; gridSize=&quot;10&quot; guides=&quot;1&quot; tooltips=&quot;1&quot; connect=&quot;1&quot; arrows=&quot;1&quot; fold=&quot;1&quot; page=&quot;1&quot; pageScale=&quot;1&quot; pageWidth=&quot;800&quot; pageHeight=&quot;500&quot;&gt;&lt;root&gt;&lt;mxCell id=&quot;0&quot;/&gt;&lt;mxCell id=&quot;1&quot; parent=&quot;0&quot;/&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;&lt;/diagram&gt;&lt;/mxfile&gt;">
+  <defs>
+    <style type="text/css">
+      .azure-box { fill: #fff; stroke: #0078d4; stroke-width: 2; }
+      .azure-header { fill: #0078d4; }
+      .label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 12px; fill: #333; }
+      .label-white { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; fill: #fff; font-weight: 600; }
+      .label-small { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 10px; fill: #666; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 16px; fill: #333; font-weight: 600; }
+      .subtitle { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 11px; fill: #666; }
+      .connection { stroke: #0078d4; stroke-width: 2; fill: none; stroke-dasharray: 5,3; }
+      .connection-solid { stroke: #0078d4; stroke-width: 2; fill: none; }
+      .bicep-box { fill: #f0f0f0; stroke: #666; stroke-width: 2; stroke-dasharray: 8,4; }
+      .resource-group { fill: none; stroke: #0078d4; stroke-width: 2; stroke-dasharray: 5,5; rx: 10; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="800" height="500" fill="#fafafa"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" class="title">Azure Infrastructure for LLM Topic Discovery</text>
+  <text x="400" y="48" text-anchor="middle" class="subtitle">Deployed via Bicep Infrastructure-as-Code</text>
+
+  <!-- Resource Group boundary -->
+  <rect x="140" y="70" width="520" height="370" class="resource-group" rx="10"/>
+  <text x="160" y="90" class="label" style="font-weight: 600; fill: #0078d4;">Resource Group</text>
+
+  <!-- Bicep/IaC box on the left -->
+  <rect x="20" y="180" width="100" height="120" class="bicep-box" rx="8"/>
+  <text x="70" y="220" text-anchor="middle" class="label" style="font-weight: 600;">Bicep</text>
+  <text x="70" y="238" text-anchor="middle" class="label-small">Template</text>
+  <text x="70" y="258" text-anchor="middle" class="label-small">(~200 lines)</text>
+  <text x="70" y="280" text-anchor="middle" class="label-small">./deploy.sh</text>
+
+  <!-- Arrow from Bicep to Resource Group -->
+  <path d="M 120 240 L 135 240" class="connection-solid" marker-end="url(#arrowhead)"/>
+  <text x="127" y="230" class="label-small" style="font-size: 9px;">provisions</text>
+
+  <!-- Azure Function -->
+  <rect x="160" y="120" width="140" height="90" class="azure-box" rx="6"/>
+  <rect x="160" y="120" width="140" height="24" class="azure-header" rx="6"/>
+  <rect x="160" y="135" width="140" height="9" class="azure-header"/>
+  <text x="230" y="137" text-anchor="middle" class="label-white">Azure Function</text>
+  <text x="230" y="165" text-anchor="middle" class="label">Python Runtime</text>
+  <text x="230" y="182" text-anchor="middle" class="label-small">/api/classify endpoint</text>
+  <text x="230" y="198" text-anchor="middle" class="label-small">Topic matching logic</text>
+
+  <!-- Azure OpenAI -->
+  <rect x="360" y="120" width="140" height="90" class="azure-box" rx="6"/>
+  <rect x="360" y="120" width="140" height="24" style="fill: #10a37f;" rx="6"/>
+  <rect x="360" y="135" width="140" height="9" style="fill: #10a37f;"/>
+  <text x="430" y="137" text-anchor="middle" class="label-white">Azure OpenAI</text>
+  <text x="430" y="165" text-anchor="middle" class="label">GPT-4o-mini</text>
+  <text x="430" y="182" text-anchor="middle" class="label-small">Structured outputs</text>
+  <text x="430" y="198" text-anchor="middle" class="label-small">Chat completions API</text>
+
+  <!-- Connection: Function to OpenAI -->
+  <path d="M 300 165 L 360 165" class="connection-solid" marker-end="url(#arrowhead)"/>
+
+  <!-- Key Vault -->
+  <rect x="540" y="120" width="100" height="90" class="azure-box" rx="6"/>
+  <rect x="540" y="120" width="100" height="24" style="fill: #e8a800;" rx="6"/>
+  <rect x="540" y="135" width="100" height="9" style="fill: #e8a800;"/>
+  <text x="590" y="137" text-anchor="middle" class="label-white">Key Vault</text>
+  <text x="590" y="168" text-anchor="middle" class="label-small">API Keys</text>
+  <text x="590" y="185" text-anchor="middle" class="label-small">Managed</text>
+  <text x="590" y="200" text-anchor="middle" class="label-small">Identity</text>
+
+  <!-- Connection: Key Vault to Function (dashed) - routes above boxes -->
+  <path d="M 590 120 L 590 105 L 230 105 L 230 120" class="connection" marker-end="url(#arrowhead-dashed)"/>
+
+  <!-- App Service Plan -->
+  <rect x="160" y="250" width="140" height="80" class="azure-box" rx="6"/>
+  <rect x="160" y="250" width="140" height="24" style="fill: #5c2d91;" rx="6"/>
+  <rect x="160" y="265" width="140" height="9" style="fill: #5c2d91;"/>
+  <text x="230" y="267" text-anchor="middle" class="label-white">App Service Plan</text>
+  <text x="230" y="295" text-anchor="middle" class="label-small">Consumption tier</text>
+  <text x="230" y="312" text-anchor="middle" class="label-small">Auto-scaling</text>
+
+  <!-- Connection: App Service Plan to Function -->
+  <path d="M 230 250 L 230 210" class="connection" marker-end="url(#arrowhead-dashed)"/>
+
+  <!-- Storage Account -->
+  <rect x="360" y="250" width="140" height="80" class="azure-box" rx="6"/>
+  <rect x="360" y="250" width="140" height="24" style="fill: #3498db;" rx="6"/>
+  <rect x="360" y="265" width="140" height="9" style="fill: #3498db;"/>
+  <text x="430" y="267" text-anchor="middle" class="label-white">Storage Account</text>
+  <text x="430" y="295" text-anchor="middle" class="label-small">Function state</text>
+  <text x="430" y="312" text-anchor="middle" class="label-small">Queue triggers</text>
+
+  <!-- Connection: Storage to Function - routes through gap between rows -->
+  <path d="M 360 290 L 320 290 L 320 230 L 280 230 L 280 210" class="connection" marker-end="url(#arrowhead-dashed)"/>
+
+  <!-- Application Insights -->
+  <rect x="540" y="250" width="100" height="80" class="azure-box" rx="6"/>
+  <rect x="540" y="250" width="100" height="24" style="fill: #68217a;" rx="6"/>
+  <rect x="540" y="265" width="100" height="9" style="fill: #68217a;"/>
+  <text x="590" y="267" text-anchor="middle" class="label-white" style="font-size: 10px;">App Insights</text>
+  <text x="590" y="292" text-anchor="middle" class="label-small">Logging</text>
+  <text x="590" y="307" text-anchor="middle" class="label-small">Monitoring</text>
+  <text x="590" y="322" text-anchor="middle" class="label-small">Tracing</text>
+
+  <!-- Connection: App Insights to Function - routes below boxes then up -->
+  <path d="M 540 310 L 520 310 L 520 350 L 150 350 L 150 165 L 160 165" class="connection" marker-end="url(#arrowhead-dashed)"/>
+
+  <!-- ServiceNow box on the left outside -->
+  <rect x="160" y="380" width="140" height="50" style="fill: #fff; stroke: #81b5a1; stroke-width: 2;" rx="6"/>
+  <rect x="160" y="380" width="140" height="20" style="fill: #81b5a1;" rx="6"/>
+  <rect x="160" y="393" width="140" height="7" style="fill: #81b5a1;"/>
+  <text x="230" y="395" text-anchor="middle" class="label-white" style="font-size: 10px;">ServiceNow</text>
+  <text x="230" y="418" text-anchor="middle" class="label-small">Virtual Agent</text>
+
+  <!-- Connection: ServiceNow to Function - routes outside left edge -->
+  <path d="M 160 405 L 135 405 L 135 165 L 160 165" class="connection-solid" marker-end="url(#arrowhead)"/>
+  <text x="100" y="300" class="label-small" style="writing-mode: vertical-rl; text-orientation: mixed;">HTTPS</text>
+
+  <!-- Legend -->
+  <rect x="550" y="385" width="190" height="55" style="fill: #fff; stroke: #ccc; stroke-width: 1;" rx="4"/>
+  <text x="560" y="402" class="label-small" style="font-weight: 600;">Legend</text>
+  <line x1="560" y1="415" x2="590" y2="415" class="connection-solid"/>
+  <text x="595" y="418" class="label-small">Data flow</text>
+  <line x1="560" y1="430" x2="590" y2="430" class="connection"/>
+  <text x="595" y="433" class="label-small">Dependency / Config</text>
+
+  <!-- Arrowhead definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0078d4"/>
+    </marker>
+    <marker id="arrowhead-dashed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0078d4"/>
+    </marker>
+  </defs>
+</svg>
