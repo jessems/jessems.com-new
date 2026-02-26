@@ -12,7 +12,7 @@ ServiceNow's AI features, which come under the umbrella of "Now Assist", include
 
 In my view, organizations should should look for ways to leapfrog the NLU architecture entirely. By "leapfrogging," I mean skipping over the investment in building and maintaining a legacy system (like NLU) in favor of adopting a more advanced and future-ready solution from the outset. This approach is similar to how some countries have leapfrogged over landline telephony and gone straight to widespread mobile phone adoption, bypassing an entire generation of infrastructure. In the same way, organizations can bypass the complexity and obsolescence of NLU by moving directly to LLM-powered topic discovery or similar state-of-the-art technologies. And as we will see in this blog post, this can be done without the need for a Pro or Pro Plus license.
 
-> **[IMAGE: Leapfrogging Concept Diagram]** > _Suggested: Side-by-side comparison showing the traditional path (NLU Workbench → training → testing → deployment) vs. the leapfrog path (direct to LLM Topic Discovery). Use arrows and icons to illustrate skipping over legacy infrastructure._
+![Leapfrogging NLU: Two Paths to Intent Recognition](./leapfrogging-concept.drawio.svg)
 
 Just to be clear: The goal here isn't to avoid paying for a pro license. The unfortunate reality is that the non-pro option (NLU) that is available is a huge pain in the ass. With some clever architecture we can avoid it entirely. It is not, however, in the slightest, feasible to recreate all pro license benefits in the same way.
 
