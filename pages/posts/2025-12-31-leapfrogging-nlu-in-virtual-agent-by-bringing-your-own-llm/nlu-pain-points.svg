@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- svg: excalidraw-style -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 380" width="720" height="380">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&amp;display=swap');
+      .hand { font-family: "Virgil", "Caveat", "Comic Sans MS", "Segoe Print", cursive; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="720" height="380" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="360" y="36" text-anchor="middle" class="hand" font-size="24" font-weight="700" fill="#1e1e1e">NLU Pain Points</text>
+
+  <!-- ====== TOP LEFT: Workload ====== -->
+  <path d="M 22 56 C 25 53, 180 54, 342 56 C 345 62, 344 125, 342 168 C 180 170, 26 171, 22 168 C 19 140, 20 66, 22 56 Z"
+        fill="#fff5f5" stroke="#e03131" stroke-width="1.8" stroke-linejoin="round"/>
+
+  <!-- Clock icon — large, hand-drawn -->
+  <circle cx="80" cy="105" r="30" fill="none" stroke="#e03131" stroke-width="2.2"/>
+  <!-- Clock hands -->
+  <path d="M 80 85 C 79 92, 81 98, 80 105" stroke="#e03131" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M 80 105 C 87 107, 94 112, 98 116" stroke="#e03131" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Tick marks -->
+  <path d="M 80 78 L 80 82" stroke="#e03131" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 107 105 L 103 105" stroke="#e03131" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Stack lines underneath -->
+  <path d="M 60 142 C 68 140, 88 140, 100 142" stroke="#e03131" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M 57 150 C 66 148, 90 148, 103 150" stroke="#e03131" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M 54 158 C 64 156, 92 156, 106 158" stroke="#e03131" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+  <text x="140" y="90" class="hand" font-size="19" font-weight="700" fill="#c92a2a">Workload</text>
+  <text x="140" y="115" class="hand" font-size="14" fill="#495057">High manual effort for</text>
+  <text x="140" y="136" class="hand" font-size="14" fill="#495057">data annotation &amp;</text>
+  <text x="140" y="157" class="hand" font-size="14" fill="#495057">maintenance</text>
+
+  <!-- ====== TOP RIGHT: Confusion ====== -->
+  <path d="M 378 56 C 381 53, 540 54, 698 56 C 701 62, 700 125, 698 168 C 540 170, 382 171, 378 168 C 375 140, 376 66, 378 56 Z"
+        fill="#fff9db" stroke="#e8890c" stroke-width="1.8" stroke-linejoin="round"/>
+
+  <!-- Signpost with multiple arrows pointing different ways -->
+  <!-- Post -->
+  <path d="M 436 80 C 435 110, 437 140, 436 165" stroke="#e8890c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Arrow right -->
+  <path d="M 436 92 C 448 91, 458 90, 468 92" stroke="#e8890c" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M 462 87 L 470 92 L 462 97" stroke="#e8890c" stroke-width="2" fill="none" stroke-linejoin="round"/>
+  <!-- Arrow upper-left -->
+  <path d="M 436 105 C 426 100, 418 95, 410 90" stroke="#e8890c" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M 416 85 L 408 89 L 414 95" stroke="#e8890c" stroke-width="2" fill="none" stroke-linejoin="round"/>
+  <!-- Arrow lower-right -->
+  <path d="M 436 120 C 448 124, 456 128, 464 133" stroke="#e8890c" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M 458 127 L 466 134 L 458 138" stroke="#e8890c" stroke-width="2" fill="none" stroke-linejoin="round"/>
+  <!-- Question marks -->
+  <text x="415" y="82" class="hand" font-size="18" font-weight="600" fill="#e8890c">?</text>
+  <text x="455" y="110" class="hand" font-size="15" font-weight="600" fill="#e8890c">?</text>
+  <text x="470" y="150" class="hand" font-size="13" font-weight="600" fill="#e8890c">?</text>
+
+  <text x="500" y="90" class="hand" font-size="19" font-weight="700" fill="#d9480f">Confusion</text>
+  <text x="500" y="115" class="hand" font-size="14" fill="#495057">Complex, overlapping</text>
+  <text x="500" y="136" class="hand" font-size="14" fill="#495057">intents lead to</text>
+  <text x="500" y="157" class="hand" font-size="14" fill="#495057">misinterpretation</text>
+
+  <!-- ====== BOTTOM LEFT: Brittleness ====== -->
+  <path d="M 22 194 C 25 191, 180 192, 342 194 C 345 200, 344 263, 342 306 C 180 308, 26 309, 22 306 C 19 278, 20 204, 22 194 Z"
+        fill="#e7f5ff" stroke="#1c7ed6" stroke-width="1.8" stroke-linejoin="round"/>
+
+  <!-- Cracked/broken glass/shield icon -->
+  <!-- Outer shape -->
+  <path d="M 60 215 C 62 212, 80 210, 100 212 C 102 215, 102 210, 100 212 L 105 260 C 103 275, 82 290, 80 292 C 78 290, 57 275, 55 260 L 60 215 Z"
+        fill="none" stroke="#1c7ed6" stroke-width="2.2" stroke-linejoin="round"/>
+  <!-- Lightning crack through middle -->
+  <path d="M 80 215 L 75 235 L 88 245 L 72 260 L 82 278"
+        stroke="#1c7ed6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Small fragments flying off -->
+  <path d="M 105 230 L 112 225" stroke="#1c7ed6" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 108 245 L 116 243" stroke="#1c7ed6" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 55 238 L 47 234" stroke="#1c7ed6" stroke-width="1.5" stroke-linecap="round"/>
+
+  <text x="140" y="228" class="hand" font-size="19" font-weight="700" fill="#1864ab">Brittleness</text>
+  <text x="140" y="253" class="hand" font-size="14" fill="#495057">Models break easily</text>
+  <text x="140" y="274" class="hand" font-size="14" fill="#495057">with real-world variation</text>
+  <text x="140" y="295" class="hand" font-size="14" fill="#495057">&amp; edge cases</text>
+
+  <!-- ====== BOTTOM RIGHT: Sunk Cost ====== -->
+  <path d="M 378 194 C 381 191, 540 192, 698 194 C 701 200, 700 263, 698 306 C 540 308, 382 309, 378 306 C 375 278, 376 204, 378 194 Z"
+        fill="#f3f0ff" stroke="#7950f2" stroke-width="1.8" stroke-linejoin="round"/>
+
+  <!-- Money flying into fire/drain -->
+  <!-- Dollar bill 1 (tilted, falling) -->
+  <path d="M 420 218 L 450 212 L 455 230 L 425 236 Z"
+        fill="none" stroke="#7950f2" stroke-width="1.8" stroke-linejoin="round"/>
+  <text x="438" y="229" text-anchor="middle" class="hand" font-size="12" font-weight="600" fill="#7950f2">$</text>
+  <!-- Dollar bill 2 (more tilted) -->
+  <path d="M 430 242 L 458 240 L 460 256 L 432 258 Z"
+        fill="none" stroke="#7950f2" stroke-width="1.5" stroke-linejoin="round" opacity="0.6"/>
+  <text x="446" y="254" text-anchor="middle" class="hand" font-size="11" font-weight="600" fill="#7950f2" opacity="0.6">$</text>
+  <!-- Drain/hole at bottom -->
+  <ellipse cx="445" cy="278" rx="22" ry="8" fill="none" stroke="#7950f2" stroke-width="2" stroke-linejoin="round"/>
+  <!-- Spiral into drain -->
+  <path d="M 445 270 C 440 273, 438 278, 445 280 C 450 282, 452 278, 448 276"
+        stroke="#7950f2" stroke-width="1.5" fill="none"/>
+  <!-- Down arrow -->
+  <path d="M 445 286 L 445 298" stroke="#7950f2" stroke-width="2" fill="none"/>
+  <path d="M 440 293 L 445 300 L 450 293" stroke="#7950f2" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+
+  <text x="500" y="228" class="hand" font-size="19" font-weight="700" fill="#6741d9">Sunk Cost</text>
+  <text x="500" y="253" class="hand" font-size="14" fill="#495057">Significant investment</text>
+  <text x="500" y="274" class="hand" font-size="14" fill="#495057">yields diminishing</text>
+  <text x="500" y="295" class="hand" font-size="14" fill="#495057">returns</text>
+
+  <!-- Bottom note -->
+  <text x="360" y="358" text-anchor="middle" class="hand" font-size="13" fill="#adb5bd">All of these go away with LLM Topic Discovery</text>
+
+</svg>
