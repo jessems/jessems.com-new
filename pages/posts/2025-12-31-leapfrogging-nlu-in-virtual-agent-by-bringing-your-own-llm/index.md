@@ -6,6 +6,7 @@ description: Skip ServiceNow's brittle NLU Workbench entirely by integrating an 
 published: true
 category: technical
 tag: 'servicenow, virtual agent, now assist'
+image: '/images/posts/leapfrogging-nlu-og.png'
 ---
 
 ServiceNow's AI features, which come under the umbrella of "Now Assist", include specific capabilities for Virtual Agent. One of these, (arguably the most valuable one), is called "LLM Topic Discovery" and entails the ability to recognize the user's intent based on the Topic description. In other words, when the user types "forgot password", the system knows the user should be routed to the "Reset Password" topic, because the description contains the text "This topic helps users reset their password when they've forgotten it." This replaces the legacy NLU workbench architecture, which required implementers to train and test models for each topic.
@@ -26,7 +27,7 @@ There are several reasons I would recommend leapfrogging NLU:
 
 4. Lost investment — If an organization _does_ choose to do the work required to implement NLU, if they do invariably migrate to LLM Topic Discovery at some point, all this work will have zero value.
 
-![NLU Pain Points Summary](./images/20260107150358.png)
+![NLU Pain Points Summary](./nlu-pain-points.svg)
 
 LLM Topic Discovery (the successor to NLU-based topic discovery), however, is only available with a Pro or Pro Plus license. These licenses unlock a wide range of Now Assist features but are often prohibitively expensive for smaller organizations.
 

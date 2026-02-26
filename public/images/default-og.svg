@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&amp;display=swap');
+    </style>
+  </defs>
+  <rect x="0" y="0" width="1200" height="630" fill="#1e1e1e"/>
+  <text x="600" y="360" text-anchor="middle" dominant-baseline="central"
+        font-family="'Virgil', 'Caveat', 'Comic Sans MS', 'Segoe Print', cursive"
+        font-size="280" font-weight="700" fill="#ffffff">J</text>
+</svg>
