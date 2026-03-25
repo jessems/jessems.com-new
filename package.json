@@ -10,9 +10,10 @@
     "build:static": "npm run prebuild:static && node ./scripts/gen-rss.js && NEXT_OUTPUT=export next build && next-sitemap",
     "postbuild:static": "node ./scripts/handleUnpublishedPosts.js restore",
     "deploy:static": "npm run build:static && wrangler deploy --config wrangler.static.jsonc",
-    "preview": "node ./scripts/handleUnpublishedPosts.js hide && opennextjs-cloudflare build && opennextjs-cloudflare preview; node ./scripts/handleUnpublishedPosts.js restore",
-    "deploy": "node ./scripts/handleUnpublishedPosts.js hide && opennextjs-cloudflare build && opennextjs-cloudflare deploy; node ./scripts/handleUnpublishedPosts.js restore",
-    "upload": "node ./scripts/handleUnpublishedPosts.js hide && opennextjs-cloudflare build && opennextjs-cloudflare upload; node ./scripts/handleUnpublishedPosts.js restore"
+    "predeploy": "node ./scripts/generateExcludedRoutes.js && node ./scripts/gen-rss.js && node ./scripts/generate-sitemap.js",
+    "preview": "node ./scripts/handleUnpublishedPosts.js hide && npm run predeploy && opennextjs-cloudflare build && opennextjs-cloudflare preview; node ./scripts/handleUnpublishedPosts.js restore",
+    "deploy": "node ./scripts/handleUnpublishedPosts.js hide && npm run predeploy && opennextjs-cloudflare build && opennextjs-cloudflare deploy; node ./scripts/handleUnpublishedPosts.js restore",
+    "upload": "node ./scripts/handleUnpublishedPosts.js hide && npm run predeploy && opennextjs-cloudflare build && opennextjs-cloudflare upload; node ./scripts/handleUnpublishedPosts.js restore"
   },
   "dependencies": {
     "clsx": "^2.1.1",
