@@ -5,9 +5,11 @@ const matter = require('gray-matter');
 
 async function generate() {
 	const feed = new RSS({
-		title: 'Your Name',
-		site_url: 'https://yoursite.com',
-		feed_url: 'https://yoursite.com/feed.xml'
+		title: 'Jesse Szepieniec',
+		description: 'Writing about product development, ServiceNow, and building things.',
+		site_url: 'https://jessems.com',
+		feed_url: 'https://jessems.com/feed.xml',
+		language: 'en',
 	});
 
 	const posts = await fs.readdir(
