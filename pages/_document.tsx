@@ -5,6 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta name="robots" content="follow, index" />
+        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
