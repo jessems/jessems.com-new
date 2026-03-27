@@ -4,8 +4,34 @@ const { initOpenNextCloudflareForDev } = require('@opennextjs/cloudflare');
 
 const withNextra = require('nextra')({
 	theme: 'nextra-theme-blog',
-	themeConfig: './theme.config.js'
-	// optional: add `unstable_staticImage: true` to enable Nextra's auto image import
+	themeConfig: './theme.config.js',
+	mdxOptions: {
+		rehypePrettyCodeOptions: {
+			transformers: [
+				// Import transformers dynamically at build time
+				// These enable [!code ++], [!code --], [!code highlight], [!code focus] notation
+				...(function() {
+					try {
+						const { 
+							transformerNotationDiff,
+							transformerNotationHighlight,
+							transformerNotationFocus,
+							transformerNotationErrorLevel
+						} = require('@shikijs/transformers');
+						return [
+							transformerNotationDiff(),
+							transformerNotationHighlight(),
+							transformerNotationFocus(),
+							transformerNotationErrorLevel()
+						];
+					} catch (e) {
+						console.warn('Shiki transformers not installed, skipping...');
+						return [];
+					}
+				})()
+			]
+		}
+	}
 });
 
 // Set `NEXT_OUTPUT=export` to build a fully-static export (no Workers runtime, no cold starts).

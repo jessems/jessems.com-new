@@ -63,3 +63,130 @@ img.next-image {
 .nav-line .nav-link {
   color: #69778c;
 }
+
+/* ==========================================================
+   Shiki Transformers - Diff, Highlight, Focus, Error Styling
+   ========================================================== */
+
+/* Diff notation: [!code ++] and [!code --] */
+pre.shiki .line.diff {
+  display: inline-block;
+  width: calc(100% + 2rem);
+  margin: 0 -1rem;
+  padding: 0 1rem;
+}
+
+pre.shiki .line.diff.add {
+  background-color: rgba(46, 160, 67, 0.15);
+}
+
+pre.shiki .line.diff.remove {
+  background-color: rgba(248, 81, 73, 0.15);
+  opacity: 0.7;
+}
+
+pre.shiki .line.diff.add::before {
+  content: '+';
+  position: absolute;
+  left: 0.5rem;
+  color: #3fb950;
+}
+
+pre.shiki .line.diff.remove::before {
+  content: '-';
+  position: absolute;
+  left: 0.5rem;
+  color: #f85149;
+}
+
+pre.shiki.has-diff {
+  padding-left: 2rem;
+}
+
+pre.shiki.has-diff .line {
+  position: relative;
+}
+
+/* Highlight notation: [!code highlight] */
+pre.shiki .line.highlighted {
+  display: inline-block;
+  width: calc(100% + 2rem);
+  margin: 0 -1rem;
+  padding: 0 1rem;
+  background-color: rgba(101, 117, 133, 0.16);
+}
+
+pre.shiki.has-highlighted {
+  padding-left: 2rem;
+}
+
+/* Word highlight */
+pre.shiki .highlighted-word {
+  background-color: rgba(101, 117, 133, 0.4);
+  border: 1px solid rgba(101, 117, 133, 0.6);
+  padding: 1px 3px;
+  margin: -1px -3px;
+  border-radius: 4px;
+}
+
+/* Focus notation: [!code focus] */
+pre.shiki:has(.line.focused) .line:not(.focused) {
+  filter: blur(0.095rem);
+  opacity: 0.5;
+  transition: filter 0.35s, opacity 0.35s;
+}
+
+pre.shiki:has(.line.focused):hover .line:not(.focused) {
+  filter: blur(0);
+  opacity: 1;
+}
+
+pre.shiki .line.focused {
+  display: inline-block;
+  width: calc(100% + 2rem);
+  margin: 0 -1rem;
+  padding: 0 1rem;
+  background-color: rgba(101, 117, 133, 0.1);
+}
+
+/* Error level notation: [!code error], [!code warning], [!code info] */
+pre.shiki .line.highlighted.error {
+  background-color: rgba(244, 63, 94, 0.15);
+}
+
+pre.shiki .line.highlighted.warning {
+  background-color: rgba(234, 179, 8, 0.15);
+}
+
+pre.shiki .line.highlighted.info {
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+/* Dark mode adjustments */
+html.dark pre.shiki .line.diff.add {
+  background-color: rgba(46, 160, 67, 0.2);
+}
+
+html.dark pre.shiki .line.diff.remove {
+  background-color: rgba(248, 81, 73, 0.2);
+}
+
+html.dark pre.shiki .line.highlighted {
+  background-color: rgba(101, 117, 133, 0.25);
+}
+
+html.dark pre.shiki .highlighted-word {
+  background-color: rgba(101, 117, 133, 0.5);
+}
+
+html.dark pre.shiki .line.highlighted.error {
+  background-color: rgba(244, 63, 94, 0.2);
+}
+
+html.dark pre.shiki .line.highlighted.warning {
+  background-color: rgba(234, 179, 8, 0.2);
+}
+
+html.dark pre.shiki .line.highlighted.info {
+  background-color: rgba(59, 130, 246, 0.2);
+}
